@@ -1,0 +1,230 @@
+
+.roster-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
+  z-index: 2;
+  justify-content: center;
+}
+
+.roster-listmenu {
+  position: absolute;
+  right: 5%;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.roster-menubar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+  background: #111;
+  color: #fff;
+  padding: 4px 4px 4px 4px;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  border-top: 2px solid #fff;
+}
+
+.roster-listcon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background: #111;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  padding: 0px 4px 0px 4px;
+  z-index: 1;
+}
+
+.roster-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: #111;
+}
+
+.roster {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border: 0px solid #eee;
+  color: #fff;
+  background: #222;
+  text-align: center;
+  height: fit-content;
+  width: auto;
+}
+
+.roster:nth-child(even) {
+  background: linear-gradient(to right, #111, #444) !important;
+}
+
+.roster-over {
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  width: 100%;
+  height: max-content;
+  background: rgba(11, 11, 11, 0.75);
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  padding: 8px;
+}
+
+.roster-focus {
+  position: relative;
+  margin-left: 45%;
+  width: 50%;
+  height: 50%;
+  color: #fff;
+  background: #111;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.focus-label {
+  position: relative;
+  margin-left: 45%;
+  width: 50%;
+  height: fit-content;
+  padding: 4px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: white;
+  background: #111;
+  border: 2px solid #fff;
+  text-align: center;
+}
+
+.roster-covercon {
+  position: absolute;
+  top: 25%;
+  left: 8px;
+  z-index: 3;
+  height: 25%;
+  width: 38%;
+}
+
+.film-strip {
+  position: relative;
+  background: #222;
+  border: 2px solid #eee;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  padding: 4px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.film-strip::before,
+.film-strip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #333 0,
+    #333 10px,
+    #eee 10px,
+    #eee 16px
+  );
+}
+
+.film-strip::before {
+  left: 0;
+  border-right: 2px solid #eee;
+}
+
+.film-strip::after {
+  right: 0;
+  border-left: 2px solid #eee;
+}
+
+.film-content {
+  background: #333;
+  color: #000;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+  height: 100%;
+  width: calc(100% - 10px);
+  position: relative;
+  left: 6px;
+}
+
+.film-content > img {
+  width: 100%;
+  height: 100%;
+}
+
+.film-bg {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+}
+
+.film-bg img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.svg-net {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  z-index: 0;
+}
+.diamond-net {
+  display: block;
+}
+
+.roster-w {
+  width: 42%;
+  height: fit-content;
+  background: rgba(11, 11, 11, 0.3);
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  top: 53%;
+  left: -6%;
+  z-index: 3;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.roster-card {
+  position: relative;
+  top: 57%;
+  left: -49%;
+  z-index: 3;
+  width: 42%;
+  height: 64px;
+  border: 2px solid #ccc;
+  overflow: visible;
+  border-radius: 5px;
+}
+
+.focused {
+  transform: scale(1);
+  font-weight: bold;
+  background: blueviolet;
+  margin: 0px;
+  z-index: 1;
+}
