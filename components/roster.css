@@ -3,12 +3,49 @@
   position: absolute;
   top: 0;
   right: 0;
-  display: none;
+  display: flex;
   height: 100%;
   width: 100%;
   max-width: 500px;
   z-index: 2;
   justify-content: center;
+  overflow: hidden;
+}
+
+.roster-vlist {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 25%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.vlist-track {
+  padding: 8px 8px;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(0);
+  animation: scroll 5s linear infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-720px); }
+}
+
+.vlist-item {
+  flex: 0 0 64px;
+  margin-bottom: 8px;
+  width: 64px;
+  background: skyblue;
+  opacity: 0.5;
+  box-sizing: border-box;
+  border: 2px solid steelblue;
+  box-shadow: 
+    0 0 5px steelblue,
+    0 0 10px steelblue,
+    0 0 15px steelblue;
 }
 
 .roster-listmenu {
@@ -29,9 +66,13 @@
   background: #111;
   color: #fff;
   padding: 4px 4px 4px 4px;
-  border-left: 2px solid #fff;
-  border-right: 2px solid #fff;
-  border-top: 2px solid #fff;
+  border-left: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+  border-top: 2px solid #ccc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
 }
 
 .roster-listcon {
@@ -40,8 +81,8 @@
   height: 100%;
   overflow: scroll;
   background: #111;
-  border-left: 2px solid #fff;
-  border-right: 2px solid #fff;
+  border-left: 2px solid #ccc;
+  border-right: 2px solid #ccc;
   padding: 0px 4px 0px 4px;
   z-index: 1;
 }
@@ -76,8 +117,8 @@
   width: 100%;
   height: max-content;
   background: rgba(11, 11, 11, 0.75);
-  border-top: 2px solid #fff;
-  border-bottom: 2px solid #fff;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
   padding: 8px;
 }
 

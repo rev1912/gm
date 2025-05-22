@@ -2,6 +2,7 @@
 @import url('components/table.css');
 @import url('components/book.css');
 @import url('components/matchcard.css');
+@import url('components/schedule.css');
 
 html, body {
   margin: 0;
@@ -19,7 +20,6 @@ html, body {
   height: 100%;
   width: 100%;
   flex: 1;
-  position: relative;
 }
 
 .menubar {

@@ -37,7 +37,7 @@
             n.d(t, { A: function() {
               return U;
             } });
-            var o = n(3029), r = n(2901), i = n(388), a = n(3954), s = n(5361), c = n(3915), l = n.n(c), u = n(6097), d = n.n(u), h = n(1738), f = n.n(h), p = n(4994), v = n.n(p), m = n(9405), g = n.n(m), b = n(5169), y = n.n(b), A = n(9548), w2 = n.n(A), x = n(3249), _ = n.n(x), k = n(6030), C = n.n(k), S = n(5004), E = n.n(S);
+            var o = n(3029), r = n(2901), i = n(388), a = n(3954), s = n(5361), c = n(3915), l = n.n(c), u = n(6097), d = n.n(u), h = n(1738), f = n.n(h), p = n(4994), v = n.n(p), m = n(9405), g = n.n(m), b = n(5169), y = n.n(b), A = n(9548), w3 = n.n(A), x = n(3249), _ = n.n(x), k = n(6030), C = n.n(k), S = n(5004), E = n.n(S);
             n(9410), n(8609);
             function T(e2) {
               var t2 = "luna-".concat(e2, "-");
@@ -50,10 +50,10 @@
               }
               return function(e3) {
                 if (/<[^>]*>/g.test(e3)) try {
-                  var t3 = w2().parse(e3);
+                  var t3 = w3().parse(e3);
                   return O(t3, function(e4) {
                     e4.attrs && e4.attrs.class && (e4.attrs.class = n2(e4.attrs.class));
-                  }), w2().stringify(t3);
+                  }), w3().stringify(t3);
                 } catch (t4) {
                   return n2(e3);
                 }
@@ -228,7 +228,7 @@
                 throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
               }();
             }
-            var a = n(3029), s = n(2901), c = n(388), l = n(3954), u = n(991), d = n(5361), h = n(5902), f = n.n(h), p = n(2561), v = n.n(p), m = n(3249), g = n.n(m), b = n(1009), y = n.n(b), A = n(4950), w2 = n.n(A), x = n(9100), _ = n.n(x), k = n(1580), C = n.n(k), S = n(9464), E = n.n(S), T = n(15), O = n.n(T), N = n(9931), j = n.n(N);
+            var a = n(3029), s = n(2901), c = n(388), l = n(3954), u = n(991), d = n(5361), h = n(5902), f = n.n(h), p = n(2561), v = n.n(p), m = n(3249), g = n.n(m), b = n(1009), y = n.n(b), A = n(4950), w3 = n.n(A), x = n(9100), _ = n.n(x), k = n(1580), C = n.n(k), S = n(9464), E = n.n(S), T = n(15), O = n.n(T), N = n(9931), j = n.n(N);
             function M(e2) {
               return e2.constructor && e2.constructor.name ? e2.constructor.name : j()({}.toString.call(e2).replace(/(\[object )|]/g, ""));
             }
@@ -265,7 +265,7 @@
             function X(e2) {
               var t2, n2 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}, o2 = n2.topObj, r2 = n2.level, i2 = void 0 === r2 ? 0 : r2, a2 = n2.getterVal, s2 = void 0 !== a2 && a2, c2 = n2.unenumerable, l2 = void 0 === c2 || c2, u2 = "", d2 = "", h2 = [], p2 = [], m2 = "";
               o2 = o2 || e2;
-              var b2 = { getterVal: s2, unenumerable: l2, level: i2 + 1 }, A2 = 0 === i2, w3 = '<span class="'.concat(K("key"), '">'), x2 = '<span class="'.concat(K("number"), '">'), k2 = '<span class="'.concat(K("null"), '">'), S2 = '<span class="'.concat(K("string"), '">'), E2 = '<span class="'.concat(K("boolean"), '">'), T2 = '<span class="'.concat(K("special"), '">'), N2 = function(e3) {
+              var b2 = { getterVal: s2, unenumerable: l2, level: i2 + 1 }, A2 = 0 === i2, w4 = '<span class="'.concat(K("key"), '">'), x2 = '<span class="'.concat(K("number"), '">'), k2 = '<span class="'.concat(K("null"), '">'), S2 = '<span class="'.concat(K("string"), '">'), E2 = '<span class="'.concat(K("boolean"), '">'), T2 = '<span class="'.concat(K("special"), '">'), N2 = function(e3) {
                 return f()(e3).replace(/\\n/g, "\u21B5").replace(/\\f|\\r|\\t/g, "").replace(/\\/g, "");
               }, j2 = "</span>";
               function I2(e3) {
@@ -275,7 +275,7 @@
                 if (t2 > 5) m2 = ", \u2026";
                 else {
                   var r3 = function(e3) {
-                    return w3 + N2(e3) + j2;
+                    return w4 + N2(e3) + j2;
                   }(te(n3));
                   if (!s2) {
                     var i3 = Object.getOwnPropertyDescriptor(e2, n3);
@@ -321,7 +321,7 @@
               return t2 && n2 && n2 !== Object.prototype;
             }
             function te(e2) {
-              return w2()(e2).replace(/\\'/g, "'").replace(/\t/g, "\\t");
+              return w3()(e2).replace(/\\'/g, "'").replace(/\t/g, "\\t");
             }
             var ne, oe = n(3390), re = n(92), ie = n(5452), ae = n(4095), se = n.n(ae), ce = n(9760), le = n.n(ce), ue = n(1738), de = n.n(ue), he = n(2650), fe = n.n(he), pe = n(7696), ve = n.n(pe), me = n(5651), ge = n.n(me), be = n(2708), ye = n.n(be), Ae = n(6631), we = n.n(Ae), xe = n(4069), _e = n.n(xe), ke = n(4236), Ce = n.n(ke), Se = n(8971), Ee = n.n(Se), Te = n(3957), Oe = n.n(Te), Ne = n(769), je = n.n(Ne), Me = n(6214), Ie = n.n(Me), ze = n(438), Be = n.n(ze), De = n(8420), Fe = n.n(De), Re = n(96), Le = n.n(Re), Pe = n(3145), He = n.n(Pe), Ge = n(3693), $e = n.n(Ge), Ye = n(5241), qe = n.n(Ye), Qe = n(2263), Ue = n.n(Qe), Je = n(4534), We = n.n(Je), Ve = n(8032), Ke = n.n(Ve), Xe = n(4844), Ze = n.n(Xe), et = n(4801), tt = n.n(et), nt = n(9041), ot = n.n(nt), rt = n(8091), it = n.n(rt), at = n(4249), st = n.n(at), ct = n(2797), lt = n.n(ct), ut = n(5773), dt = n.n(ut), ht = n(4433), ft = n.n(ht), pt = n(5630), vt = n.n(pt), mt = n(6493), gt = n.n(mt), bt = n(9350), yt = n.n(bt), At = n(1976), wt = n.n(At);
             function xt() {
@@ -336,8 +336,8 @@
             }
             var _t = /https?:\/\/([0-9.\-A-Za-z]+)(?::(\d+))?\/[A-Z.a-z0-9/]*\.js/g, kt = { comment: "", string: "", number: "", keyword: "", operator: "" }, Ct = function(e2) {
               function t2(e3, n2) {
-                var o2, r2, i2, s2, u2 = n2.type, d2 = void 0 === u2 ? "log" : u2, h2 = n2.args, f2 = void 0 === h2 ? [] : h2, p2 = n2.id, v2 = n2.group, m2 = n2.targetGroup, g2 = n2.header, b2 = n2.ignoreFilter, y2 = void 0 !== b2 && b2, A2 = n2.accessGetter, w3 = n2.unenumerable, x2 = n2.lazyEvaluation;
-                (0, a.A)(this, t2), r2 = this, i2 = t2, i2 = (0, l.A)(i2), (o2 = (0, c.A)(r2, xt() ? Reflect.construct(i2, s2 || [], (0, l.A)(r2).constructor) : i2.apply(r2, s2))).container = qe()("div"), o2.count = 1, o2.width = 0, o2.height = 0, o2.isHidden = false, o2.columns = [], o2.elements = {}, o2.objects = {}, o2.console = e3, o2.type = d2, o2.group = v2, o2.targetGroup = m2, o2.args = f2, o2.id = p2, o2.header = g2, o2.ignoreFilter = y2, o2.collapsed = false, o2.container.log = o2, o2.height = 0, o2.width = 0, o2.$container = $e()(o2.container), o2.accessGetter = A2, o2.unenumerable = w3, o2.lazyEvaluation = x2;
+                var o2, r2, i2, s2, u2 = n2.type, d2 = void 0 === u2 ? "log" : u2, h2 = n2.args, f2 = void 0 === h2 ? [] : h2, p2 = n2.id, v2 = n2.group, m2 = n2.targetGroup, g2 = n2.header, b2 = n2.ignoreFilter, y2 = void 0 !== b2 && b2, A2 = n2.accessGetter, w4 = n2.unenumerable, x2 = n2.lazyEvaluation;
+                (0, a.A)(this, t2), r2 = this, i2 = t2, i2 = (0, l.A)(i2), (o2 = (0, c.A)(r2, xt() ? Reflect.construct(i2, s2 || [], (0, l.A)(r2).constructor) : i2.apply(r2, s2))).container = qe()("div"), o2.count = 1, o2.width = 0, o2.height = 0, o2.isHidden = false, o2.columns = [], o2.elements = {}, o2.objects = {}, o2.console = e3, o2.type = d2, o2.group = v2, o2.targetGroup = m2, o2.args = f2, o2.id = p2, o2.header = g2, o2.ignoreFilter = y2, o2.collapsed = false, o2.container.log = o2, o2.height = 0, o2.width = 0, o2.$container = $e()(o2.container), o2.accessGetter = A2, o2.unenumerable = w4, o2.lazyEvaluation = x2;
                 var _2 = "info";
                 switch (d2) {
                   case "debug":
@@ -909,8 +909,8 @@
               } }, { key: "_renderViewport", value: function() {
                 var e3 = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}, t3 = e3.topTolerance, n2 = void 0 === t3 ? 500 : t3, o2 = e3.bottomTolerance, r2 = void 0 === o2 ? 500 : o2, i2 = this.el, a2 = this.container, s2 = this.space;
                 if (!J()(a2)) {
-                  for (var c2 = a2.scrollTop, l2 = a2.offsetHeight, u2 = s2.getBoundingClientRect().width, d2 = c2 - n2, h2 = c2 + l2 + r2, f2 = this.displayLogs, p2 = 0, v2 = 0, m2 = 0, g2 = f2.length, b2 = this.fakeEl, y2 = document.createDocumentFragment(), A2 = [], w3 = 0; w3 < g2; w3++) {
-                    var x2 = f2[w3], _2 = x2.width;
+                  for (var c2 = a2.scrollTop, l2 = a2.offsetHeight, u2 = s2.getBoundingClientRect().width, d2 = c2 - n2, h2 = c2 + l2 + r2, f2 = this.displayLogs, p2 = 0, v2 = 0, m2 = 0, g2 = f2.length, b2 = this.fakeEl, y2 = document.createDocumentFragment(), A2 = [], w4 = 0; w4 < g2; w4++) {
+                    var x2 = f2[w4], _2 = x2.width;
                     0 !== x2.height && _2 === u2 || (y2.appendChild(x2.container), A2.push(x2));
                   }
                   if (A2.length > 0) {
@@ -951,7 +951,7 @@
             n.d(t, { A: function() {
               return Oe;
             } });
-            var o = n(7528), r = n(3029), i = n(2901), a = n(388), s = n(3954), c = n(991), l = n(5361), u = n(3693), d = n.n(u), h = n(5773), f = n.n(h), p = n(2263), v = n.n(p), m = n(3915), g = n.n(m), b = n(9405), y = n.n(b), A = n(5169), w2 = n.n(A), x = n(9548), _ = n.n(x), k = (n(6097), n(3249)), C = n.n(k), S = n(6030), E = n.n(S), T = n(5004), O = n.n(T);
+            var o = n(7528), r = n(3029), i = n(2901), a = n(388), s = n(3954), c = n(991), l = n(5361), u = n(3693), d = n.n(u), h = n(5773), f = n.n(h), p = n(2263), v = n.n(p), m = n(3915), g = n.n(m), b = n(9405), y = n.n(b), A = n(5169), w3 = n.n(A), x = n(9548), _ = n.n(x), k = (n(6097), n(3249)), C = n.n(k), S = n(6030), E = n.n(S), T = n(5004), O = n.n(T);
             n(9410), n(8609);
             function N(e2) {
               var t2 = "luna-".concat(e2, "-");
@@ -980,7 +980,7 @@
                 t2(r2), r2.content && j(r2.content, t2);
               }
             }
-            w2();
+            w3();
             function M(e2, t2) {
               var n2 = "x" === e2 ? "clientX" : "clientY";
               return t2[n2] ? t2[n2] : t2.changedTouches ? t2.changedTouches[0][n2] : 0;
@@ -1249,7 +1249,7 @@
             n.d(t, { A: function() {
               return me;
             } });
-            var o = n(7528), r = n(4467), i = n(3029), a = n(2901), s = n(388), c = n(3954), l = n(5361), u = n(2263), d = n.n(u), h = n(3693), f = n.n(h), p = n(3915), v = n.n(p), m = n(9405), g = n.n(m), b = n(5169), y = n.n(b), A = n(9548), w2 = n.n(A), x = (n(6097), n(3249)), _ = n.n(x), k = (n(6030), n(5004)), C = n.n(k);
+            var o = n(7528), r = n(4467), i = n(3029), a = n(2901), s = n(388), c = n(3954), l = n(5361), u = n(2263), d = n.n(u), h = n(3693), f = n.n(h), p = n(3915), v = n.n(p), m = n(9405), g = n.n(m), b = n(5169), y = n.n(b), A = n(9548), w3 = n.n(A), x = (n(6097), n(3249)), _ = n.n(x), k = (n(6030), n(5004)), C = n.n(k);
             n(9410), n(8609);
             function S(e2) {
               var t2 = "luna-".concat(e2, "-");
@@ -1262,10 +1262,10 @@
               }
               return function(e3) {
                 if (/<[^>]*>/g.test(e3)) try {
-                  var t3 = w2().parse(e3);
+                  var t3 = w3().parse(e3);
                   return E(t3, function(e4) {
                     e4.attrs && e4.attrs.class && (e4.attrs.class = n2(e4.attrs.class));
-                  }), w2().stringify(t3);
+                  }), w3().stringify(t3);
                 } catch (t4) {
                   return n2(e3);
                 }
@@ -1562,7 +1562,7 @@
             n.d(t, { A: function() {
               return X;
             } });
-            var o = n(5458), r = n(4467), i = n(7528), a = n(3029), s = n(2901), c = n(388), l = n(3954), u = n(991), d = n(5361), h = n(2263), f = n.n(h), p = n(3693), v = n.n(p), m = n(3915), g = n.n(m), b = n(9405), y = n.n(b), A = n(5169), w2 = n.n(A), x = n(9548), _ = n.n(x), k = (n(6097), n(3249)), C = n.n(k), S = (n(6030), n(5004)), E = n.n(S);
+            var o = n(5458), r = n(4467), i = n(7528), a = n(3029), s = n(2901), c = n(388), l = n(3954), u = n(991), d = n(5361), h = n(2263), f = n.n(h), p = n(3693), v = n.n(p), m = n(3915), g = n.n(m), b = n(9405), y = n.n(b), A = n(5169), w3 = n.n(A), x = n(9548), _ = n.n(x), k = (n(6097), n(3249)), C = n.n(k), S = (n(6030), n(5004)), E = n.n(S);
             n(9410), n(8609);
             function T(e2) {
               var t2 = "luna-".concat(e2, "-");
@@ -1591,7 +1591,7 @@
                 t2(r2), r2.content && O(r2.content, t2);
               }
             }
-            w2();
+            w3();
             var N = n(9100), j = n.n(N), M = n(8105), I = n.n(M), z = n(5651), B = n.n(z), D = n(961), F = n.n(D), R = n(7e3), L = n.n(R), P = n(1009), H = n.n(P);
             function G() {
               try {
@@ -1751,12 +1751,12 @@
             n.d(t, { A: function() {
               return U;
             } });
-            var o = n(3029), r = n(2901), i = n(388), a = n(3954), s = n(5361), c = n(3693), l = n.n(c), u = n(5630), d = n.n(u), h = n(8438), f = n.n(h), p = n(5241), v = n.n(p), m = n(2263), g = n.n(m), b = n(3915), y = n.n(b), A = n(9405), w2 = n.n(A), x = n(5169), _ = n.n(x), k = n(9548), C = n.n(k), S = (n(6097), n(3249)), E = n.n(S), T = (n(6030), n(5004)), O = n.n(T);
+            var o = n(3029), r = n(2901), i = n(388), a = n(3954), s = n(5361), c = n(3693), l = n.n(c), u = n(5630), d = n.n(u), h = n(8438), f = n.n(h), p = n(5241), v = n.n(p), m = n(2263), g = n.n(m), b = n(3915), y = n.n(b), A = n(9405), w3 = n.n(A), x = n(5169), _ = n.n(x), k = n(9548), C = n.n(k), S = (n(6097), n(3249)), E = n.n(S), T = (n(6030), n(5004)), O = n.n(T);
             n(9410), n(8609);
             function N(e2) {
               var t2 = "luna-".concat(e2, "-");
               function n2(e3) {
-                return y()(w2()(e3).split(/\s+/), function(e4) {
+                return y()(w3()(e3).split(/\s+/), function(e4) {
                   return E()(e4, t2) ? e4 : e4.replace(/[\w-]+/, function(e5) {
                     return "".concat(t2).concat(e5);
                   });
@@ -1906,7 +1906,7 @@
             }, A: function() {
               return Ge;
             } });
-            var o = n(2284), r = n(3029), i = n(2901), a = n(388), s = n(3954), c = n(991), l = n(5361), u = n(5427), d = n.n(u), h = n(6097), f = n.n(h), p = n(6493), v = n.n(p), m = n(96), g = n.n(m), b = n(9760), y = n.n(b), A = n(6214), w2 = n.n(A), x = n(9931), _ = n.n(x), k = n(3145), C = n.n(k), S = n(9100), E = n.n(S), T = n(1168), O = n.n(T), N = n(8796), j = n.n(N), M = n(2989), I = n.n(M), z = n(3693), B = n.n(z), D = n(466), F = n.n(D), R = n(15), L = n.n(R), P = n(1738), H = n.n(P), G = n(7514), $ = n.n(G), Y = n(2571), q = n.n(Y), Q = n(7140), U = n.n(Q), J = n(2561), W = n.n(J), V = n(9993), K = n.n(V), X = n(1532), Z = n.n(X), ee = n(8105), te = n.n(ee), ne = function() {
+            var o = n(2284), r = n(3029), i = n(2901), a = n(388), s = n(3954), c = n(991), l = n(5361), u = n(5427), d = n.n(u), h = n(6097), f = n.n(h), p = n(6493), v = n.n(p), m = n(96), g = n.n(m), b = n(9760), y = n.n(b), A = n(6214), w3 = n.n(A), x = n(9931), _ = n.n(x), k = n(3145), C = n.n(k), S = n(9100), E = n.n(S), T = n(1168), O = n.n(T), N = n(8796), j = n.n(N), M = n(2989), I = n.n(M), z = n(3693), B = n.n(z), D = n(466), F = n.n(D), R = n(15), L = n.n(R), P = n(1738), H = n.n(P), G = n(7514), $ = n.n(G), Y = n(2571), q = n.n(Y), Q = n(7140), U = n.n(Q), J = n(2561), W = n.n(J), V = n(9993), K = n.n(V), X = n(1532), Z = n.n(X), ee = n(8105), te = n.n(ee), ne = function() {
               return (0, i.A)(function e2() {
                 (0, r.A)(this, e2), this.id = 0, this.visited = [];
               }, [{ key: "set", value: function(e2, t2) {
@@ -2160,7 +2160,7 @@
                 var c2 = "", l2 = ["enumerable"], u2 = C()(e3), h2 = [], f2 = [], p2 = [], v2 = {};
                 if (this.options.unenumerable && !t3 && (l2.push("unenumerable"), l2.push("symbol"), h2 = F()($()(e3, { prototype: false, unenumerable: true }), u2), f2 = q()($()(e3, { prototype: false, symbol: true }), function(e4) {
                   return "symbol" === (0, o.A)(e4);
-                })), w2()(e3) && e3.length > 100) {
+                })), w3()(e3) && e3.length > 100) {
                   l2.unshift("virtual"), a2 = true;
                   var m2 = 0, g2 = {};
                   E()(U()(e3, 100), function(e4) {
@@ -2253,7 +2253,7 @@
             n.d(t, { Ay: function() {
               return fe;
             } });
-            var o = n(991), r = n(3029), i = n(2901), a = n(388), s = n(3954), c = n(5361), l = n(3693), u = n.n(l), d = n(5241), h = n.n(d), f = n(5902), p = n.n(f), v = n(5630), m = n.n(v), g = n(9760), b = n.n(g), y = n(5651), A = n.n(y), w2 = n(3915), x = n.n(w2), _ = n(6030), k = n.n(_), C = n(2561), S = n.n(C), E = n(3957), T = n.n(E), O = n(3497), N = n.n(O), j = n(1976), M = n.n(j), I = n(1738), z = n.n(I), B = n(9405), D = n.n(B), F = n(3249), R = n.n(F), L = n(96), P = n.n(L), H = n(4236), G = n.n(H), $ = n(9100), Y = n.n($);
+            var o = n(991), r = n(3029), i = n(2901), a = n(388), s = n(3954), c = n(5361), l = n(3693), u = n.n(l), d = n(5241), h = n.n(d), f = n(5902), p = n.n(f), v = n(5630), m = n.n(v), g = n(9760), b = n.n(g), y = n(5651), A = n.n(y), w3 = n(3915), x = n.n(w3), _ = n(6030), k = n.n(_), C = n(2561), S = n.n(C), E = n(3957), T = n.n(E), O = n(3497), N = n.n(O), j = n(1976), M = n.n(j), I = n(1738), z = n.n(I), B = n(9405), D = n.n(B), F = n(3249), R = n.n(F), L = n(96), P = n.n(L), H = n(4236), G = n.n(H), $ = n(9100), Y = n.n($);
             var q = n(2263), Q = n.n(q), U = n(5169), J = n.n(U), W = n(9548), V = n.n(W), K = (n(6097), n(5004)), X = n.n(K);
             n(9410), n(8609);
             function Z(e2) {
@@ -2578,7 +2578,7 @@
             n.d(t, { A: function() {
               return J;
             } });
-            var o = n(7528), r = n(3029), i = n(2901), a = n(388), s = n(3954), c = n(5361), l = n(2263), u = n.n(l), d = n(3693), h = n.n(d), f = n(3915), p = n.n(f), v = n(9405), m = n.n(v), g = n(5169), b = n.n(g), y = n(9548), A = n.n(y), w2 = n(6097), x = n.n(w2), _ = n(3249), k = n.n(_), C = (n(6030), n(5004)), S = n.n(C);
+            var o = n(7528), r = n(3029), i = n(2901), a = n(388), s = n(3954), c = n(5361), l = n(2263), u = n.n(l), d = n(3693), h = n.n(d), f = n(3915), p = n.n(f), v = n(9405), m = n.n(v), g = n(5169), b = n.n(g), y = n(9548), A = n.n(y), w3 = n(6097), x = n.n(w3), _ = n(3249), k = n.n(_), C = (n(6030), n(5004)), S = n.n(C);
             n(9410), n(8609);
             function E(e2) {
               var t2 = "luna-".concat(e2, "-");
@@ -2759,7 +2759,7 @@
             n.d(t, { A: function() {
               return ne;
             } });
-            var o = n(3029), r = n(2901), i = n(388), a = n(3954), s = n(991), c = n(5361), l = n(2263), u = n.n(l), d = n(3693), h = n.n(d), f = n(3915), p = n.n(f), v = n(9405), m = n.n(v), g = n(5169), b = n.n(g), y = n(9548), A = n.n(y), w2 = (n(6097), n(3249)), x = n.n(w2), _ = (n(6030), n(5004)), k = n.n(_);
+            var o = n(3029), r = n(2901), i = n(388), a = n(3954), s = n(991), c = n(5361), l = n(2263), u = n.n(l), d = n(3693), h = n.n(d), f = n(3915), p = n.n(f), v = n(9405), m = n.n(v), g = n(5169), b = n.n(g), y = n(9548), A = n.n(y), w3 = (n(6097), n(3249)), x = n.n(w3), _ = (n(6030), n(5004)), k = n.n(_);
             n(8609);
             function C(e2) {
               var t2 = "luna-".concat(e2, "-");
@@ -2927,7 +2927,7 @@
               return this._$el.hide(), this;
             }, destroy: function() {
               this._$el.remove();
-            } }), m = n(3693), g = n.n(m), b = n(5021), y = n.n(b), A = n(5630), w2 = n.n(A), x = n(9100), _ = n.n(x), k = n(2571), C = n.n(k), S = n(1738), E = n.n(S), T = n(3249), O = n.n(T), N = n(8420), j = n.n(N), M = n(2561), I = n.n(M), z = n(3145), B = n.n(z), D = n(7604), F = n.n(D), R = n(5651), L = n.n(R), P = n(8105), H = n.n(P), G = n(6214), $ = n.n(G), Y = ["background", "foreground", "selectForeground", "accent", "highlight", "border", "primary", "contrast", "varColor", "stringColor", "keywordColor", "numberColor", "operatorColor", "linkColor", "textColor", "tagNameColor", "functionColor", "attributeNameColor", "commentColor"], q = Y.length;
+            } }), m = n(3693), g = n.n(m), b = n(5021), y = n.n(b), A = n(5630), w3 = n.n(A), x = n(9100), _ = n.n(x), k = n(2571), C = n.n(k), S = n(1738), E = n.n(S), T = n(3249), O = n.n(T), N = n(8420), j = n.n(N), M = n(2561), I = n.n(M), z = n(3145), B = n.n(z), D = n(7604), F = n.n(D), R = n(5651), L = n.n(R), P = n(8105), H = n.n(P), G = n(6214), $ = n.n(G), Y = ["background", "foreground", "selectForeground", "accent", "highlight", "border", "primary", "contrast", "varColor", "stringColor", "keywordColor", "numberColor", "operatorColor", "linkColor", "textColor", "tagNameColor", "functionColor", "attributeNameColor", "commentColor"], q = Y.length;
             function Q(e2) {
               for (var t2 = {}, n2 = 0; n2 < q; n2++) t2[Y[n2]] = e2[n2];
               return t2;
@@ -3049,7 +3049,7 @@
                 }
                 for (var n2 = 0, o2 = e3.length; n2 < o2 - 1; n2++) t3(e3[n2]) && t3(e3[n2 + 1]) && g()(e3[n2]).remove();
               } }, { key: "_genId", value: function() {
-                return w2()("eruda-settings");
+                return w3()("eruda-settings");
               } }, { key: "_getSetting", value: function(e3) {
                 var t3;
                 return _()(this._settings, function(n2) {
@@ -5045,7 +5045,7 @@
             }, t.performSearch = function(e2) {
               var t2 = (0, y.default)(e2.query), n2 = [];
               try {
-                n2 = (0, _.default)(n2, (0, w2.default)(document.querySelectorAll(t2)));
+                n2 = (0, _.default)(n2, (0, w3.default)(document.querySelectorAll(t2)));
               } catch (e3) {
               }
               try {
@@ -5121,7 +5121,7 @@
             }, t.getNodesForSubtreeByStyle = function() {
               return { nodeIds: [] };
             };
-            var s = a(n(8665)), c = i(n(9893)), l = n(9893), u = i(n(2484)), d = a(n(8757)), h = a(n(3693)), f = a(n(4236)), p = a(n(9464)), v = a(n(9548)), m = a(n(3915)), g = a(n(438)), b = a(n(3249)), y = a(n(96)), A = a(n(9100)), w2 = a(n(769)), x = a(n(8862)), _ = a(n(4069)), k = n(2627), C = n(916);
+            var s = a(n(8665)), c = i(n(9893)), l = n(9893), u = i(n(2484)), d = a(n(8757)), h = a(n(3693)), f = a(n(4236)), p = a(n(9464)), v = a(n(9548)), m = a(n(3915)), g = a(n(438)), b = a(n(3249)), y = a(n(96)), A = a(n(9100)), w3 = a(n(769)), x = a(n(8862)), _ = a(n(4069)), k = n(2627), C = n(916);
             var S, E = false;
             (S = Element.prototype.attachShadow) && (Element.prototype.attachShadow = function(e2) {
               var t2 = S.apply(this, [e2]);
@@ -5285,10 +5285,10 @@
               });
               return { cookies: e2 };
             }, t.getResponseBody = function(e2) {
-              return { base64Encoded: false, body: w2.get(e2.requestId) };
+              return { base64Encoded: false, body: w3.get(e2.requestId) };
             };
             var s = a(n(9405)), c = a(n(9100)), l = a(n(6334)), u = a(n(3290)), d = a(n(9122)), h = a(n(3249)), f = a(n(3981)), p = a(n(1738)), v = a(n(3750)), m = a(n(8971)), g = a(n(5957)), b = n(3411), y = a(n(8665)), A = n(916);
-            var w2 = /* @__PURE__ */ new Map(), x = false;
+            var w3 = /* @__PURE__ */ new Map(), x = false;
             function _(e2, t2) {
               e2.on("send", function(e3, n2) {
                 var o2 = { method: n2.method, url: n2.url, headers: n2.reqHeaders };
@@ -5297,7 +5297,7 @@
                 N("Network.responseReceivedExtraInfo", { requestId: e3, blockedCookies: [], headers: t3.resHeaders });
               }), e2.on("done", function(e3, n2) {
                 var o2 = { status: n2.status };
-                n2.resHeaders && (o2.headers = n2.resHeaders), N("Network.responseReceived", { requestId: e3, type: t2, response: o2, timestamp: n2.time / 1e3 }), w2.set(e3, n2.resTxt), N("Network.loadingFinished", { requestId: e3, encodedDataLength: n2.size, timestamp: n2.time / 1e3 });
+                n2.resHeaders && (o2.headers = n2.resHeaders), N("Network.responseReceived", { requestId: e3, type: t2, response: o2, timestamp: n2.time / 1e3 }), w3.set(e3, n2.resTxt), N("Network.loadingFinished", { requestId: e3, encodedDataLength: n2.size, timestamp: n2.time / 1e3 });
               }), e2.on("error", function(e3, n2) {
                 N("Network.loadingFailed", { requestId: e3, errorText: n2.errorText, timestamp: n2.time / 1e3, type: t2 });
               });
@@ -5429,10 +5429,10 @@
             }, t.setInspectMode = function(e2) {
               N = e2.highlightConfig, j = e2.mode;
             };
-            var s, c, l = n(9893), u = n(6192), d = a(n(3693)), h = a(n(5241)), f = a(n(3048)), p = a(n(5651)), v = a(n(8105)), m = a(n(8665)), g = a(n(5169)), b = a(n(9e3)), y = a(n(8534)), A = a(n(9196)), w2 = i(n(2484)), x = false, _ = false, k = (0, y.default)("clip-path", "polygon(50% 0px, 0px 100%, 100% 100%)"), C = "ontouchstart" in g.default, S = n(7119).replace("/*# sourceMappingURL=luna-dom-highlighter.css.map*/", "");
+            var s, c, l = n(9893), u = n(6192), d = a(n(3693)), h = a(n(5241)), f = a(n(3048)), p = a(n(5651)), v = a(n(8105)), m = a(n(8665)), g = a(n(5169)), b = a(n(9e3)), y = a(n(8534)), A = a(n(9196)), w3 = i(n(2484)), x = false, _ = false, k = (0, y.default)("clip-path", "polygon(50% 0px, 0px 100%, 100% 100%)"), C = "ontouchstart" in g.default, S = n(7119).replace("/*# sourceMappingURL=luna-dom-highlighter.css.map*/", "");
             function E(e2) {
               var t2, n2 = e2.nodeId, o2 = e2.highlightConfig, r2 = e2.objectId;
-              n2 && (t2 = (0, l.getNode)(n2)), r2 && (t2 = w2.getObj(r2)), 1 !== t2.nodeType && 3 !== t2.nodeType || ((0, p.default)(o2, { contentColor: "transparent", paddingColor: "transparent", borderColor: "transparent", marginColor: "transparent" }), k || (0, v.default)(o2, { showInfo: false }), s.highlight(t2, o2));
+              n2 && (t2 = (0, l.getNode)(n2)), r2 && (t2 = w3.getObj(r2)), 1 !== t2.nodeType && 3 !== t2.nodeType || ((0, p.default)(o2, { contentColor: "transparent", paddingColor: "transparent", borderColor: "transparent", marginColor: "transparent" }), k || (0, v.default)(o2, { showInfo: false }), s.highlight(t2, o2));
             }
             function T() {
               s.hide();
@@ -5667,13 +5667,13 @@
               return e2 && e2.__esModule ? e2 : { default: e2 };
             };
             Object.defineProperty(t, "__esModule", { value: true }), t.clear = function() {
-              A.clear(), w2.clear(), x.clear();
+              A.clear(), w3.clear(), x.clear();
             }, t.wrap = S, t.getObj = E, t.releaseObj = function(e2) {
               var t2 = E(e2);
-              w2.delete(t2), x.delete(e2), A.delete(e2);
+              w3.delete(t2), x.delete(e2), A.delete(e2);
             }, t.getProperties = function(e2) {
-              for (var t2 = e2.accessorPropertiesOnly, n2 = e2.objectId, o2 = e2.ownProperties, i2 = e2.generatePreview, a2 = [], c2 = { prototype: !o2, unenumerable: true, symbol: !t2 }, l2 = A.get(n2), h2 = x.get(n2), f2 = (0, v.default)(l2, c2), p2 = (0, g.default)(l2), w3 = 0, k2 = f2.length; w3 < k2; w3++) {
-                var C2 = f2[w3], T2 = void 0;
+              for (var t2 = e2.accessorPropertiesOnly, n2 = e2.objectId, o2 = e2.ownProperties, i2 = e2.generatePreview, a2 = [], c2 = { prototype: !o2, unenumerable: true, symbol: !t2 }, l2 = A.get(n2), h2 = x.get(n2), f2 = (0, v.default)(l2, c2), p2 = (0, g.default)(l2), w4 = 0, k2 = f2.length; w4 < k2; w4++) {
+                var C2 = f2[w4], T2 = void 0;
                 try {
                   T2 = h2[C2];
                 } catch (e3) {
@@ -5701,10 +5701,10 @@
               }
               return { internalProperties: M2, result: a2 };
             };
-            var r = o(n(2561)), i = o(n(4236)), a = o(n(6214)), s = o(n(3957)), c = o(n(2708)), l = o(n(2650)), u = o(n(1751)), d = o(n(5945)), h = o(n(1976)), f = o(n(3145)), p = o(n(1168)), v = o(n(7514)), m = o(n(9122)), g = o(n(5427)), b = o(n(9350)), y = n(916), A = /* @__PURE__ */ new Map(), w2 = /* @__PURE__ */ new Map(), x = /* @__PURE__ */ new Map(), _ = /* @__PURE__ */ new Map(), k = 1;
+            var r = o(n(2561)), i = o(n(4236)), a = o(n(6214)), s = o(n(3957)), c = o(n(2708)), l = o(n(2650)), u = o(n(1751)), d = o(n(5945)), h = o(n(1976)), f = o(n(3145)), p = o(n(1168)), v = o(n(7514)), m = o(n(9122)), g = o(n(5427)), b = o(n(9350)), y = n(916), A = /* @__PURE__ */ new Map(), w3 = /* @__PURE__ */ new Map(), x = /* @__PURE__ */ new Map(), _ = /* @__PURE__ */ new Map(), k = 1;
             function C(e2, t2) {
-              var n2 = w2.get(e2);
-              return n2 || (n2 = JSON.stringify({ injectedScriptId: 0, id: k++ }), w2.set(e2, n2), A.set(n2, e2), x.set(n2, t2), n2);
+              var n2 = w3.get(e2);
+              return n2 || (n2 = JSON.stringify({ injectedScriptId: 0, id: k++ }), w3.set(e2, n2), A.set(n2, e2), x.set(n2, t2), n2);
             }
             function S(e2, t2) {
               var n2 = void 0 === t2 ? {} : t2, o2 = n2.generatePreview, r2 = void 0 !== o2 && o2, i2 = n2.self, a2 = void 0 === i2 ? e2 : i2, s2 = M(e2), c2 = s2.type, l2 = s2.subtype;
@@ -5811,7 +5811,7 @@
                 e3 && t3 && (this.reqHeaders[e3] = t3);
               }, t2.prototype.handleHeadersReceived = function() {
                 var e3 = this.xhr, t3 = S(e3.getResponseHeader("Content-Type") || "");
-                this.emit("headersReceived", this.id, { type: t3.type, subType: t3.subType, size: x(e3, true, this.url), time: (0, h.default)(), resHeaders: w2(e3) });
+                this.emit("headersReceived", this.id, { type: t3.type, subType: t3.subType, size: x(e3, true, this.url), time: (0, h.default)(), resHeaders: w3(e3) });
               }, t2.prototype.handleDone = function() {
                 var e3, t3, n2, o2 = this, r2 = this.xhr, i2 = r2.responseType, a2 = "", s2 = function() {
                   o2.emit("done", o2.id, { status: r2.status, size: x(r2, false, o2.url), time: (0, h.default)(), resTxt: a2 });
@@ -5857,7 +5857,7 @@
                 return t2[n2] = e3;
               }), t2;
             }
-            function w2(e2) {
+            function w3(e2) {
               var t2 = e2.getAllResponseHeaders().split("\n"), n2 = {};
               return (0, f.default)(t2, function(e3) {
                 if ("" !== (e3 = (0, d.default)(e3))) {
@@ -7013,7 +7013,7 @@
               1 === arguments.length && o(e2) && !u.test(e2) && (n2 = e2, e2 = void 0), e2 = e2 || /* @__PURE__ */ new Date(), r(e2) || (e2 = new Date(e2));
               var f = (n2 = i(t.masks[n2] || n2 || t.masks.default)).slice(0, 4);
               "UTC:" !== f && "GMT:" !== f || (n2 = n2.slice(4), a2 = true, "GMT:" === f && (h = true));
-              var p = a2 ? "getUTC" : "get", v = e2[p + "Date"](), m = e2[p + "Day"](), g = e2[p + "Month"](), b = e2[p + "FullYear"](), y = e2[p + "Hours"](), A = e2[p + "Minutes"](), w2 = e2[p + "Seconds"](), x = e2[p + "Milliseconds"](), _ = a2 ? 0 : e2.getTimezoneOffset(), k = { d: v, dd: s(v), ddd: t.i18n.dayNames[m], dddd: t.i18n.dayNames[m + 7], m: g + 1, mm: s(g + 1), mmm: t.i18n.monthNames[g], mmmm: t.i18n.monthNames[g + 12], yy: i(b).slice(2), yyyy: b, h: y % 12 || 12, hh: s(y % 12 || 12), H: y, HH: s(y), M: A, MM: s(A), s: w2, ss: s(w2), l: s(x, 3), L: s(Math.round(x / 10)), t: y < 12 ? "a" : "p", tt: y < 12 ? "am" : "pm", T: y < 12 ? "A" : "P", TT: y < 12 ? "AM" : "PM", Z: h ? "GMT" : a2 ? "UTC" : (i(e2).match(l) || [""]).pop().replace(d, ""), o: (_ > 0 ? "-" : "+") + s(100 * Math.floor(Math.abs(_) / 60) + Math.abs(_) % 60, 4), S: ["th", "st", "nd", "rd"][v % 10 > 3 ? 0 : (v % 100 - v % 10 != 10) * v % 10] };
+              var p = a2 ? "getUTC" : "get", v = e2[p + "Date"](), m = e2[p + "Day"](), g = e2[p + "Month"](), b = e2[p + "FullYear"](), y = e2[p + "Hours"](), A = e2[p + "Minutes"](), w3 = e2[p + "Seconds"](), x = e2[p + "Milliseconds"](), _ = a2 ? 0 : e2.getTimezoneOffset(), k = { d: v, dd: s(v), ddd: t.i18n.dayNames[m], dddd: t.i18n.dayNames[m + 7], m: g + 1, mm: s(g + 1), mmm: t.i18n.monthNames[g], mmmm: t.i18n.monthNames[g + 12], yy: i(b).slice(2), yyyy: b, h: y % 12 || 12, hh: s(y % 12 || 12), H: y, HH: s(y), M: A, MM: s(A), s: w3, ss: s(w3), l: s(x, 3), L: s(Math.round(x / 10)), t: y < 12 ? "a" : "p", tt: y < 12 ? "am" : "pm", T: y < 12 ? "A" : "P", TT: y < 12 ? "AM" : "PM", Z: h ? "GMT" : a2 ? "UTC" : (i(e2).match(l) || [""]).pop().replace(d, ""), o: (_ > 0 ? "-" : "+") + s(100 * Math.floor(Math.abs(_) / 60) + Math.abs(_) % 60, 4), S: ["th", "st", "nd", "rd"][v % 10 > 3 ? 0 : (v % 100 - v % 10 != 10) * v % 10] };
               return n2.replace(c, function(e3) {
                 return e3 in k ? k[e3] : e3.slice(1, e3.length - 1);
               });
@@ -7597,13 +7597,13 @@
                   if ("0" === r(A).opacity) return true;
                 }
               }
-              var w2 = e2.getBoundingClientRect();
-              if (h && (0 === w2.width || 0 === w2.height)) return true;
-              if (p) return a(w2, { top: 0, left: 0, right: i.documentElement.clientWidth, bottom: i.documentElement.clientHeight });
+              var w3 = e2.getBoundingClientRect();
+              if (h && (0 === w3.width || 0 === w3.height)) return true;
+              if (p) return a(w3, { top: 0, left: 0, right: i.documentElement.clientWidth, bottom: i.documentElement.clientHeight });
               if (m) for (var x = e2; x = x.parentElement; ) {
                 var _ = r(x).overflow;
                 if ("scroll" === _ || "hidden" === _) {
-                  if (a(w2, x.getBoundingClientRect())) return true;
+                  if (a(w3, x.getBoundingClientRect())) return true;
                 }
               }
               return false;
@@ -8055,7 +8055,7 @@
                     g && (e2 = e2.substring(g[0].length), g[0].replace(c, x), n2 = false);
                   } else if (i(e2, "<")) {
                     var b = e2.match(l);
-                    b && (e2 = e2.substring(b[0].length), b[0].replace(l, w2), n2 = false);
+                    b && (e2 = e2.substring(b[0].length), b[0].replace(l, w3), n2 = false);
                   }
                   if (n2) {
                     var y = e2.indexOf("<"), A = y < 0 ? e2 : e2.substring(0, y);
@@ -8065,7 +8065,7 @@
                 if (h === e2) throw Error("Parse Error: " + e2);
                 h = e2;
               }
-              function w2(e3, n3, o2, i2) {
+              function w3(e3, n3, o2, i2) {
                 if (n3 = a(n3), (i2 = !!i2) || r2.push(n3), t2.start) {
                   var s2 = {};
                   o2.replace(u, function(e4, t3, n4, o3, r3) {
@@ -8433,7 +8433,7 @@
               var n2, l;
             }, e.exports = t;
           }, 4801: function(e, t, n) {
-            var o = n(4950), r = n(2989), i = n(2561), a = n(1580), s = n(1168), c = n(3145), l = n(9100), u = n(2717), d = n(5427), h = n(466), f = n(8105), p = n(8796), v = n(2571), m = n(3981), g = n(7514), b = n(3249), y = n(9760), A = n(4460), w2 = n(6513), x = n(1009), _ = n(2806), k = n(4151), C = n(896), S = n(5793);
+            var o = n(4950), r = n(2989), i = n(2561), a = n(1580), s = n(1168), c = n(3145), l = n(9100), u = n(2717), d = n(5427), h = n(466), f = n(8105), p = n(8796), v = n(2571), m = n(3981), g = n(7514), b = n(3249), y = n(9760), A = n(4460), w3 = n(6513), x = n(1009), _ = n(2806), k = n(4151), C = n(896), S = n(5793);
             function E(e2, n2, o2, r2) {
               var a2 = [];
               return l(n2, function(e3) {
@@ -8459,7 +8459,7 @@
               return o(e2).replace(/\\'/g, "'").replace(/\t/g, "\\t");
             }
             t = function(e2) {
-              var n2 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}, o2 = n2.self, l2 = n2.startTime, u2 = void 0 === l2 ? m() : l2, p2 = n2.timeout, y2 = void 0 === p2 ? 0 : p2, A2 = n2.depth, w3 = void 0 === A2 ? 0 : A2, x2 = n2.curDepth, _2 = void 0 === x2 ? 1 : x2, k2 = n2.visitor, C2 = void 0 === k2 ? new j() : k2, S2 = n2.unenumerable, T2 = void 0 !== S2 && S2, N2 = n2.symbol, M2 = void 0 !== N2 && N2, I2 = n2.accessGetter, z = void 0 !== I2 && I2, B = n2.ignore, D = void 0 === B ? [] : B, F = "", R = { visitor: C2, unenumerable: T2, symbol: M2, accessGetter: z, depth: w3, curDepth: _2 + 1, timeout: y2, startTime: u2, ignore: D }, L = r(e2, false);
+              var n2 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}, o2 = n2.self, l2 = n2.startTime, u2 = void 0 === l2 ? m() : l2, p2 = n2.timeout, y2 = void 0 === p2 ? 0 : p2, A2 = n2.depth, w4 = void 0 === A2 ? 0 : A2, x2 = n2.curDepth, _2 = void 0 === x2 ? 1 : x2, k2 = n2.visitor, C2 = void 0 === k2 ? new j() : k2, S2 = n2.unenumerable, T2 = void 0 !== S2 && S2, N2 = n2.symbol, M2 = void 0 !== N2 && N2, I2 = n2.accessGetter, z = void 0 !== I2 && I2, B = n2.ignore, D = void 0 === B ? [] : B, F = "", R = { visitor: C2, unenumerable: T2, symbol: M2, accessGetter: z, depth: w4, curDepth: _2 + 1, timeout: y2, startTime: u2, ignore: D }, L = r(e2, false);
               if ("String" === L) F = O(e2);
               else if ("Number" === L) F = i(e2), a(F, "Infinity") && (F = '{"value":"'.concat(F, '","type":"Number"}'));
               else if ("NaN" === L) F = '{"value":"NaN","type":"Number"}';
@@ -8475,7 +8475,7 @@
                 F = '{"value":'.concat(O(P), ',"type":"Symbol"}');
               } else {
                 if (y2 && m() - u2 > y2) return O("Timeout");
-                if (w3 && _2 > w3) return O("{...}");
+                if (w4 && _2 > w4) return O("{...}");
                 F = "{";
                 var H, G = [], $ = C2.get(e2);
                 if ($ ? (H = $.id, G.push('"reference":'.concat(H))) : (H = C2.set(e2), G.push('"id":'.concat(H))), G.push('"type":"'.concat(L, '"')), a(L, "Function") ? G.push('"value":'.concat(O(s(e2)))) : "RegExp" === L && G.push('"value":'.concat(O(e2))), !$) {
@@ -8529,7 +8529,7 @@
                   var v2;
                   if ("Object" !== r2) v2 = A ? function() {
                   } : new Function(r2, ""), s2 && (v2.prototype = M(s2, t2)), h2 = new v2();
-                  else h2 = w2(s2 ? M(s2, t2) : null);
+                  else h2 = w3(s2 ? M(s2, t2) : null);
                 }
                 var m2, g2 = {};
                 if (u2) S(u2) && (m2 = u2.length, delete u2.length), u2 = C(u2, function(e3, t3) {
@@ -8901,7 +8901,7 @@
               return e2 && e2.__esModule ? e2 : { default: e2 };
             };
             Object.defineProperty(t, "__esModule", { value: true });
-            var c = s(n(7214)), l = n(926), u = n(4725), d = s(n(4095)), h = s(n(5865)), f = s(n(96)), p = s(n(9100)), v = s(n(8734)), m = s(n(9848)), g = s(n(3805)), b = s(n(8105)), y = s(n(387)), A = s(n(3249)), w2 = s(n(6030)), x = s(n(3019)), _ = s(n(1738));
+            var c = s(n(7214)), l = n(926), u = n(4725), d = s(n(4095)), h = s(n(5865)), f = s(n(96)), p = s(n(9100)), v = s(n(8734)), m = s(n(9848)), g = s(n(3805)), b = s(n(8105)), y = s(n(387)), A = s(n(3249)), w3 = s(n(6030)), x = s(n(3019)), _ = s(n(1738));
             n(3270);
             var k = function(e2) {
               function t2(t3, n2) {
@@ -8942,8 +8942,8 @@
               }, t2.prototype.getPaths = function(e3) {
                 var t3 = this.options, n2 = window.getComputedStyle(e3), o2 = e3.getBoundingClientRect(), r2 = o2.left, i2 = o2.top, a2 = o2.width, s2 = o2.height, c2 = function(e4) {
                   return (0, u.pxToNum)(n2.getPropertyValue(e4));
-                }, l2 = c2("margin-left"), d2 = c2("margin-right"), h2 = c2("margin-top"), f2 = c2("margin-bottom"), p2 = c2("border-left-width"), v2 = c2("border-right-width"), m2 = c2("border-top-width"), g2 = c2("border-bottom-width"), b2 = c2("padding-left"), y2 = c2("padding-right"), A2 = c2("padding-top"), w3 = c2("padding-bottom");
-                return [{ path: this.rectToPath({ left: r2 + p2 + b2, top: i2 + m2 + A2, width: a2 - p2 - b2 - v2 - y2, height: s2 - m2 - A2 - g2 - w3 }), fillColor: E(t3.contentColor), name: "content" }, { path: this.rectToPath({ left: r2 + p2, top: i2 + m2, width: a2 - p2 - v2, height: s2 - m2 - g2 }), fillColor: E(t3.paddingColor), name: "padding" }, { path: this.rectToPath({ left: r2, top: i2, width: a2, height: s2 }), fillColor: E(t3.borderColor), name: "border" }, { path: this.rectToPath({ left: r2 - l2, top: i2 - h2, width: a2 + l2 + d2, height: s2 + h2 + f2 }), fillColor: E(t3.marginColor), name: "margin" }];
+                }, l2 = c2("margin-left"), d2 = c2("margin-right"), h2 = c2("margin-top"), f2 = c2("margin-bottom"), p2 = c2("border-left-width"), v2 = c2("border-right-width"), m2 = c2("border-top-width"), g2 = c2("border-bottom-width"), b2 = c2("padding-left"), y2 = c2("padding-right"), A2 = c2("padding-top"), w4 = c2("padding-bottom");
+                return [{ path: this.rectToPath({ left: r2 + p2 + b2, top: i2 + m2 + A2, width: a2 - p2 - b2 - v2 - y2, height: s2 - m2 - A2 - g2 - w4 }), fillColor: E(t3.contentColor), name: "content" }, { path: this.rectToPath({ left: r2 + p2, top: i2 + m2, width: a2 - p2 - v2, height: s2 - m2 - g2 }), fillColor: E(t3.paddingColor), name: "padding" }, { path: this.rectToPath({ left: r2, top: i2, width: a2, height: s2 }), fillColor: E(t3.borderColor), name: "border" }, { path: this.rectToPath({ left: r2 - l2, top: i2 - h2, width: a2 + l2 + d2, height: s2 + h2 + f2 }), fillColor: E(t3.marginColor), name: "margin" }];
               }, t2.prototype.getElementInfo = function(e3) {
                 var t3 = e3.getBoundingClientRect(), n2 = t3.width, o2 = t3.height, r2 = e3.getAttribute("class") || "";
                 r2 = r2.split(/\s+/).map(function(e4) {
@@ -8962,7 +8962,7 @@
                 var t3 = (0, f.default)(e3.tagName);
                 if ((0, A.default)(["a", "button", "input", "textarea", "select", "details"], t3)) return true;
                 var n2 = e3.getAttribute("tabindex");
-                return !!(n2 && (0, w2.default)(n2) > -1);
+                return !!(n2 && (0, w3.default)(n2) > -1);
               }, t2.prototype.getAccessibleNameAndRole = function(e3) {
                 var t3 = e3.getAttribute("labelledby") || e3.getAttribute("aria-label"), n2 = e3.getAttribute("role"), o2 = (0, f.default)(e3.tagName);
                 return x.default.forEach(function(t4) {
@@ -9456,8 +9456,8 @@
                     y2 && "#00000000" !== y2 && O2("Background", y2, t5);
                     var A2 = v2.margin;
                     A2 && "0px" !== A2 && T2("Margin", A2);
-                    var w3 = v2.padding;
-                    w3 && "0px" !== w3 && T2("Padding", w3);
+                    var w4 = v2.padding;
+                    w4 && "0px" !== w4 && T2("Padding", w4);
                     var x2 = e5.contrast ? e5.contrast.backgroundColor : null, _2 = m2 && "#00000000" !== m2 && x2 && "#00000000" !== x2;
                     e5.showAccessibilityInfo && (C2("Accessibility"), _2 && v2.color && e5.contrast && N2(v2.color, e5.contrast), T2("Name", e5.accessibleName), T2("Role", e5.accessibleRole), E2("Keyboard-focusable", e5.isKeyboardFocusable ? "a11y-icon a11y-icon-ok" : "a11y-icon a11y-icon-not-ok"));
                     function k2() {
@@ -9501,13 +9501,13 @@
                     return n4;
                   }(t4, n3);
                   d2.appendChild(h2);
-                  var f2, p2 = d2.offsetWidth, v = d2.offsetHeight, m = 8, g = 2, b = 2 * m, y = m + 2, A = g + y, w2 = r3 - g - y - b, x = o3.maxX - o3.minX < b + 2 * y;
+                  var f2, p2 = d2.offsetWidth, v = d2.offsetHeight, m = 8, g = 2, b = 2 * m, y = m + 2, A = g + y, w3 = r3 - g - y - b, x = o3.maxX - o3.minX < b + 2 * y;
                   if (x) f2 = 0.5 * (o3.minX + o3.maxX) - m;
                   else {
                     var _ = o3.minX + y, k = o3.maxX - y - b;
-                    f2 = _ > A && _ < w2 ? _ : (0, c.constrainNumber)(A, _, k);
+                    f2 = _ > A && _ < w3 ? _ : (0, c.constrainNumber)(A, _, k);
                   }
-                  var C = f2 < A || f2 > w2, S = f2 - y;
+                  var C = f2 < A || f2 > w3, S = f2 - y;
                   S = (0, c.constrainNumber)(S, g, r3 - p2 - g);
                   var E = o3.minY - m - v, T = true;
                   E < 0 ? (E = Math.min(i3 - v, o3.maxY + m), T = false) : o3.minY > i3 && (E = i3 - m - v);
@@ -9781,7 +9781,7 @@
                 }, e2.Path2D = t2;
               }
               function i2(e3, t3) {
-                var n3, o3, r3, i3, a2, s2, c2, l2, u2, f2, p2, v2, m2, g, b, y, A, w2, x, _, k, C, S, E, T, O, N, j, M, I = { x: 0, y: 0 }, z = { x: 0, y: 0 };
+                var n3, o3, r3, i3, a2, s2, c2, l2, u2, f2, p2, v2, m2, g, b, y, A, w3, x, _, k, C, S, E, T, O, N, j, M, I = { x: 0, y: 0 }, z = { x: 0, y: 0 };
                 e3.beginPath();
                 for (var B = 0; B < t3.length; ++B) {
                   var D = t3[B];
@@ -9850,7 +9850,7 @@
                       p2 = D[1], m2 = D[2], y = D[3], A = D[4], c2 = D[5], o3 = D[6], n3 = D[7], O = D[8], e3.save(), e3.translate(p2, m2), e3.rotate(c2), e3.scale(y, A), e3.arc(0, 0, 1, o3, n3, O), e3.restore();
                       break;
                     case "R":
-                      p2 = D[1], m2 = D[2], w2 = D[3], x = D[4], I = { x: p2, y: m2 }, e3.rect(p2, m2, w2, x);
+                      p2 = D[1], m2 = D[2], w3 = D[3], x = D[4], I = { x: p2, y: m2 }, e3.rect(p2, m2, w3, x);
                   }
                   z.x = p2, z.y = m2;
                 }
@@ -10070,7 +10070,7 @@
   // src/app.js
   var import_eruda = __toESM(require_eruda(), 1);
 
-  // node_modules/.pnpm/solid-js@1.9.5/node_modules/solid-js/dist/solid.js
+  // node_modules/.pnpm/solid-js@1.9.6/node_modules/solid-js/dist/solid.js
   var sharedConfig = {
     context: void 0,
     registry: void 0,
@@ -10083,8 +10083,8 @@
       return getContextId(this.context.count++);
     }
   };
-  function getContextId(count4) {
-    const num = String(count4), len = num.length - 1;
+  function getContextId(count5) {
+    const num = String(count5), len = num.length - 1;
     return sharedConfig.context.id + (len ? String.fromCharCode(96 + len) : "") + num;
   }
   function setHydrateContext(context) {
@@ -10390,7 +10390,7 @@
       }
     }
     if (ExternalSourceConfig && c.fn) {
-      const [track3, trigger] = createSignal(void 0, {
+      const [track5, trigger] = createSignal(void 0, {
         equals: false
       });
       const ordinary = ExternalSourceConfig.factory(c.fn, trigger);
@@ -10398,7 +10398,7 @@
       const triggerInTransition = () => startTransition(trigger).then(() => inTransition.dispose());
       const inTransition = ExternalSourceConfig.factory(c.fn, triggerInTransition);
       c.fn = (x) => {
-        track3();
+        track5();
         return Transition && Transition.running ? inTransition.track(x) : ordinary.track(x);
       };
     }
@@ -10417,8 +10417,8 @@
     for (let i = ancestors.length - 1; i >= 0; i--) {
       node = ancestors[i];
       if (runningTransition) {
-        let top = node, prev2 = ancestors[i + 1];
-        while ((top = top.owner) && top !== prev2) {
+        let top = node, prev4 = ancestors[i + 1];
+        while ((top = top.owner) && top !== prev4) {
           if (Transition.disposed.has(top)) return;
         }
       }
@@ -10569,13 +10569,13 @@
     let i;
     if (node.sources) {
       while (node.sources.length) {
-        const source = node.sources.pop(), index2 = node.sourceSlots.pop(), obs = source.observers;
+        const source = node.sources.pop(), index4 = node.sourceSlots.pop(), obs = source.observers;
         if (obs && obs.length) {
           const n = obs.pop(), s = source.observerSlots.pop();
-          if (index2 < obs.length) {
-            n.sourceSlots[s] = index2;
-            obs[index2] = n;
-            source.observerSlots[index2] = s;
+          if (index4 < obs.length) {
+            n.sourceSlots[s] = index4;
+            obs[index4] = n;
+            source.observerSlots[index4] = s;
           }
         }
       }
@@ -10751,7 +10751,7 @@
     return target;
   }
 
-  // node_modules/.pnpm/solid-js@1.9.5/node_modules/solid-js/web/dist/web.js
+  // node_modules/.pnpm/solid-js@1.9.6/node_modules/solid-js/web/dist/web.js
   var booleans = [
     "allowfullscreen",
     "async",
@@ -10783,6 +10783,7 @@
     "className",
     "value",
     "readOnly",
+    "noValidate",
     "formNoValidate",
     "isMap",
     "noModule",
@@ -10801,6 +10802,10 @@
   });
   var PropAliases = /* @__PURE__ */ Object.assign(/* @__PURE__ */ Object.create(null), {
     class: "className",
+    novalidate: {
+      $: "noValidate",
+      FORM: 1
+    },
     formnovalidate: {
       $: "formNoValidate",
       BUTTON: 1,
@@ -10966,17 +10971,17 @@
           let i = bStart;
           while (i < bEnd) map.set(b[i], i++);
         }
-        const index2 = map.get(a[aStart]);
-        if (index2 != null) {
-          if (bStart < index2 && index2 < bEnd) {
+        const index4 = map.get(a[aStart]);
+        if (index4 != null) {
+          if (bStart < index4 && index4 < bEnd) {
             let i = aStart, sequence = 1, t;
             while (++i < aEnd && i < bEnd) {
-              if ((t = map.get(a[i])) == null || t !== index2 + sequence) break;
+              if ((t = map.get(a[i])) == null || t !== index4 + sequence) break;
               sequence++;
             }
-            if (sequence > index2 - bStart) {
+            if (sequence > index4 - bStart) {
               const node = a[aStart];
-              while (bStart < index2) parentNode.insertBefore(b[bStart++], node);
+              while (bStart < index4) parentNode.insertBefore(b[bStart++], node);
             } else parentNode.replaceChild(b[bStart++], a[aStart++]);
           } else aStart++;
         } else a[aStart++].remove();
@@ -11035,43 +11040,43 @@
       node.addEventListener(name2, handler[0] = (e) => handlerFn.call(node, handler[1], e));
     } else node.addEventListener(name2, handler, typeof handler !== "function" && handler);
   }
-  function classList(node, value, prev2 = {}) {
-    const classKeys = Object.keys(value || {}), prevKeys = Object.keys(prev2);
+  function classList(node, value, prev4 = {}) {
+    const classKeys = Object.keys(value || {}), prevKeys = Object.keys(prev4);
     let i, len;
     for (i = 0, len = prevKeys.length; i < len; i++) {
       const key = prevKeys[i];
       if (!key || key === "undefined" || value[key]) continue;
       toggleClassKey(node, key, false);
-      delete prev2[key];
+      delete prev4[key];
     }
     for (i = 0, len = classKeys.length; i < len; i++) {
       const key = classKeys[i], classValue = !!value[key];
-      if (!key || key === "undefined" || prev2[key] === classValue || !classValue) continue;
+      if (!key || key === "undefined" || prev4[key] === classValue || !classValue) continue;
       toggleClassKey(node, key, true);
-      prev2[key] = classValue;
+      prev4[key] = classValue;
     }
-    return prev2;
+    return prev4;
   }
-  function style(node, value, prev2) {
-    if (!value) return prev2 ? setAttribute(node, "style") : value;
+  function style(node, value, prev4) {
+    if (!value) return prev4 ? setAttribute(node, "style") : value;
     const nodeStyle = node.style;
     if (typeof value === "string") return nodeStyle.cssText = value;
-    typeof prev2 === "string" && (nodeStyle.cssText = prev2 = void 0);
-    prev2 || (prev2 = {});
+    typeof prev4 === "string" && (nodeStyle.cssText = prev4 = void 0);
+    prev4 || (prev4 = {});
     value || (value = {});
     let v, s;
-    for (s in prev2) {
+    for (s in prev4) {
       value[s] == null && nodeStyle.removeProperty(s);
-      delete prev2[s];
+      delete prev4[s];
     }
     for (s in value) {
       v = value[s];
-      if (v !== prev2[s]) {
+      if (v !== prev4[s]) {
         nodeStyle.setProperty(s, v);
-        prev2[s] = v;
+        prev4[s] = v;
       }
     }
-    return prev2;
+    return prev4;
   }
   function spread(node, props = {}, isSVG, skipChildren) {
     const prevProps = {};
@@ -11123,33 +11128,33 @@
     return !!sharedConfig.context && !sharedConfig.done && (!node || node.isConnected);
   }
   function toPropertyName(name2) {
-    return name2.toLowerCase().replace(/-([a-z])/g, (_, w2) => w2.toUpperCase());
+    return name2.toLowerCase().replace(/-([a-z])/g, (_, w3) => w3.toUpperCase());
   }
   function toggleClassKey(node, key, value) {
     const classNames = key.trim().split(/\s+/);
     for (let i = 0, nameLen = classNames.length; i < nameLen; i++)
       node.classList.toggle(classNames[i], value);
   }
-  function assignProp(node, prop, value, prev2, isSVG, skipRef, props) {
+  function assignProp(node, prop, value, prev4, isSVG, skipRef, props) {
     let isCE, isProp, isChildProp, propAlias, forceProp;
-    if (prop === "style") return style(node, value, prev2);
-    if (prop === "classList") return classList(node, value, prev2);
-    if (value === prev2) return prev2;
+    if (prop === "style") return style(node, value, prev4);
+    if (prop === "classList") return classList(node, value, prev4);
+    if (value === prev4) return prev4;
     if (prop === "ref") {
       if (!skipRef) value(node);
     } else if (prop.slice(0, 3) === "on:") {
       const e = prop.slice(3);
-      prev2 && node.removeEventListener(e, prev2, typeof prev2 !== "function" && prev2);
+      prev4 && node.removeEventListener(e, prev4, typeof prev4 !== "function" && prev4);
       value && node.addEventListener(e, value, typeof value !== "function" && value);
     } else if (prop.slice(0, 10) === "oncapture:") {
       const e = prop.slice(10);
-      prev2 && node.removeEventListener(e, prev2, true);
+      prev4 && node.removeEventListener(e, prev4, true);
       value && node.addEventListener(e, value, true);
     } else if (prop.slice(0, 2) === "on") {
       const name2 = prop.slice(2).toLowerCase();
       const delegate = DelegatedEvents.has(name2);
-      if (!delegate && prev2) {
-        const h = Array.isArray(prev2) ? prev2[0] : prev2;
+      if (!delegate && prev4) {
+        const h = Array.isArray(prev4) ? prev4[0] : prev4;
         node.removeEventListener(name2, h);
       }
       if (delegate || value) {
@@ -11311,19 +11316,19 @@
   function normalizeIncomingArray(normalized, array, current2, unwrap2) {
     let dynamic = false;
     for (let i = 0, len = array.length; i < len; i++) {
-      let item = array[i], prev2 = current2 && current2[normalized.length], t;
+      let item = array[i], prev4 = current2 && current2[normalized.length], t;
       if (item == null || item === true || item === false) ;
       else if ((t = typeof item) === "object" && item.nodeType) {
         normalized.push(item);
       } else if (Array.isArray(item)) {
-        dynamic = normalizeIncomingArray(normalized, item, prev2) || dynamic;
+        dynamic = normalizeIncomingArray(normalized, item, prev4) || dynamic;
       } else if (t === "function") {
         if (unwrap2) {
           while (typeof item === "function") item = item();
           dynamic = normalizeIncomingArray(
             normalized,
             Array.isArray(item) ? item : [item],
-            Array.isArray(prev2) ? prev2 : [prev2]
+            Array.isArray(prev4) ? prev4 : [prev4]
           ) || dynamic;
         } else {
           normalized.push(item);
@@ -11331,7 +11336,7 @@
         }
       } else {
         const value = String(item);
-        if (prev2 && prev2.nodeType === 3 && prev2.data === value) normalized.push(prev2);
+        if (prev4 && prev4.nodeType === 3 && prev4.data === value) normalized.push(prev4);
         else normalized.push(document.createTextNode(value));
       }
     }
@@ -11359,7 +11364,7 @@
   }
   var RequestContext = Symbol();
 
-  // node_modules/.pnpm/solid-js@1.9.5/node_modules/solid-js/html/dist/html.js
+  // node_modules/.pnpm/solid-js@1.9.6/node_modules/solid-js/html/dist/html.js
   var tagRE = /(?:<!--[\S\s]*?-->|<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>)/g;
   var attrRE = /(?:\s(?<boolean>[^/\s><=]+?)(?=[\s/>]))|(?:(?<name>\S+?)(?:\s*=\s*(?:(['"])(?<quotedValue>[\s\S]*?)\3|(?<unquotedValue>[^\s>]+))))/g;
   var lookup = {
@@ -11442,44 +11447,44 @@
   function parse(html2) {
     const result = [];
     let current2 = void 0;
-    let level = -1;
+    let level2 = -1;
     const arr = [];
     const byTag = {};
-    html2.replace(tagRE, (tag, index2) => {
+    html2.replace(tagRE, (tag, index4) => {
       const isOpen = tag.charAt(1) !== "/";
       const isComment = tag.slice(0, 4) === "<!--";
-      const start2 = index2 + tag.length;
+      const start2 = index4 + tag.length;
       const nextChar = html2.charAt(start2);
       let parent2 = void 0;
       if (isOpen && !isComment) {
-        level++;
+        level2++;
         current2 = parseTag(tag);
         if (!current2.voidElement && nextChar && nextChar !== "<") {
           pushTextNode(current2.children, html2, start2);
         }
         byTag[current2.tagName] = current2;
-        if (level === 0) {
+        if (level2 === 0) {
           result.push(current2);
         }
-        parent2 = arr[level - 1];
+        parent2 = arr[level2 - 1];
         if (parent2) {
           parent2.children.push(current2);
         }
-        arr[level] = current2;
+        arr[level2] = current2;
       }
       if (isComment) {
-        if (level < 0) {
+        if (level2 < 0) {
           pushCommentNode(result, tag);
         } else {
-          pushCommentNode(arr[level].children, tag);
+          pushCommentNode(arr[level2].children, tag);
         }
       }
       if (isComment || !isOpen || current2.voidElement) {
         if (!isComment) {
-          level--;
+          level2--;
         }
         if (nextChar !== "<" && nextChar) {
-          parent2 = level === -1 ? result : arr[level].children;
+          parent2 = level2 === -1 ? result : arr[level2].children;
           pushTextNode(parent2, html2, start2);
         }
       }
@@ -11540,13 +11545,13 @@
     return VOID_ELEMENTS.test($1) ? $0 : "<" + $1 + $2 + "></" + $1 + ">";
   }
   function toPropertyName2(name2) {
-    return name2.toLowerCase().replace(/-([a-z])/g, (_, w2) => w2.toUpperCase());
+    return name2.toLowerCase().replace(/-([a-z])/g, (_, w3) => w3.toUpperCase());
   }
   function parseDirective(name2, value, tag, options) {
     if (name2 === "use:###" && value === "###") {
-      const count4 = options.counter++;
+      const count5 = options.counter++;
       options.exprs.push(
-        `typeof exprs[${count4}] === "function" ? r.use(exprs[${count4}], ${tag}, exprs[${options.counter++}]) : (()=>{throw new Error("use:### must be a function")})()`
+        `typeof exprs[${count5}] === "function" ? r.use(exprs[${count5}], ${tag}, exprs[${options.counter++}]) : (()=>{throw new Error("use:### must be a function")})()`
       );
     } else {
       throw new Error(`Not support syntax ${name2} must be use:{function}`);
@@ -11613,13 +11618,13 @@
       const isChildProp = r.ChildProperties.has(name2);
       const isProp = r.Properties.has(name2);
       if (name2 === "style") {
-        const prev2 = `_$v${uuid++}`;
-        options.decl.push(`${prev2}={}`);
-        options.exprs.push(`r.style(${tag},${expr},${prev2})`);
+        const prev4 = `_$v${uuid++}`;
+        options.decl.push(`${prev4}={}`);
+        options.exprs.push(`r.style(${tag},${expr},${prev4})`);
       } else if (name2 === "classList") {
-        const prev2 = `_$v${uuid++}`;
-        options.decl.push(`${prev2}={}`);
-        options.exprs.push(`r.classList(${tag},${expr},${prev2})`);
+        const prev4 = `_$v${uuid++}`;
+        options.decl.push(`${prev4}={}`);
+        options.exprs.push(`r.classList(${tag},${expr},${prev4})`);
       } else if (namespace !== "attr" && (isChildProp || !isSVG && (r.getPropAlias(name2, node.name.toUpperCase()) || isProp) || isCE || namespace === "prop")) {
         if (isCE && !isChildProp && !isProp && namespace !== "prop") name2 = toPropertyName2(name2);
         options.exprs.push(
@@ -11651,10 +11656,10 @@
       } else {
         const childOptions = Object.assign({}, options, {
           exprs: []
-        }), count4 = options.counter;
+        }), count5 = options.counter;
         parseKeyValue(node, tag, name2, value, isSVG, isCE, childOptions);
         options.decl.push(
-          `_fn${count4} = (${value === "###" ? "doNotWrap" : ""}) => {
+          `_fn${count5} = (${value === "###" ? "doNotWrap" : ""}) => {
 ${childOptions.exprs.join(
             ";\n"
           )};
@@ -11662,15 +11667,15 @@ ${childOptions.exprs.join(
         );
         if (value === "###") {
           options.exprs.push(
-            `typeof exprs[${count4}] === "function" ? r.effect(_fn${count4}) : _fn${count4}(true)`
+            `typeof exprs[${count5}] === "function" ? r.effect(_fn${count5}) : _fn${count5}(true)`
           );
         } else {
           let check = "";
-          for (let i = count4; i < childOptions.counter; i++) {
-            i !== count4 && (check += " || ");
+          for (let i = count5; i < childOptions.counter; i++) {
+            i !== count5 && (check += " || ");
             check += `typeof exprs[${i}] === "function"`;
           }
-          options.exprs.push(check + ` ? r.effect(_fn${count4}) : _fn${count4}()`);
+          options.exprs.push(check + ` ? r.effect(_fn${count5}) : _fn${count5}()`);
         }
         options.counter = childOptions.counter;
         options.wrap = false;
@@ -11735,8 +11740,8 @@ ${childOptions.exprs.join(
             propGroups.push(`exprs[${options.counter++}]`);
             propGroups.push(props = []);
           } else if (value === "###") {
-            props.push(`${name2}: exprs[${options.counter++}]`);
-          } else props.push(`${name2}: "${value}"`);
+            props.push(`"${name2}": exprs[${options.counter++}]`);
+          } else props.push(`"${name2}": "${value}"`);
         } else if (type === "directive") {
           const tag2 = `_$el${uuid++}`;
           const topDecl = !options.decl.length;
@@ -11844,8 +11849,8 @@ return _$el${id};
             const { type, name: name2, value } = node.attrs[i];
             if (type === "attr") {
               if (value.includes("###")) {
-                let count4 = options.counter++;
-                current2 += `${name2}: ${name2 !== "ref" ? `typeof exprs[${count4}] === "function" ? exprs[${count4}]() : ` : ""}exprs[${count4}],`;
+                let count5 = options.counter++;
+                current2 += `${name2}: ${name2 !== "ref" ? `typeof exprs[${count5}] === "function" ? exprs[${count5}]() : ` : ""}exprs[${count5}],`;
               } else if (name2 === "###") {
                 if (current2.length) {
                   spreadArgs.push(`()=>({${current2}})`);
@@ -11975,7 +11980,7 @@ return _$el${id};
     SVGNamespace
   });
 
-  // node_modules/.pnpm/solid-js@1.9.5/node_modules/solid-js/store/dist/store.js
+  // node_modules/.pnpm/solid-js@1.9.6/node_modules/solid-js/store/dist/store.js
   var $RAW = Symbol("store-raw");
   var $NODE = Symbol("store-node");
   var $HAS = Symbol("store-has");
@@ -12002,8 +12007,8 @@ return _$el${id};
     return p;
   }
   function isWrappable(obj) {
-    let proto;
-    return obj != null && typeof obj === "object" && (obj[$PROXY] || !(proto = Object.getPrototypeOf(obj)) || proto === Object.prototype || Array.isArray(obj));
+    let proto2;
+    return obj != null && typeof obj === "object" && (obj[$PROXY] || !(proto2 = Object.getPrototypeOf(obj)) || proto2 === Object.prototype || Array.isArray(obj));
   }
   function unwrap(item, set = /* @__PURE__ */ new Set()) {
     let result, unwrapped, v, prop;
@@ -12098,16 +12103,16 @@ return _$el${id};
   };
   function setProperty(state, property, value, deleting = false) {
     if (!deleting && state[property] === value) return;
-    const prev2 = state[property], len = state.length;
+    const prev4 = state[property], len = state.length;
     if (value === void 0) {
       delete state[property];
-      if (state[$HAS] && state[$HAS][property] && prev2 !== void 0) state[$HAS][property].$();
+      if (state[$HAS] && state[$HAS][property] && prev4 !== void 0) state[$HAS][property].$();
     } else {
       state[property] = value;
-      if (state[$HAS] && state[$HAS][property] && prev2 === void 0) state[$HAS][property].$();
+      if (state[$HAS] && state[$HAS][property] && prev4 === void 0) state[$HAS][property].$();
     }
     let nodes = getNodes(state, $NODE), node;
-    if (node = getNode(nodes, property, prev2)) node.$(() => value);
+    if (node = getNode(nodes, property, prev4)) node.$(() => value);
     if (Array.isArray(state) && state.length !== len) {
       for (let i = state.length; i < len; i++) (node = nodes[i]) && node.$();
       (node = getNode(nodes, "length", len)) && node.$(state.length);
@@ -12121,21 +12126,21 @@ return _$el${id};
       setProperty(state, key, value[key]);
     }
   }
-  function updateArray(current2, next2) {
-    if (typeof next2 === "function") next2 = next2(current2);
-    next2 = unwrap(next2);
-    if (Array.isArray(next2)) {
-      if (current2 === next2) return;
-      let i = 0, len = next2.length;
+  function updateArray(current2, next4) {
+    if (typeof next4 === "function") next4 = next4(current2);
+    next4 = unwrap(next4);
+    if (Array.isArray(next4)) {
+      if (current2 === next4) return;
+      let i = 0, len = next4.length;
       for (; i < len; i++) {
-        const value = next2[i];
+        const value = next4[i];
         if (current2[i] !== value) setProperty(current2, i, value);
       }
       setProperty(current2, "length", len);
-    } else mergeStoreNode(current2, next2);
+    } else mergeStoreNode(current2, next4);
   }
   function updatePath(current2, path, traversed = []) {
-    let part, prev2 = current2;
+    let part, prev4 = current2;
     if (path.length > 1) {
       part = path.shift();
       const partType = typeof part, isArray = Array.isArray(current2);
@@ -12159,18 +12164,18 @@ return _$el${id};
         updatePath(current2[part], path, [part].concat(traversed));
         return;
       }
-      prev2 = current2[part];
+      prev4 = current2[part];
       traversed = [part].concat(traversed);
     }
     let value = path[0];
     if (typeof value === "function") {
-      value = value(prev2, traversed);
-      if (value === prev2) return;
+      value = value(prev4, traversed);
+      if (value === prev4) return;
     }
     if (part === void 0 && value == void 0) return;
     value = unwrap(value);
-    if (part === void 0 || isWrappable(prev2) && isWrappable(value) && !Array.isArray(value)) {
-      mergeStoreNode(prev2, value);
+    if (part === void 0 || isWrappable(prev4) && isWrappable(value) && !Array.isArray(value)) {
+      mergeStoreNode(prev4, value);
     } else setProperty(current2, part, value);
   }
   function createStore(...[store2, options]) {
@@ -12185,6 +12190,35 @@ return _$el${id};
     return [wrappedStore, setStore2];
   }
   var $ROOT = Symbol("store-root");
+  var producers = /* @__PURE__ */ new WeakMap();
+  var setterTraps = {
+    get(target, property) {
+      if (property === $RAW) return target;
+      const value = target[property];
+      let proxy;
+      return isWrappable(value) ? producers.get(value) || (producers.set(value, proxy = new Proxy(value, setterTraps)), proxy) : value;
+    },
+    set(target, property, value) {
+      setProperty(target, property, unwrap(value));
+      return true;
+    },
+    deleteProperty(target, property) {
+      setProperty(target, property, void 0, true);
+      return true;
+    }
+  };
+  function produce(fn) {
+    return (state) => {
+      if (isWrappable(state)) {
+        let proxy;
+        if (!(proxy = producers.get(state))) {
+          producers.set(state, proxy = new Proxy(state, setterTraps));
+        }
+        fn(proxy);
+      }
+      return state;
+    };
+  }
 
   // src/components/radar.js
   var range = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
@@ -12400,41 +12434,41 @@ return _$el${id};
   };
   var keys = Object.keys(stats);
   var count = keys.length;
-  var toggleArrow = (table, e, sortOrder) => {
-    table.querySelectorAll("#nav-arrow").forEach(
+  var toggleArrow = (table2, e, sortOrder) => {
+    table2.querySelectorAll("#nav-arrow").forEach(
       (arrow) => (arrow.classList.remove("arrow-dn"), arrow.classList.remove("arrow-up"))
     );
     e = e.target.querySelector("#nav-arrow");
     sortOrder() == 1 ? e.classList.add("arrow-dn") : e.classList.add("arrow-up");
   };
-  var toggleNav = (cellh, index2) => {
-    if (index2 == -1) return;
+  var toggleNav = (cellh, index4) => {
+    if (index4 == -1) return;
     cellh.forEach((h) => {
       h.querySelector(".nav-button-l").classList.add("invis");
       h.querySelector(".nav-button-r").classList.add("invis");
     });
-    cellh[index2]?.querySelector(".nav-button-l").classList.remove("invis");
-    cellh[index2]?.querySelector(".nav-button-r").classList.remove("invis");
+    cellh[index4]?.querySelector(".nav-button-l").classList.remove("invis");
+    cellh[index4]?.querySelector(".nav-button-r").classList.remove("invis");
   };
-  var highlight = (cellh, cell, count4, index2) => {
+  var highlight = (cellh, cell, count5, index4) => {
     cellh.forEach((h) => h.querySelector(".cell-bg").classList.remove("cell-highlight"));
     cell.forEach((bg) => bg.querySelector(".cell-bg").classList.remove("cell-highlight"));
-    cellh[index2]?.querySelector(".cell-bg").classList.add("cell-highlight");
+    cellh[index4]?.querySelector(".cell-bg").classList.add("cell-highlight");
     cell.forEach((bg, i) => {
-      i % count4 == index2 ? bg.querySelector(".cell-bg").classList.add("cell-highlight") : null;
+      i % count5 == index4 ? bg.querySelector(".cell-bg").classList.add("cell-highlight") : null;
     });
   };
   var selectCol = () => {
     let cellh = document.querySelectorAll(".cell-h:not(.corner)");
     let cell = document.querySelectorAll(".cell-data");
-    cell.forEach((col, index2) => {
-      index2 = index2 % count;
-      col.addEventListener("mouseenter", (e) => {
-        highlight(cellh, cell, count, index2);
+    cell.forEach((col2, index4) => {
+      index4 = index4 % count;
+      col2.addEventListener("mouseenter", (e) => {
+        highlight(cellh, cell, count, index4);
         e.target.children[0].classList.remove("cell-highlight");
       });
-      col.addEventListener("mouseleave", () => {
-        highlight(cellh, cell, count, index2);
+      col2.addEventListener("mouseleave", () => {
+        highlight(cellh, cell, count, index4);
       });
     });
   };
@@ -12466,26 +12500,26 @@ return _$el${id};
     if (store2.popChange[i] > store2.roster[i].pop) return html`<div class="arrow down"></div>`;
   };
   var TableBody = (store2) => {
-    return () => store2.roster.map((w2, i) => {
-      let img = `assets/${w2.img}.png`;
-      let fat = `width:${Math.round(w2.fat / 10) * 10 - 1}%;`;
+    return () => store2.roster.map((w3, i) => {
+      let img = `assets/${w3.img}.png`;
+      let fat = `width:${Math.round(w3.fat / 10) * 10 - 1}%;`;
       return html`
       <div class=row>
         <div class=cell-fcol>
-          <img src=${img}>
+          <img src=${img} onerror="this.style.visibility='hidden';">
           <div>
             <div>
               <div class=fcol onClick=${() => {
         overlay.classList.add("active");
       }}>
-                <div class=cell-bg><p>${w2.name}</p></div>
+                <div class=cell-bg><p>${w3.name}</p></div>
               </div>
             </div>
           </div>
         </div>
         <div class=cell-data><div class=cell-bg>
           <div class=cell-pop>
-            <p>${w2.pop}</p>
+            <p>${w3.pop}</p>
             ${popArrow(store2, i)}
           </div>
         </div></div>
@@ -12499,8 +12533,8 @@ return _$el${id};
             </div>
           </div>
         </div>
-        <div class=cell-data><div class=cell-bg>${w2.mor}</div></div>
-        <div class=cell-data><div class=cell-bg>${w2.align.toUpperCase()}</div></div>
+        <div class=cell-data><div class=cell-bg>${w3.mor}</div></div>
+        <div class=cell-data><div class=cell-bg>${w3.align.toUpperCase()}</div></div>
         <div class=cell-data><div class=cell-bg>${"WCW"}</div></div>
         <div class=cell-data><div class=cell-bg>${"-"}</div></div>
         <div class=cell-data><div class=cell-bg>${"-"}</div></div>
@@ -12509,10 +12543,78 @@ return _$el${id};
     `;
     });
   };
+  var table;
+  var [row, setRow] = createStore({
+    stats: {}
+  });
+  var [col, setCol] = createSignal(null);
+  var imgPath = (img) => `/assets/${img}.png`;
+  var updateBanner = (store2) => {
+    let { name: name2, pop, img } = store2.roster[0];
+    setRow("stats", { name: name2, pop, img: imgPath(img) });
+  };
+  var mountBanner = (store2) => {
+    updateBanner(store2);
+    table.addEventListener("scroll", () => {
+      if (col()) return;
+      let cur;
+      let rows2 = table.querySelectorAll(".cell-fcol");
+      let rect = rows2[0].getBoundingClientRect();
+      rows2.forEach((r) => {
+        let rect2 = r.getBoundingClientRect();
+        if (rect.top == rect2.top) {
+          cur = r;
+        }
+      });
+      cur = cur.textContent;
+      let w3 = store2.roster.find((w4) => w4.name == cur);
+      setRow("stats", {
+        name: cur,
+        pop: w3.pop,
+        ovr: 80,
+        img: imgPath(w3.img)
+      });
+    });
+    let rows = table.querySelectorAll(".row");
+    rows.forEach((r) => {
+      r.addEventListener("click", (e) => {
+        let fcol = r.querySelector(".cell-fcol");
+        fcol = fcol.textContent;
+        let w3 = store2.roster.find((w4) => w4.name == fcol);
+        setRow("stats", {
+          name: fcol,
+          pop: w3.pop,
+          ovr: 80,
+          img: imgPath(w3.img)
+        });
+        setCol(true);
+      });
+    });
+    document.addEventListener("mouseup", (e) => {
+      if (col()) setCol(false);
+    });
+  };
+  var TableBanner = () => {
+    return html`
+    <div class=table-banner>
+      <div class=table-top>
+        <img id=banner-bg src=bg2.jpg>
+        <img id=banner-img src=${() => row.stats.img} 
+          onload="this.style.visibility='visible';"
+          onerror="this.style.visibility='hidden';"
+        >
+        <div class=top-text>
+          <p>${() => row.stats.name}</p>
+          <p>Popularity ${() => row.stats.pop}
+            <br>Overall 86</p>
+        </div>
+      </div>
+    </div>
+  `;
+  };
   var RosterTable = (store2, setStore2) => {
     const [sortOrder, setSort] = createSignal(1);
     const [sortKey, setKey] = createSignal(null);
-    let table;
     let handleSort = (e, key) => {
       let unused = ["over", "brand", "title", "contract", "injury"];
       if (!unused.includes(key)) {
@@ -12522,76 +12624,615 @@ return _$el${id};
         setStore2("roster", sort);
         toggleArrow(table, e, sortOrder);
       }
-      let index2 = keys.indexOf(key);
+      let index4 = keys.indexOf(key);
       let cellh = document.querySelectorAll(".cell-h:not(.corner)");
       let cell = document.querySelectorAll(".cell-data");
-      toggleNav(cellh, index2);
-      highlight(cellh, cell, count, index2);
+      toggleNav(cellh, index4);
+      highlight(cellh, cell, count, index4);
       selectCol();
+      updateBanner(store2);
     };
     onMount(selectCol);
-    let [curR, setCurR] = createSignal(null);
-    let [curC, setCurC] = createSignal(null);
-    onMount(() => {
-      let fcol = table.querySelector(".cell-fcol .cell-bg");
-      setCurR(fcol.textContent);
-    });
-    let updateBanner = () => {
-      let first = table.querySelector(".cell-fcol");
-      setCurR(first.textContent);
-      table.addEventListener("scroll", () => {
-        if (curC()) return;
-        let cur;
-        let row2 = table.querySelectorAll(".cell-fcol");
-        let rect = row2[0].getBoundingClientRect();
-        row2.forEach((r) => {
-          let rect2 = r.getBoundingClientRect();
-          if (rect.top == rect2.top) {
-            cur = r;
-          }
-        });
-        setCurR(cur.textContent);
-      });
-      let row = table.querySelectorAll(".row");
-      row.forEach((r) => {
-        r.addEventListener("click", (e) => {
-          let fcol = r.querySelector(".cell-fcol");
-          setCurR(fcol.textContent);
-          setCurC(true);
-        });
-      });
-      document.addEventListener("mouseup", (e) => {
-        if (curC()) setCurC(false);
-      });
-    };
-    onMount(updateBanner);
+    onMount(() => mountBanner(store2));
     return html`
   <div class=table-container>
     ${wrestlerBook()}
-    <div class=table-banner>
-      <div class=table-top>
-        <img id=banner-bg src=cover.webp>
-        <img id=banner-img src=dummy.png>
-        <p>${curR}<br>Popularity 75<br>Overall 80</p>
-      </div>
-    </div>
+    ${TableBanner()}
     <div class=nav-button-up><div class=nav-up></div></div>
     <div class=nav-button-dn><div class=nav-dn></div></div>
     <div ref=${(e) => table = e} class=table>
-      <div class=grid-table>
-        ${TableHeader(handleSort)}
-        <div class=table-body>
-        ${TableBody(store2)}
+        <div class=grid-table>
+          ${TableHeader(handleSort)}
+          <div class=table-body>
+          ${TableBody(store2)}
+          </div>
         </div>
-      </div>
     <div>
   </div>
   `;
   };
 
-  // src/components/roster.js
+  // node_modules/.pnpm/chalk@5.4.1/node_modules/chalk/source/vendor/ansi-styles/index.js
+  var ANSI_BACKGROUND_OFFSET = 10;
+  var wrapAnsi16 = (offset = 0) => (code) => `\x1B[${code + offset}m`;
+  var wrapAnsi256 = (offset = 0) => (code) => `\x1B[${38 + offset};5;${code}m`;
+  var wrapAnsi16m = (offset = 0) => (red, green, blue) => `\x1B[${38 + offset};2;${red};${green};${blue}m`;
+  var styles = {
+    modifier: {
+      reset: [0, 0],
+      // 21 isn't widely supported and 22 does the same thing
+      bold: [1, 22],
+      dim: [2, 22],
+      italic: [3, 23],
+      underline: [4, 24],
+      overline: [53, 55],
+      inverse: [7, 27],
+      hidden: [8, 28],
+      strikethrough: [9, 29]
+    },
+    color: {
+      black: [30, 39],
+      red: [31, 39],
+      green: [32, 39],
+      yellow: [33, 39],
+      blue: [34, 39],
+      magenta: [35, 39],
+      cyan: [36, 39],
+      white: [37, 39],
+      // Bright color
+      blackBright: [90, 39],
+      gray: [90, 39],
+      // Alias of `blackBright`
+      grey: [90, 39],
+      // Alias of `blackBright`
+      redBright: [91, 39],
+      greenBright: [92, 39],
+      yellowBright: [93, 39],
+      blueBright: [94, 39],
+      magentaBright: [95, 39],
+      cyanBright: [96, 39],
+      whiteBright: [97, 39]
+    },
+    bgColor: {
+      bgBlack: [40, 49],
+      bgRed: [41, 49],
+      bgGreen: [42, 49],
+      bgYellow: [43, 49],
+      bgBlue: [44, 49],
+      bgMagenta: [45, 49],
+      bgCyan: [46, 49],
+      bgWhite: [47, 49],
+      // Bright color
+      bgBlackBright: [100, 49],
+      bgGray: [100, 49],
+      // Alias of `bgBlackBright`
+      bgGrey: [100, 49],
+      // Alias of `bgBlackBright`
+      bgRedBright: [101, 49],
+      bgGreenBright: [102, 49],
+      bgYellowBright: [103, 49],
+      bgBlueBright: [104, 49],
+      bgMagentaBright: [105, 49],
+      bgCyanBright: [106, 49],
+      bgWhiteBright: [107, 49]
+    }
+  };
+  var modifierNames = Object.keys(styles.modifier);
+  var foregroundColorNames = Object.keys(styles.color);
+  var backgroundColorNames = Object.keys(styles.bgColor);
+  var colorNames = [...foregroundColorNames, ...backgroundColorNames];
+  function assembleStyles() {
+    const codes = /* @__PURE__ */ new Map();
+    for (const [groupName, group] of Object.entries(styles)) {
+      for (const [styleName, style2] of Object.entries(group)) {
+        styles[styleName] = {
+          open: `\x1B[${style2[0]}m`,
+          close: `\x1B[${style2[1]}m`
+        };
+        group[styleName] = styles[styleName];
+        codes.set(style2[0], style2[1]);
+      }
+      Object.defineProperty(styles, groupName, {
+        value: group,
+        enumerable: false
+      });
+    }
+    Object.defineProperty(styles, "codes", {
+      value: codes,
+      enumerable: false
+    });
+    styles.color.close = "\x1B[39m";
+    styles.bgColor.close = "\x1B[49m";
+    styles.color.ansi = wrapAnsi16();
+    styles.color.ansi256 = wrapAnsi256();
+    styles.color.ansi16m = wrapAnsi16m();
+    styles.bgColor.ansi = wrapAnsi16(ANSI_BACKGROUND_OFFSET);
+    styles.bgColor.ansi256 = wrapAnsi256(ANSI_BACKGROUND_OFFSET);
+    styles.bgColor.ansi16m = wrapAnsi16m(ANSI_BACKGROUND_OFFSET);
+    Object.defineProperties(styles, {
+      rgbToAnsi256: {
+        value(red, green, blue) {
+          if (red === green && green === blue) {
+            if (red < 8) {
+              return 16;
+            }
+            if (red > 248) {
+              return 231;
+            }
+            return Math.round((red - 8) / 247 * 24) + 232;
+          }
+          return 16 + 36 * Math.round(red / 255 * 5) + 6 * Math.round(green / 255 * 5) + Math.round(blue / 255 * 5);
+        },
+        enumerable: false
+      },
+      hexToRgb: {
+        value(hex) {
+          const matches = /[a-f\d]{6}|[a-f\d]{3}/i.exec(hex.toString(16));
+          if (!matches) {
+            return [0, 0, 0];
+          }
+          let [colorString] = matches;
+          if (colorString.length === 3) {
+            colorString = [...colorString].map((character) => character + character).join("");
+          }
+          const integer = Number.parseInt(colorString, 16);
+          return [
+            /* eslint-disable no-bitwise */
+            integer >> 16 & 255,
+            integer >> 8 & 255,
+            integer & 255
+            /* eslint-enable no-bitwise */
+          ];
+        },
+        enumerable: false
+      },
+      hexToAnsi256: {
+        value: (hex) => styles.rgbToAnsi256(...styles.hexToRgb(hex)),
+        enumerable: false
+      },
+      ansi256ToAnsi: {
+        value(code) {
+          if (code < 8) {
+            return 30 + code;
+          }
+          if (code < 16) {
+            return 90 + (code - 8);
+          }
+          let red;
+          let green;
+          let blue;
+          if (code >= 232) {
+            red = ((code - 232) * 10 + 8) / 255;
+            green = red;
+            blue = red;
+          } else {
+            code -= 16;
+            const remainder = code % 36;
+            red = Math.floor(code / 36) / 5;
+            green = Math.floor(remainder / 6) / 5;
+            blue = remainder % 6 / 5;
+          }
+          const value = Math.max(red, green, blue) * 2;
+          if (value === 0) {
+            return 30;
+          }
+          let result = 30 + (Math.round(blue) << 2 | Math.round(green) << 1 | Math.round(red));
+          if (value === 2) {
+            result += 60;
+          }
+          return result;
+        },
+        enumerable: false
+      },
+      rgbToAnsi: {
+        value: (red, green, blue) => styles.ansi256ToAnsi(styles.rgbToAnsi256(red, green, blue)),
+        enumerable: false
+      },
+      hexToAnsi: {
+        value: (hex) => styles.ansi256ToAnsi(styles.hexToAnsi256(hex)),
+        enumerable: false
+      }
+    });
+    return styles;
+  }
+  var ansiStyles = assembleStyles();
+  var ansi_styles_default = ansiStyles;
+
+  // node_modules/.pnpm/chalk@5.4.1/node_modules/chalk/source/vendor/supports-color/browser.js
+  var level = (() => {
+    if (!("navigator" in globalThis)) {
+      return 0;
+    }
+    if (globalThis.navigator.userAgentData) {
+      const brand = navigator.userAgentData.brands.find(({ brand: brand2 }) => brand2 === "Chromium");
+      if (brand && brand.version > 93) {
+        return 3;
+      }
+    }
+    if (/\b(Chrome|Chromium)\//.test(globalThis.navigator.userAgent)) {
+      return 1;
+    }
+    return 0;
+  })();
+  var colorSupport = level !== 0 && {
+    level,
+    hasBasic: true,
+    has256: level >= 2,
+    has16m: level >= 3
+  };
+  var supportsColor = {
+    stdout: colorSupport,
+    stderr: colorSupport
+  };
+  var browser_default = supportsColor;
+
+  // node_modules/.pnpm/chalk@5.4.1/node_modules/chalk/source/utilities.js
+  function stringReplaceAll(string, substring, replacer) {
+    let index4 = string.indexOf(substring);
+    if (index4 === -1) {
+      return string;
+    }
+    const substringLength = substring.length;
+    let endIndex = 0;
+    let returnValue = "";
+    do {
+      returnValue += string.slice(endIndex, index4) + substring + replacer;
+      endIndex = index4 + substringLength;
+      index4 = string.indexOf(substring, endIndex);
+    } while (index4 !== -1);
+    returnValue += string.slice(endIndex);
+    return returnValue;
+  }
+  function stringEncaseCRLFWithFirstIndex(string, prefix, postfix, index4) {
+    let endIndex = 0;
+    let returnValue = "";
+    do {
+      const gotCR = string[index4 - 1] === "\r";
+      returnValue += string.slice(endIndex, gotCR ? index4 - 1 : index4) + prefix + (gotCR ? "\r\n" : "\n") + postfix;
+      endIndex = index4 + 1;
+      index4 = string.indexOf("\n", endIndex);
+    } while (index4 !== -1);
+    returnValue += string.slice(endIndex);
+    return returnValue;
+  }
+
+  // node_modules/.pnpm/chalk@5.4.1/node_modules/chalk/source/index.js
+  var { stdout: stdoutColor, stderr: stderrColor } = browser_default;
+  var GENERATOR = Symbol("GENERATOR");
+  var STYLER = Symbol("STYLER");
+  var IS_EMPTY = Symbol("IS_EMPTY");
+  var levelMapping = [
+    "ansi",
+    "ansi",
+    "ansi256",
+    "ansi16m"
+  ];
+  var styles2 = /* @__PURE__ */ Object.create(null);
+  var applyOptions = (object, options = {}) => {
+    if (options.level && !(Number.isInteger(options.level) && options.level >= 0 && options.level <= 3)) {
+      throw new Error("The `level` option should be an integer from 0 to 3");
+    }
+    const colorLevel = stdoutColor ? stdoutColor.level : 0;
+    object.level = options.level === void 0 ? colorLevel : options.level;
+  };
+  var chalkFactory = (options) => {
+    const chalk2 = (...strings) => strings.join(" ");
+    applyOptions(chalk2, options);
+    Object.setPrototypeOf(chalk2, createChalk.prototype);
+    return chalk2;
+  };
+  function createChalk(options) {
+    return chalkFactory(options);
+  }
+  Object.setPrototypeOf(createChalk.prototype, Function.prototype);
+  for (const [styleName, style2] of Object.entries(ansi_styles_default)) {
+    styles2[styleName] = {
+      get() {
+        const builder = createBuilder(this, createStyler(style2.open, style2.close, this[STYLER]), this[IS_EMPTY]);
+        Object.defineProperty(this, styleName, { value: builder });
+        return builder;
+      }
+    };
+  }
+  styles2.visible = {
+    get() {
+      const builder = createBuilder(this, this[STYLER], true);
+      Object.defineProperty(this, "visible", { value: builder });
+      return builder;
+    }
+  };
+  var getModelAnsi = (model, level2, type, ...arguments_) => {
+    if (model === "rgb") {
+      if (level2 === "ansi16m") {
+        return ansi_styles_default[type].ansi16m(...arguments_);
+      }
+      if (level2 === "ansi256") {
+        return ansi_styles_default[type].ansi256(ansi_styles_default.rgbToAnsi256(...arguments_));
+      }
+      return ansi_styles_default[type].ansi(ansi_styles_default.rgbToAnsi(...arguments_));
+    }
+    if (model === "hex") {
+      return getModelAnsi("rgb", level2, type, ...ansi_styles_default.hexToRgb(...arguments_));
+    }
+    return ansi_styles_default[type][model](...arguments_);
+  };
+  var usedModels = ["rgb", "hex", "ansi256"];
+  for (const model of usedModels) {
+    styles2[model] = {
+      get() {
+        const { level: level2 } = this;
+        return function(...arguments_) {
+          const styler = createStyler(getModelAnsi(model, levelMapping[level2], "color", ...arguments_), ansi_styles_default.color.close, this[STYLER]);
+          return createBuilder(this, styler, this[IS_EMPTY]);
+        };
+      }
+    };
+    const bgModel = "bg" + model[0].toUpperCase() + model.slice(1);
+    styles2[bgModel] = {
+      get() {
+        const { level: level2 } = this;
+        return function(...arguments_) {
+          const styler = createStyler(getModelAnsi(model, levelMapping[level2], "bgColor", ...arguments_), ansi_styles_default.bgColor.close, this[STYLER]);
+          return createBuilder(this, styler, this[IS_EMPTY]);
+        };
+      }
+    };
+  }
+  var proto = Object.defineProperties(() => {
+  }, {
+    ...styles2,
+    level: {
+      enumerable: true,
+      get() {
+        return this[GENERATOR].level;
+      },
+      set(level2) {
+        this[GENERATOR].level = level2;
+      }
+    }
+  });
+  var createStyler = (open, close, parent2) => {
+    let openAll;
+    let closeAll;
+    if (parent2 === void 0) {
+      openAll = open;
+      closeAll = close;
+    } else {
+      openAll = parent2.openAll + open;
+      closeAll = close + parent2.closeAll;
+    }
+    return {
+      open,
+      close,
+      openAll,
+      closeAll,
+      parent: parent2
+    };
+  };
+  var createBuilder = (self2, _styler, _isEmpty) => {
+    const builder = (...arguments_) => applyStyle(builder, arguments_.length === 1 ? "" + arguments_[0] : arguments_.join(" "));
+    Object.setPrototypeOf(builder, proto);
+    builder[GENERATOR] = self2;
+    builder[STYLER] = _styler;
+    builder[IS_EMPTY] = _isEmpty;
+    return builder;
+  };
+  var applyStyle = (self2, string) => {
+    if (self2.level <= 0 || !string) {
+      return self2[IS_EMPTY] ? "" : string;
+    }
+    let styler = self2[STYLER];
+    if (styler === void 0) {
+      return string;
+    }
+    const { openAll, closeAll } = styler;
+    if (string.includes("\x1B")) {
+      while (styler !== void 0) {
+        string = stringReplaceAll(string, styler.close, styler.open);
+        styler = styler.parent;
+      }
+    }
+    const lfIndex = string.indexOf("\n");
+    if (lfIndex !== -1) {
+      string = stringEncaseCRLFWithFirstIndex(string, closeAll, openAll, lfIndex);
+    }
+    return openAll + string + closeAll;
+  };
+  Object.defineProperties(createChalk.prototype, styles2);
+  var chalk = createChalk();
+  var chalkStderr = createChalk({ level: stderrColor ? stderrColor.level : 0 });
+  var source_default = chalk;
+
+  // src/game.js
   var log = (x) => console.log(x);
-  var container;
+  var range3 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
+  var randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  var genWrestlers = (n) => range3(0, n).map((id) => ({
+    id,
+    name: id,
+    img: "dummy",
+    pop: randomInt(0, 100),
+    mor: randomInt(0, 100),
+    fat: randomInt(0, 100),
+    align: Math.random() < 0.5 ? "face" : "heel"
+  }));
+  var sortWrestler = (roster3) => (
+    //sort by happy, fatigue
+    [...roster3].filter((w3) => w3.mor <= 50).sort((a, b) => a.mor - b.mor).concat([...roster3].filter((w3) => w3.mor > 50).sort((a, b) => a.fat - b.fat))
+  );
+  var used = /* @__PURE__ */ new Set();
+  var usedMap = /* @__PURE__ */ new Map();
+  var setUsed = (x) => used = x;
+  var setUsedMap = (x) => usedMap = x;
+  var findTeam = (wrestler, pool, matchType2) => {
+    log(source_default.blue(`Finding team for ${wrestler.id} (${wrestler.align})`));
+    let match2 = matchType2[0];
+    if (match2.length == 1) return [wrestler];
+    return match2.map((_, i) => {
+      if (i == 0) return wrestler;
+      let p = pool.filter((w3) => !used.has(w3.id)).filter((w3) => w3.align == wrestler.align);
+      if (p.length != 0) {
+        used.add(p[0].id);
+        usedMap.set(p[0].name, usedMap.get(p[0].name) + 1 || 1);
+        log(`-> Found team align ${p[0].id} ${p[0].align}`);
+        return p[0];
+      }
+      let p2 = pool.filter((w3) => !used.has(w3.id));
+      if (p2.length != 0) {
+        used.add(p2[0].id);
+        usedMap.set(p2[0].name, usedMap.get(p2[0].name) + 1 || 1);
+        log(`-> Found team nonalign ${p2[0].id} ${p2[0].align}`);
+        return p2[0];
+      }
+      log("Not Found");
+      return null;
+    }).filter((x) => x != null);
+  };
+  var findOpponent = (wrestler, roster3) => {
+    log(source_default.red(`Finding op for ${wrestler.id} (${wrestler.align}) def=${roster3[0].id} (${roster3[0].align})`));
+    return roster3.reduce((best, opponent) => {
+      let diffPop = Math.abs(wrestler.pop - opponent.pop);
+      let bestPop = Math.abs(best.pop - opponent.pop);
+      if (wrestler.align != opponent.align && diffPop < 20) {
+        if (bestPop > diffPop) {
+          log(`-> Found align+pop ${opponent.id} (${opponent.pop})`);
+          return opponent;
+        }
+      }
+      if (wrestler.align != opponent.align) {
+        if (bestPop > diffPop) {
+          log(`-> Found align ${opponent.id} (${opponent.align})`);
+          return opponent;
+        }
+      }
+      if (wrestler.align != best.align) {
+        if (bestPop > diffPop) {
+          log(`-> Found nonalign+pop ${opponent.id} (${opponent.pop})`);
+          return opponent;
+        }
+      }
+      log(`-> Best choice ${best.id} (${best.align})`);
+      return best;
+    }, roster3[0]);
+  };
+  var genMatchType = () => {
+    let matchType2 = range3(
+      0,
+      Math.random() < 0.75 ? 2 : Math.random() < 0.75 ? 3 : Math.random() < 0.75 ? 4 : Math.random() < 0.75 ? 5 : 6
+    );
+    let r = Math.random();
+    if (matchType2.length == 2) {
+      return r < 0.75 ? { "Single /no. manager": [[0], [0]] } : r < 0.5 ? { "Normal Tag": [[0, 0], [0, 0]] } : { "Trio Tag": [[0, 0, 0], [0, 0, 0]] };
+    } else if (matchType2.length == 3) {
+      return r < 0.5 ? { "Triple Treat": [[0], [0], [0]] } : { "Trio Tag": [[0, 0, 0], [0, 0, 0]] };
+    } else {
+      return { "5-man Battle Royale": [[0], [0], [0], [0], [0]] };
+    }
+  };
+  var genType = 0;
+  var genSingleMatch = (roster3, index4, matches, type) => {
+    let mType = type == void 0 ? genMatchType() : type;
+    let matchType2 = Object.values(mType)[0];
+    let sorted = sortWrestler(roster3);
+    let available = sorted.filter((w3) => !used.has(w3.id));
+    log(`
+matchType ${matchType2.length}x${matchType2[0].length}`);
+    let matchSize = matchType2.length * matchType2[0].length;
+    if (available.length < matchSize) {
+      if (genType == 0) {
+        log(source_default.red("Reused wrestlers"));
+        available = sorted;
+        setUsed(/* @__PURE__ */ new Set());
+      }
+      if (available.length < matchSize || available.length < 2) {
+        log(source_default.red("Not enough wrestler"));
+        return null;
+      } else {
+      }
+    }
+    let _matchType = Object.keys(mType);
+    log(source_default.yellow("genSingleMatch " + (index4 + 1)));
+    if (matchType2.length == 2) {
+      let [wrestler] = available;
+      let opponent = findOpponent(wrestler, available.filter((w3) => w3.id != wrestler.id));
+      used.add(wrestler.id);
+      used.add(opponent.id);
+      usedMap.set(wrestler.name, usedMap.get(wrestler.name) + 1 || 1);
+      usedMap.set(opponent.name, usedMap.get(opponent.name) + 1 || 1);
+      let team = findTeam(wrestler, available.filter((w3) => w3.id != wrestler.id), matchType2);
+      let team2 = findTeam(opponent, available.filter((w3) => w3.id != opponent.id), matchType2);
+      return { match: index4 + 1, wrestlers: [team, team2], matchType: _matchType };
+    } else {
+      let wrestlers = available.slice(0, matchType2.length);
+      wrestlers.forEach((w3) => {
+        used.add(w3.id);
+        usedMap.set(w3.name, usedMap.get(w3.name) + 1 || 1);
+      });
+      wrestlers = wrestlers.map((wrestler) => {
+        let team = findTeam(wrestler, available.filter((w3) => w3.id != wrestler.id), matchType2);
+        return team;
+      });
+      return { match: index4 + 1, wrestlers, matchType: _matchType };
+    }
+  };
+  var genPresetCard = (roster3, n, matches) => {
+    log(source_default.yellow("\ngenPresetCard " + n + " match"));
+    genType = 1;
+    setUsed(/* @__PURE__ */ new Set());
+    usedMap = /* @__PURE__ */ new Map();
+    let preset = range3(0, n).map((index4) => {
+      return genSingleMatch(roster3, index4, matches);
+    });
+    return genType = 0, preset;
+  };
+  var simulateMatches = (matches) => {
+    return matches.map((match2) => {
+      if (match2 == null) return null;
+      log(source_default.blue(`
+Simulating Match ${match2.match}: ${match2.matchType}`));
+      let teams = match2.wrestlers;
+      let index4 = Math.floor(Math.random() * teams.length);
+      let winner = teams[index4];
+      let loser = teams.filter((_, i) => i != index4);
+      log(source_default.green(`Winner: ${winner.map((w3) => w3.id).join(", ")} | Loser: ${loser.map((t) => t.map((w3) => w3.id).join(", ")).join(" & ")}`));
+      return { match: match2.match, winner, loser };
+    });
+  };
+  var updateStats = (roster3, results) => {
+    return roster3.map((wrestler) => {
+      let match2 = results.flat().find(
+        (match3) => match3 != null && (match3.winner.some((w3) => w3.id === wrestler.id) || match3.loser.some((team) => team.some((w3) => w3.id === wrestler.id)))
+      );
+      if (match2) {
+        if (match2.winner.some((w3) => w3.id === wrestler.id)) {
+          return { ...wrestler, pop: wrestler.pop + 5, mor: wrestler.mor + 5, fat: wrestler.fat + 3 };
+        } else {
+          return { ...wrestler, pop: wrestler.pop - 5, mor: wrestler.mor - 5, fat: wrestler.fat + 7 };
+        }
+      } else {
+        return { ...wrestler, pop: Math.max(0, wrestler.pop - 2), mor: Math.max(0, wrestler.mor - 2), fat: Math.max(0, wrestler.fat - 10) };
+      }
+    });
+  };
+  var roster = genWrestlers(12);
+  var match = range3(0, 5).map((x) => null);
+  for (let i = 0; i < 4; i++) {
+    match[0] = genSingleMatch(roster, 0, match);
+    match[1] = genSingleMatch(roster, 1, match);
+    match[2] = genSingleMatch(roster, 2, match);
+    match[3] = genSingleMatch(roster, 3, match);
+    match[4] = genSingleMatch(roster, 4, match);
+    log(usedMap);
+    let result = simulateMatches(match);
+    roster = updateStats(roster, result);
+    match = range3(0, 5).map((x) => null);
+    used = /* @__PURE__ */ new Set();
+    usedMap = /* @__PURE__ */ new Map();
+  }
+
+  // src/components/roster.js
+  var range4 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
+  var roster2;
   var [current, setCurrent] = createSignal(null);
   var [curImg, setCurImg] = createSignal(null);
   var track;
@@ -12601,7 +13242,7 @@ return _$el${id};
     cloned.forEach((text) => {
       let div = document.createElement("div");
       div.className = "roster";
-      div.textContent = text;
+      div.innerHTML = text;
       list2.appendChild(div);
     });
   };
@@ -12622,19 +13263,19 @@ return _$el${id};
     if (closest) return closest;
     return;
   };
+  var [scroll, setScroll] = createSignal(0);
   var toCenter = () => {
     let first = list.children[0];
     let loop = () => {
       let center = getCenterItem();
       if (center.textContent != first.textContent) {
         track.scrollTop += itemH;
-        return requestAnimationFrame(loop);
+        return loop();
       }
-      container.style.display = "none";
       setCurrent(center.textContent);
       return;
     };
-    requestAnimationFrame(loop);
+    return loop();
   };
   var startY;
   var start = (event) => {
@@ -12661,22 +13302,23 @@ return _$el${id};
   var trackH;
   var count2;
   var onscroll = (store2) => {
-    log("scroll");
-    let pos = track.scrollTop;
+    let pos2 = track.scrollTop;
     let totalH = list.scrollHeight;
     let addH = items.length * itemH;
-    if (pos + trackH > totalH - count2 * itemH) {
+    if (pos2 + trackH > totalH - count2 * itemH) {
       list.append(...newItems());
-    } else if (pos <= itemH * 2) {
+    } else if (pos2 <= itemH * 2) {
       list.prepend(...newItems());
-      if (pos == 0) track.scrollTop += addH;
+      if (pos2 == 0) {
+        track.scrollTop += addH;
+      }
     }
     if (list.children.length > count2 * 3) {
-      if (pos >= count2 * itemH) {
+      if (pos2 >= count2 * itemH) {
         for (let i = 0; i < items.length; i++) {
           list.removeChild(list.firstChild);
         }
-      } else if (pos <= count2 * itemH) {
+      } else if (pos2 <= count2 * itemH) {
         for (let i = 0; i < items.length; i++) {
           list.removeChild(list.lastChild);
         }
@@ -12687,9 +13329,8 @@ return _$el${id};
     c = store2.roster.find((x) => x.name == c);
     setCurImg(`/assets/${c.img}.png`);
   };
-  var rosterList = (store2, setStore2, matchN2, select2) => {
-    createEffect(() => {
-      container.style.display = "flex";
+  var rosterList = (store2, setStore2) => {
+    onMount(() => {
       items = [...store2.roster.map((x) => x.name)];
       itemH = list.children[0].offsetHeight + 4;
       trackH = track.clientHeight;
@@ -12700,8 +13341,7 @@ return _$el${id};
         clonedList.push(...items);
       }
       createList(list, clonedList);
-      requestAnimationFrame(toCenter);
-      container.style.display = "none";
+      toCenter();
       track.addEventListener("touchstart", start);
       track.addEventListener("touchmove", move, { passive: false });
       setCurImg(`/assets/${store2.roster[0].img}.png`);
@@ -12711,24 +13351,37 @@ return _$el${id};
       );
     });
     let book = () => {
-      if (select2()[1] == current()) return;
-      let newMatches = store2.matches.slice();
-      let newWrestler = store2.roster.find((w2) => w2.name == current());
-      let m = newMatches[matchN2()];
-      if (newWrestler.name == m.wrestler.name || newMatches.name == m.opponent.name) return;
-      newMatches[matchN2()] = {
-        match: m.match,
-        wrestler: select2()[0] == "wrestler" ? newWrestler : m.wrestler,
-        opponent: select2()[0] == "opponent" ? newWrestler : m.opponent
-      };
-      setStore2("matches", newMatches);
-      log(store2.matches);
+      let [[i, j], sel] = select();
+      if (sel == current()) return alert(`${sel} already in a match`);
+      let wrestlers = store2.matches[matchN()].wrestlers;
+      let dup = wrestlers.find(
+        (team) => team.find((w3) => w3?.name == current())
+      );
+      if (dup != void 0) return alert(`${current()} already in a match`);
+      let newWrestler = store2.roster.find((w3) => w3.name == current());
+      used.delete(wrestlers[i][j].id);
+      let name2 = wrestlers[i][j].name;
+      let n = usedMap.get(name2);
+      n = n < 1 ? 1 : n;
+      usedMap.set(name2, n);
+      used.add(newWrestler.id);
+      usedMap.set(newWrestler.name, usedMap.get(newWrestler.name) + 1 || 1);
+      setStore2(produce((state) => {
+        state.matches[matchN()].wrestlers[i][j] = newWrestler;
+      }));
     };
     return html`
-    <div ref=${(e) => container = e} class=roster-container 
-      onclick=${() => container.style.display = "none"}>
+    <div ref=${(e) => roster2 = e} class=roster-container 
+      onclick=${() => {
+      setPage("match");
+    }}>
+      <div class=roster-vlist>
+        <div class=vlist-track>
+        ${range4(0, 20).map((_) => html`<div class=vlist-item></div>`)}
+        </div>
+      </div>
       <div class=roster-listmenu>
-        <div class=roster-menubar>All Champions Contenders Rivalies Match Specialist</div>
+        <div class=roster-menubar>All${""}</div>
         <div ref=${(e) => track = e} class=roster-listcon>
           <div ref=${(e) => list = e} class=roster-list>
             ${() => [...store2.roster.map((x) => html`<div class=roster>${x.name}</div>`)]}
@@ -12749,7 +13402,9 @@ return _$el${id};
                 <rect width="100%" height="100%" fill="url(#diamondNet)" />
               </svg>
             </div>
-            <div class=film-bg><img src=bg2.jpg></div>
+            <div class=film-bg><img src=
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfw8dcbHJSektuNFTMxqjJX3vlyKvhDi_D_QoN3MMQJmT_gjqizTD0mpOp&s=10"
+            ></div>
             <img src=${curImg}>
           </div>
         </div>
@@ -12760,7 +13415,10 @@ return _$el${id};
       <div class=roster-card>
         <div class=card3-bg>
           <div class=folder-rat-r>
-            <div class=folder-rat>96</div>
+            <div class=folder-rat>
+              <p>96</p>
+            </div>
+            <div class=folder-ovr>Overall</div>
           </div>
         </div>
         <div class=folder-bar></div>
@@ -12771,470 +13429,401 @@ return _$el${id};
             <div class=octagon-container>
               <div class=name-line></div>
               <div class=name-line></div>
-              <p>${current}</p>
+              ${() => {
+      return usedMap.has(current()) ? matchDup(current()) : html`<p>${current()}</p>`;
+    }}
               <div class=octagon-inner>
-                <div class=brand-center><img src=bg2.jpg></div>
+                <div class=brand-center><img 
+                src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/WWE_SmackDown_%282024%29_Logo.svg/1200px-WWE_SmackDown_%282024%29_Logo.svg.png'
+                ></div>
               </div>
               <div class=octagon-label>OVERALL 78</div>
             </div>
           </div>
         </div>
         <div class=focus-label>Minor Injury</div>
-        <div class=focus-label onclick=${book}>Booked</div>
-      </div>
-    </div>
-  `;
-  };
-
-  // src/components/matchtype.js
-  var range3 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
-  var matchT;
-  var matchType = (body2) => {
-    let cat, sub, track3, list2;
-    let [move2, setMove] = createSignal(false);
-    let movecat = (e) => {
-      e.stopPropagation();
-      if (!move2()) {
-        if (!e.target.classList.contains("typesub-item")) return;
-        cat.style.transform = "translateX(-100%)";
-        sub.style.transform = "translateX(-80%)";
-        setMove(true);
-      } else {
-        cat.style.transform = "translateX(0%)";
-        sub.style.transform = "translateX(0%)";
-        setMove(false);
-      }
-    };
-    let [index2, setIndex2] = createSignal(0);
-    let [pos, setPos] = createSignal(0);
-    let top, center, bot;
-    let moving2 = false;
-    let update = (reset2) => {
-      for (let i = 0; i < track3.children.length; i++) {
-        if (reset2 && i == index2()) {
-          track3.children[index2()].style.transition = "none";
-        } else {
-          track3.children[i].classList.add("match-shadow");
-        }
-      }
-      requestAnimationFrame(() => track3.children[index2()].classList.remove("match-shadow"));
-    };
-    let scrollUp = (index3) => {
-      let target = track3.children[index3];
-      let th = target.offsetHeight + 8;
-      let ch = sub.offsetHeight;
-      let prevpos = index3 == 0 ? 0 : (track3.children[index3 - 1].offsetHeight + 8) / 2;
-      setPos(pos() - prevpos - th / 2);
-      return pos();
-    };
-    onMount(() => {
-      let bh = body2.offsetHeight;
-      body2.style.display = "none";
-      matchT.style.display = "flex";
-      matchT.style.height = bh + "px";
-      let a = track3.children[track3.children.length - 3].cloneNode(true);
-      let b = track3.children[track3.children.length - 2].cloneNode(true);
-      let c = track3.children[track3.children.length - 1].cloneNode(true);
-      track3.prepend(...[a, b, c]);
-      let d = track3.children[3].cloneNode(true);
-      let e = track3.children[4].cloneNode(true);
-      let f = track3.children[5].cloneNode(true);
-      track3.append(...[d, e, f]);
-      let target = track3.children[index2()];
-      let tt = target.offsetTop;
-      let th = target.offsetHeight + 8;
-      let ch = sub.offsetHeight;
-      setPos(ch / 2 - th / 2);
-      let dpos = pos();
-      let def = `translateY(${pos()}px)`;
-      track3.style.transform = def;
-      let cur = 2;
-      let tp = 0;
-      let init = (i) => {
-        if (index2() <= cur || pos() > 0) {
-          setIndex2(i);
-          tp = `translateY(${scrollUp(index2())}px)`;
-          return init(i + 1);
-        }
-        track3.style.transform = tp;
-      };
-      init(1);
-      update(false);
-      track3.addEventListener("transitionstart", () => {
-      });
-      track3.addEventListener("transitionend", () => {
-        let h = track3.children[0].offsetHeight;
-        if (pos() + h > 0) {
-          cur = cur + 5;
-          track3.style.transition = "none";
-          init(2);
-          cur = 2;
-          update(true);
-        }
-        h = track3.children[track3.children.length - 1].offsetHeight;
-        if (pos() + track3.offsetHeight - h < sub.offsetHeight) {
-          track3.style.transition = "none";
-          setPos(dpos);
-          track3.style.transform = def;
-          cur = 2;
-          init(1);
-          update(true);
-        }
-        moving2 = false;
-      });
-      matchT.style.display = "none";
-      body2.style.display = "flex";
-    });
-    let scrollDn = (index3) => {
-      let target = track3.children[index3];
-      let th = target.offsetHeight + 8;
-      let ch = sub.offsetHeight;
-      let prevpos = index3 >= track3.children.length ? 0 : (track3.children[index3 + 1].offsetHeight + 8) / 2;
-      setPos(pos() + prevpos + th / 2);
-      return pos();
-    };
-    const next2 = (e) => {
-      if (moving2 || index2() >= track3.children.length - 1) return;
-      moving2 = true;
-      setIndex2(index2() + 1);
-      requestAnimationFrame(() => {
-        track3.style.transition = "transform 0.25s ease-in-out";
-        track3.style.transform = `translateY(${scrollUp(index2())}px)`;
-        update(false);
-      });
-    };
-    const prev2 = (e) => {
-      if (moving2 || index2() <= 0) return;
-      moving2 = true;
-      setIndex2(index2() - 1);
-      requestAnimationFrame(() => {
-        track3.style.transition = "transform 0.25s ease-in-out";
-        track3.style.transform = `translateY(${scrollDn(index2())}px)`;
-        update(false);
-      });
-    };
-    let startY2;
-    let onstart2 = (e) => {
-      startY2 = e.touches[0].clientY;
-    };
-    let onmove2 = (e) => {
-      if (moving2) return;
-      let cury = e.touches[0].clientY - startY2;
-      if (Math.abs(cury) > 50) {
-        cury < 0 ? next2(cury) : prev2(cury);
-        startY2 = e.touches[0].clientY;
-      }
-    };
-    return html`
-    <div ref=${(e) => matchT = e} onclick=${(e) => movecat(e)} class=match-typecon>
-      <div ref=${(e) => cat = e} class=match-typecat>
-        <div class=typecat-list>
-          ${range3(0, 5).map((i) => html`<div class=typecat-item>${i}</div>`)}
-        </div>
-      </div>
-      <div ref=${(e) => sub = e} class=match-typesub ontouchstart=${onstart2} ontouchmove=${onmove2}>
-        <div ref=${(e) => track3 = e} class=match-track>
-          ${range3(1, 7).map(
-      (i) => html`<div class=typecat-list>
-              <div class=typesub-cat>
-                <p>Fatal 4 Ways</p>
-                
-<div class="svg-net2">
-  <svg class="diamond-net" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-    <defs>
-      <pattern id="diamondNet2" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-        <line x1="0" y1="0" x2="5" y2="0" stroke="#000" stroke-width="2"/>
-        <line x1="0" y1="0" x2="0" y2="5" stroke="#000" stroke-width="2"/>
-      </pattern>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#diamondNet2)" />
-  </svg>
-</div>
-                
-              </div>
-              <div class=typesub-match>
-                ${range3(0, 5).map(
-        (_) => html`<div onclick=${() => {
-        }} class=typesub-item>${i}</div>`
-      )}
-              </div>
-            </div>`
-    )}
-        </div>
+        <div class=focus-label onclick=${book}>Book</div>
       </div>
     </div>
   `;
   };
 
   // src/components/folder.js
-  var range4 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
-  var card;
-  var folder = (container2, store2, setStore2, matchN2, setSelect2) => {
-    return html`
-    <div ref=${(e) => card = e} class=match-con2>
-      <!--div class=vs>VS</div-->
-      <div class=card-leftcon>
-        ${() => range4(0, 1).map((i) => {
-      let img = store2.matches[matchN2()];
-      img = img?.wrestler?.img || "dummy";
-      img = `/assets/${img}.png`;
-      return html`
-        <div class="folder-left">
-          <div class="tab-border left">
-            <div class="tab-inner">
-              <p>${() => store2.matches[matchN2()]?.wrestler?.name || ""}</p>
-            </div>
-          </div>
-          <div class=folder-before>
-            <div onclick=${() => {
-        container2.style.display = "flex";
-        let s = store2.matches[matchN2()]?.wrestler?.name || "";
-        setSelect2(["wrestler", s]);
-      }} class=folder-img><img src=${img}></div>
-            <div class="folder-body">
-              <div class=folder-data>
-                <div class=data-brand>
-                  <img src=brand.jpg>
-                </div>
-                <p>POPULARITY 96 OVERALL 90</p>
-                <div class="fat-c-container">
-                  <div class="fat-c-inner">
-                    <div class=fat-gauge-border>
-                      <div class=fat-gauge style="width:50%;">
-                        <div class=fat-gauge-over></div>
-                      </div>
-                    </div>
-                    <p>FATIGUE</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>`;
-    })}
-      </div>
-      <div class=card-rightcon>
-        ${() => range4(0, 1).map((i) => {
-      let img = store2.matches[matchN2()];
-      img = img?.opponent?.img || "dummy";
-      img = `/assets/${img}.png`;
-      return html`
-        <div class="folder-right">
-          <div class="tab-border right">
-            <div class="tab-inner">
-              <p>${() => store2.matches[matchN2()]?.opponent?.name || ""}</p>
-            </div>
-          </div>
-        <div class=folder-before>
-          <div class="folder-body">
-            <div class=folder-data>
-              <div class=data-brand>
-                <img src=brand.jpg>
-              </div>
-              <p>POPULARITY 96 OVERALL 90</p>
-              <div class="fat-c-container">
-                <div class="fat-c-inner">
-                  <p>FATIGUE</p>
-                  <div class=fat-gauge-border>
-                    <div class=fat-gauge style="width:50%;">
-                      <div class=fat-gauge-over></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div onclick=${() => {
-        container2.style.display = "flex";
-        let s = store2.matches[matchN2()]?.opponent?.name || "";
-        setSelect2(["opponent", s]);
-      }} class=folder-img><img src=${img}></div>
-          </div>
-        </div>`;
-    })}
-      </div>
-    </div>`;
-  };
-
-  // src/components/prepare.js
   var range5 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
-  var pre;
-  var prepare = () => {
-    return html`<div ref=${(e) => pre = e} class=prepare-con>
-  <div class=prepare-card>
-    <div class=prepare-bantop>
-      <div class=bantop-inner>
-        <div class=ban-img>
-          <img src=dummy.png>
-          <img src=dummy2.png>
-          <img src=dummy3.png>
+  var card;
+  var folderBody = (store2, [i, j]) => {
+    let w3 = store2.matches[matchN()]?.wrestlers[i][j];
+    let img = w3?.img || "dummy";
+    img = `/assets/${img}.png`;
+    return html`
+    <div class=folder-before>
+      <div onclick=${() => {
+      setPage("roster");
+      setSelect([[i, j], w3?.name || ""]);
+    }} class=folder-img><img src=${img}></div>
+      <div class="folder-body">
+        <div class=folder-data>
+          <div class=data-brand>
+            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/WWE_SmackDown_%282024%29_Logo.svg/1200px-WWE_SmackDown_%282024%29_Logo.svg.png'>
+          </div>
+          <p>POPULARITY 96 OVERALL 90</p>
+          <div class="fat-c-container">
+            <div class="fat-c-inner">
+              <div class=fat-gauge-border>
+                <div class=fat-gauge style="width:50%;">
+                  <div class=fat-gauge-over></div>
+                </div>
+              </div>
+              <p>FATIGUE</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class=card-stack>
-      ${range5(0, 3).map(
-      (i) => html`<div class=card-ban>
-          <div class=card-octagon>
-            <div class=octagon-container>
-              <div class=name-line></div>
-              <div class=name-line></div>
-                <p>${0}</p>
-              <div class=octagon-inner>
-                <div class=brand-center><img src=brand.jpg></div>
-              </div>
-              <div class=octagon-label>OVERALL 78</div>
-            </div>
-          </div>
-        </div>`
-    )}
-    </div>
-  </div>
-  <div class="prepare-card bot">
-    <div class=prepare-banbot>
-      <div class=banbot-inner>
-        <div class=ban-img>
-          <img src=dummy1.png>
-          <img src=dummy3.png>
-          <img src=dummy4.png>
+  `;
+  };
+  var folderLeft = (store2, [i, j]) => {
+    let w3 = store2.matches[matchN()]?.wrestlers[i][j];
+    return html`
+    <div class="folder-left">
+      <div class="tab-border left">
+        <div class="tab-inner">
+          ${matchDup(w3?.name || "")}
         </div>
       </div>
+      ${folderBody(store2, [i, j])}
     </div>
-    <div class="card-stack left">
-      ${range5(0, 3).map(
-      (i) => html`<div class=card-ban>
-          <div class=card-octagon>
-            <div class=octagon-container>
-              <div class=name-line></div>
-              <div class=name-line></div>
-                <p>${0}</p>
-              <div class=octagon-inner>
-                <div class=brand-center><img src=brand.jpg></div>
-              </div>
-              <div class=octagon-label>OVERALL 78</div>
-            </div>
+  `;
+  };
+  var folderRight = (store2, [i, j]) => {
+    let w3 = store2.matches[matchN()]?.wrestlers[i][j];
+    return html`
+    <div class="folder-right">
+      <div class="tab-border right">
+        <div class="tab-inner">
+          ${matchDup(w3?.name || "")}
+        </div>
+      </div>
+      ${folderBody(store2, [i, j])}
+    </div>
+  `;
+  };
+  var bodyH;
+  var folder = (store2) => {
+    let wrestlers = store2.matches[matchN()]?.wrestlers || "";
+    onMount(() => bodyH = card.offsetHeight);
+    return html`<div ref=${(e) => card = e} class=match-con>
+    ${() => {
+      if (wrestlers == "") return "";
+      if (wrestlers.length == 2) {
+        return range5(0, 3).map((i) => {
+          let l = wrestlers[0][i];
+          let r = wrestlers[1][i];
+          if (!l && !r) return "";
+          return html`<div class=card-row>
+            ${l ? folderLeft(store2, [0, i]) : ""}
+            ${l ? folderRight(store2, [1, i]) : ""}
+          </div>`;
+        });
+      } else if (wrestlers.length == 3 && wrestlers[0].length == 1) {
+        let [a, b, c] = wrestlers.flat();
+        return html`<div class=card-row>
+          ${folderLeft(store2, [0, 0])}
+          ${folderRight(store2, [1, 0])}
+        </div>
+        <div class=card-row>
+          ${folderLeft(store2, [2, 0])}
+        </div>`;
+      } else if (wrestlers.length == 3 && wrestlers[0].length == 2) {
+        let [[a, b], [c, d], [e, f]] = wrestlers;
+        return html`<div class=card-row>
+            ${folderLeft(store2, [0, 0])}
+            ${folderRight(store2, [1, 0])}
           </div>
-        </div>`
-    )}
-    </div>
-  </div>
-</div>`;
+          <div class=card-row>
+            ${folderLeft(store2, [0, 1])}
+            ${folderRight(store2, [1, 1])}
+          </div>
+          <div class=card-row>
+            ${folderLeft(store2, [2, 0])}
+            ${folderRight(store2, [2, 1])}
+          </div>
+        `;
+      } else if (wrestlers.length == 4) {
+        let [a, b, c, d] = wrestlers.flat();
+        let pair = [[a, b], [c, d]];
+        return pair.map(
+          ([a2, b2], i) => html`<div class=card-row>
+            ${folderLeft(store2, [i * 2, 0])}
+            ${folderRight(store2, [i * 2 + 1, 0])}
+          </div>`
+        );
+      } else if (wrestlers.length == 5) {
+        let [a, b, c, d, e] = wrestlers.flat();
+        let pair = [[a, b], [d, e]];
+        return pair.map(([a2, b2], i) => {
+          i = i * 2 == 2 ? i * 2 + 1 : i * 2;
+          return html`<div class=card-row>
+            ${folderLeft(store2, [i, 0])}
+            ${folderRight(store2, [i + 1, 0])}
+          </div>`;
+        }).concat(html`<div class=card-row>
+          ${folderRight(store2, [2, 0])}
+        </div>`);
+      } else if (wrestlers.length == 6) {
+        let [a, b, c, d, e, f] = wrestlers.flat();
+        let pair = [[a, b], [c, d], [e, f]];
+        return pair.map(
+          ([a2, b2], i) => html`<div class=card-row>
+            ${folderLeft(store2, [i * 2, 0])}
+            ${folderRight(store2, [i * 2 + 1, 0])}
+          </div>`
+        );
+      }
+    }}
+  </div>`;
   };
 
-  // src/game.js
-  var log2 = (x) => console.log(x);
-  var range6 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
-  var randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-  var genWrestlers = (n) => range6(0, n).map((id) => ({
-    id,
-    name: id,
-    img: "dummy",
-    pop: randomInt(0, 100),
-    mor: randomInt(0, 100),
-    fat: randomInt(0, 100),
-    align: Math.random() < 0.5 ? "face" : "heel"
-  }));
-  var sortWrestler = (roster2) => (
-    //sort by happy, fatigue
-    [...roster2].filter((w2) => w2.mor <= 50).sort((a, b) => a.mor - b.mor).concat([...roster2].filter((w2) => w2.mor >= 50).sort((a, b) => a.fat - b.fat))
-  );
-  var findOpponent = (wrestler, roster2) => {
-    return roster2.reduce((best, opponent) => {
-      let diffPop = Math.abs(wrestler.pop - opponent.pop);
-      let bestPop = Math.abs(best.pop - opponent.pop);
-      if (wrestler.align !== opponent.align && diffPop < 20) {
-        if (bestPop > diffPop) {
-          log2(`-> Found align+pop ${opponent.id} (${opponent.pop})`);
-          return opponent;
-        }
-      }
-      if (wrestler.align !== opponent.align) {
-        if (bestPop > diffPop) {
-          log2(`-> Found align ${opponent.id} (${opponent.align})`);
-          return opponent;
-        }
-      }
-      if (wrestler.align === best.align) {
-        if (bestPop > diffPop) {
-          log2(`-> Found nonalign+pop ${opponent.id} (${opponent.pop})`);
-          return opponent;
-        }
-      }
-      log2(`-> Best choice ${best.id} (${best.align})`);
-      return best;
-    }, roster2[0]);
+  // src/components/matchtype.js
+  var randomInt2 = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  var match_type = {
+    "Single": { "Single /no. manager": [[0], [0]] },
+    "Tag Team": {
+      "Normal Tag": [[0, 0], [0, 0]],
+      "Trio Tag": [[0, 0, 0], [0, 0, 0]]
+    },
+    "Triple Treat": { "Triple Treat": [[0], [0], [0]] },
+    "Fatal 4 Ways": { "Fatal 4 Ways": [[0], [0], [0], [0]] },
+    "Battle Royale": {
+      "5-man Battle Royale": [[0], [0], [0], [0], [0]],
+      "6-man Battle Royale": [[0], [0], [0], [0], [0], [0]]
+    }
   };
-  var used = /* @__PURE__ */ new Set();
-  var setUsed = (x) => used = x;
-  var genSingleMatch = (roster2, index2, matches) => {
-    let sorted = sortWrestler(roster2);
-    let available = sorted.filter((w2) => !used.has(w2.id));
-    if (available.length < 2 || matches[index2] != null) return null;
-    let [wrestler] = available;
-    let opponent = findOpponent(wrestler, available.filter((w2) => w2.id !== wrestler.id));
-    used.add(wrestler.id);
-    used.add(opponent.id);
-    return { match: index2 + 1, wrestler, opponent };
+  var count3 = 3;
+  var match_cat = Object.keys(match_type);
+  var catClone = [
+    ...match_cat.slice(-count3),
+    ...match_cat,
+    ...match_cat.slice(0, count3)
+  ];
+  var matchRef;
+  var cat;
+  var sub;
+  var track2;
+  var show;
+  var [index, setIndex] = createSignal(0);
+  var [pos, setPos] = createSignal(0);
+  var moving = false;
+  var scrollUp = (index4) => {
+    let target = track2.children[index4];
+    let h = index4 == 0 ? 0 : target.offsetHeight + 8;
+    let prev4 = index4 == 0 ? 0 : (track2.children[index4 - 1].offsetHeight + 8) / 2;
+    let newPos = pos() - prev4 - h / 2;
+    setPos(newPos);
+    return newPos;
   };
-  var genPresetCard = (roster2, n, matches) => {
-    let sorted = sortWrestler(roster2);
-    return range6(0, n).map((index2) => {
-      if (matches[index2]) return matches[index2];
-      let available = sorted.filter((w2) => !used.has(w2.id));
-      if (available.length < 2) return matches[index2];
-      log2("genPresetCard " + index2);
-      let [wrestler] = available;
-      let opponent = findOpponent(wrestler, available.filter((w2) => w2.id !== wrestler.id));
-      used.add(wrestler.id);
-      used.add(opponent.id);
-      return { match: index2 + 1, wrestler, opponent };
-    });
+  var scrollDn = (index4) => {
+    let target = track2.children[index4];
+    let th = index4 >= track2.children.length ? 0 : target.offsetHeight + 8;
+    let ch = sub.offsetHeight;
+    let prev4 = index4 >= track2.children.length ? 0 : (track2.children[index4 + 1].offsetHeight + 8) / 2;
+    let newPos = pos() + prev4 + th / 2;
+    setPos(newPos);
+    return newPos;
   };
-  var genResults = (matches) => {
-    return matches.map((m) => {
-      if (m == null) return null;
-      let { match: match2, wrestler, opponent } = m;
-      let winner = Math.random() < 0.5 ? wrestler : opponent;
-      let loser = winner.id === wrestler.id ? opponent : wrestler;
-      log2(`Match ${match2}: Wrestler ${winner.name} defeated Opponent ${loser.name}`);
-      return { match: match2, winner, loser };
-    });
+  var curStyle = "";
+  var scrollRange = (from, to) => {
+    if (index() < to || pos() >= 0) {
+      setIndex(from);
+      curStyle = `translateY(${scrollUp(index())}px)`;
+      return scrollRange(from + 1, to);
+    }
+    track2.style.transform = curStyle;
   };
-  var updateStats = (roster2, results) => {
-    return roster2.map((wrestler) => {
-      let match2 = results.filter((r) => r).find((r) => r?.winner.id == wrestler.id || r?.loser.id == wrestler.id);
-      if (match2) {
-        if (match2.winner.id === wrestler.id) {
-          return { ...wrestler, pop: wrestler.pop + 5, mor: wrestler.mor + 5, fat: wrestler.fat + 3 };
-        } else {
-          return { ...wrestler, pop: wrestler.pop - 5, mor: wrestler.mor - 5, fat: wrestler.fat + 7 };
-        }
+  var updateShadow = (reset2) => {
+    for (let i = 0; i < track2.children.length; i++) {
+      if (reset2 && i == index()) {
+        track2.children[index()].style.transition = "none";
       } else {
-        return { ...wrestler, pop: Math.max(0, wrestler.pop - 2), mor: Math.max(0, wrestler.mor - 2), fat: Math.max(0, wrestler.fat - 10) };
+        track2.children[i].classList.add("match-shadow");
       }
+    }
+    requestAnimationFrame(
+      () => track2.children[index()].classList.remove("match-shadow")
+    );
+  };
+  var transEnd = (defStyle, defPos) => {
+    if (pos() >= 0) {
+      track2.style.transition = "none";
+      track2.style.transform = defStyle;
+      setPos(defPos);
+      scrollRange(0, match_cat.length + count3 - 1);
+      updateShadow(true);
+    }
+    if (pos() + track2.offsetHeight <= sub.offsetHeight) {
+      track2.style.transition = "none";
+      track2.style.transform = defStyle;
+      setPos(defPos);
+      scrollRange(0, count3);
+      updateShadow(true);
+    }
+    moving = false;
+    let c = document.querySelectorAll(".typecat-item");
+    c.forEach((cc) => cc.style.background = "rgba(11,11,11,0.7)");
+    c[index() - count3].style.background = "darkred";
+  };
+  var next = (e) => {
+    if (moving || index() >= track2.children.length - 1) return;
+    moving = true;
+    setIndex(index() + 1);
+    requestAnimationFrame(() => {
+      track2.style.transition = "transform 0.25s ease-in-out";
+      track2.style.transform = `translateY(${scrollUp(index())}px)`;
+      updateShadow(false);
     });
   };
-  var roster = genWrestlers(8);
-  var match = range6(0, 5).map((x) => null);
-  for (let i = 0; i < 1; i++) {
-    genSingleMatch(roster, 0, match, used);
-    genSingleMatch(roster, 2, match, used);
-    genSingleMatch(roster, 3, match, used);
-    match = genPresetCard(roster, 5, match);
-    let result = genResults(match);
-    roster = updateStats(roster, result);
-    match = range6(0, 5).map((x) => null);
-    used = /* @__PURE__ */ new Set();
-  }
+  var prev = (e) => {
+    if (moving || index() <= 0) return;
+    moving = true;
+    setIndex(index() - 1);
+    requestAnimationFrame(() => {
+      track2.style.transition = "transform 0.25s ease-in-out";
+      track2.style.transform = `translateY(${scrollDn(index())}px)`;
+      updateShadow(false);
+    });
+  };
+  var startY2;
+  var lastTime = 0;
+  var onstart = (e) => {
+    startY2 = e.touches[0].clientY;
+  };
+  var onmove = (e) => {
+    if (moving) return;
+    let now = Date.now();
+    if (now - lastTime < 300) return;
+    let cury = e.touches[0].clientY - startY2;
+    if (Math.abs(cury) > 50) {
+      cury < 0 ? next(cury) : prev(cury);
+      startY2 = e.touches[0].clientY;
+      lastTime = now;
+    }
+  };
+  var [move2, setMove] = createSignal(false);
+  var movecat = (e, store2, reset2) => {
+    e.stopPropagation();
+    if (!move2()) {
+      if (!e.target.classList.contains("cat")) return;
+      cat.style.transform = "translateX(-100%)";
+      sub.style.transform = "translateX(-80%)";
+      show.style.transform = "translateX(-75%)";
+      let n = () => randomInt2(0, 8);
+      show.querySelector("img").src = `assets/${store2.roster[n()].img}.png`;
+      setMove(true);
+    } else if (move2() || reset2) {
+      cat.style.transform = "translateX(0%)";
+      sub.style.transform = "translateX(0%)";
+      show.style.transform = "translateX(0%)";
+      setMove(false);
+      return;
+    }
+  };
+  var matchType = (store2, setStore2) => {
+    onMount(() => {
+      matchRef.style.height = bodyH + 1 + "px";
+      let target = track2.children[index() + count3];
+      let ch = sub.offsetHeight;
+      let th = target.offsetHeight + 8;
+      setPos(ch / 2 - th / 2);
+      let defPos = pos();
+      let defStyle = `translateY(${pos()}px)`;
+      track2.style.transform = defStyle;
+      scrollRange(0, count3);
+      updateShadow(false);
+      track2.addEventListener(
+        "transitionend",
+        () => transEnd(defStyle, defPos)
+      );
+    });
+    return html`
+    <div ref=${(e) => matchRef = e} class=match-typecon onclick=${(e) => movecat(e, store2, true)}>
+      <div class=match-typebg></div>
+      <div class=match-typeback></div>
+      
+      <!--div class=testline></div-->
+      
+      <div ref=${(e) => cat = e} class=match-typecat>
+        <div class=typecat-list>
+          ${match_cat.map((cat2, i) => html`<div onclick=${(e) => {
+      let c = document.querySelectorAll(".typecat-item");
+      c.forEach((cc) => cc.style.background = "rgba(11,11,11,0.7)");
+      e.stopPropagation();
+      let scrollUntil = () => {
+        if (index() != count3 + i) {
+          next();
+          moving = true;
+          return setTimeout(scrollUntil, 50);
+        } else {
+          moving = false;
+          return movecat(e, store2, false);
+        }
+      };
+      scrollUntil();
+    }} class="typecat-item cat">${cat2}</div>`)}
+        </div>
+      </div>
+      <div ref=${(e) => sub = e} class=match-typesub ontouchstart=${onstart} ontouchmove=${onmove}>
+        <div ref=${(e) => track2 = e} class=match-track>
+          ${catClone.map(
+      (cat2) => html`<div class=typecat-list>
+              <div class=typesub-cat>
+                <p onclick=${(e) => movecat(e, store2, false)} class=cat>${cat2}</p>
+                
+                <div class="svg-net2">
+                  <svg class="diamond-net" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                    <defs>
+                      <pattern id="diamondNet2" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                        <line x1="0" y1="0" x2="5" y2="0" stroke="#000" stroke-width="2"/>
+                        <line x1="0" y1="0" x2="0" y2="5" stroke="#000" stroke-width="2"/>
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#diamondNet2)" />
+                  </svg>
+                </div>
+                
+              </div>
+              <div class=typesub-match>
+                ${Object.keys(match_type[cat2]).map(
+        (sub2, i) => html`<div onclick=${(e) => {
+          if (e.target.parentElement.classList.contains("match-shadow")) return;
+          removeCurrentCard(store2, setStore2);
+          let t = match_type[cat2];
+          t = { [Object.keys(t)[i]]: t[sub2] };
+          let m = genSingleMatch(store2.roster, matchN(), store2.matches, t);
+          setStore2("matches", matchN(), m);
+          setPage("match");
+        }} class=typesub-item>${sub2}</div>`
+      )}
+              </div>
+            </div>`
+    )}
+        </div>
+      </div>
+      <div ref=${(e) => show = e} class=match-typeshow>
+        <img src=dummy.png>
+      </div>
+    </div>
+  `;
+  };
 
   // src/components/matchcard.js
-  var range7 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
+  var range6 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
   var carousel;
-  var track2;
+  var track3;
   var body;
-  var count3 = 3;
+  var count4 = 3;
   var w = 33.33;
-  var [index, setIndex] = createSignal(count3 - 1);
-  var [matchN, setMatchN] = createSignal(index() - count3 + 1);
+  var [index2, setIndex2] = createSignal(count4 - 1);
+  var [matchN, setMatchN] = createSignal(index2() - count4 + 1);
   var menu = [
     "Match #1",
     "Match #2",
@@ -13246,73 +13835,72 @@ return _$el${id};
     "Main Event"
   ];
   var clonedMenu = [
-    ...menu.slice(-count3),
+    ...menu.slice(-count4),
     ...menu,
-    ...menu.slice(0, count3)
+    ...menu.slice(0, count4)
   ];
   var startTime;
   var setTransition = (ts) => {
     if (startTime == ts) {
       return requestAnimationFrame(setTransition);
     }
-    track2.style.transition = "transform 0.25s ease-in-out";
+    track3.style.transition = "transform 0.25s ease-in-out";
   };
-  var moving = false;
+  var moving2 = false;
   var resetTransform = (x, reset2) => {
     requestAnimationFrame((ts) => {
       startTime = ts;
-      track2.style.transition = "none";
-      track2.style.transform = x == 0 ? `translateX(${-index() * w}px)` : x == 1 ? `translateX(${-menu.length * w}px)` : "";
+      track3.style.transition = "none";
+      track3.style.transform = x == 0 ? `translateX(${-index2() * w}px)` : x == 1 ? `translateX(${-menu.length * w}px)` : "";
       updateCarousel(reset2);
-      moving = false;
+      moving2 = false;
     });
     requestAnimationFrame(setTransition);
   };
-  var transEnd = () => {
-    if (index() == menu.length + count3 - 1) {
-      setIndex(count3 - 1);
+  var transEnd2 = () => {
+    if (index2() == menu.length + count4 - 1) {
+      setIndex2(count4 - 1);
       resetTransform(0, true);
     }
-    if (index() == 0) {
-      setIndex(menu.length);
+    if (index2() == 0) {
+      setIndex2(menu.length);
       resetTransform(1, true);
     }
-    moving = false;
+    moving2 = false;
   };
   var startX;
   var setTranslate = () => requestAnimationFrame(() => {
-    track2.style.transition = "transform 0.25s ease-in-out";
-    track2.style.transform = `translateX(${-index() * w}px)`;
+    track3.style.transition = "transform 0.25s ease-in-out";
+    track3.style.transform = `translateX(${-index2() * w}px)`;
     updateCarousel(false);
   });
-  var next = (e) => {
-    if (moving || index() >= menu.length + count3 - 1) return;
-    moving = true;
-    setIndex(index() + 1);
-    setNextMatch();
-    setMatchN();
+  var next2 = (e) => {
+    if (moving2 || index2() >= menu.length + count4 - 1) return;
+    moving2 = true;
+    setIndex2(index2() + 1);
     setTranslate();
-  };
-  var prev = (e) => {
-    if (moving || index() <= 0) return;
-    moving = true;
-    setIndex(index() - 1);
     setNextMatch();
-    setTranslate();
   };
-  var onstart = (e) => {
+  var prev2 = (e) => {
+    if (moving2 || index2() <= 0) return;
+    moving2 = true;
+    setIndex2(index2() - 1);
+    setTranslate();
+    setNextMatch();
+  };
+  var onstart2 = (e) => {
     startX = e.touches[0].clientX;
   };
-  var onmove = (e) => {
-    if (moving) return;
+  var onmove2 = (e) => {
+    if (moving2) return;
     let curx = e.touches[0].clientX - startX;
     if (Math.abs(curx) > 50) {
-      curx < 0 ? next(curx) : prev(curx);
+      curx < 0 ? next2(curx) : prev2(curx);
       startX = e.touches[0].clientX;
     }
   };
   var setNextMatch = () => {
-    let n = index() - count3 + 1;
+    let n = index2() - count4 + 1;
     n < 0 ? n = menu.length - 1 : n >= menu.length ? n = 0 : n;
     setMatchN(n);
   };
@@ -13320,36 +13908,74 @@ return _$el${id};
     let slides = carousel.querySelectorAll(".match-lab");
     slides.forEach((e, i) => {
       e.classList.remove("center", "side", "far", "no-anim");
-      e.removeEventListener("click", next);
-      e.removeEventListener("click", prev);
-      let offset = i - index();
+      e.removeEventListener("click", next2);
+      e.removeEventListener("click", prev2);
+      let offset = i - index2();
       if (offset == 1) {
         if (reset2) e.classList.add("no-anim");
         e.classList.add("center");
       } else if (Math.abs(offset) == 0) {
         e.classList.add("far");
-        e.addEventListener("click", prev);
+        e.addEventListener("click", prev2);
       } else {
         e.classList.add("side");
-        e.addEventListener("click", next);
+        e.addEventListener("click", next2);
       }
     });
     setNextMatch();
   };
+  var imgPath2 = (img) => `/assets/${img}.png`;
   var imgRef;
+  var updateImg = () => {
+    let img = imgRef.querySelectorAll(".wrestler-img");
+    if (img.length == 2) {
+      img.forEach((im, i) => {
+        im.style.position = "relative";
+      });
+    }
+    if (img.length == 3) {
+      imgRef.style["justify-content"] = "center";
+      img.forEach((im, i) => {
+        im.style.position = "relative";
+      });
+    }
+    if (img.length == 4) {
+      img[2].style["z-index"] = 2;
+      img.forEach((im, i) => {
+        im.style.position = "absolute";
+        im.style.left = i * 25 + "%";
+      });
+    }
+    let c = 2;
+    if (img.length == 5) {
+      img.forEach((im, i) => {
+        im.style.position = "absolute";
+        im.style.left = i * 17.5 + "%";
+        i >= c ? im.style["z-index"] = img.length - i - 1 : null;
+      });
+    }
+    if (img.length == 6) {
+      img.forEach((im, i) => {
+        im.style.left = i * 15 + "%";
+        im.style.position = "absolute";
+        i >= c ? im.style["z-index"] = img.length - i - 1 : null;
+      });
+    }
+  };
   var MatchImage = (store2) => {
     return html`
     <div ref=${(e) => imgRef = e} class=match-wrestler>
       ${() => {
       if (matchN() > store2.matches.length - 1) return "";
       if (store2.matches.length == 0) return "";
-      let w2 = store2.matches[matchN()]?.wrestler || "";
-      w2 = `/assets/${w2.img}.png`;
-      let o = store2.matches[matchN()]?.opponent || "";
-      o = `/assets/${o.img}.png`;
-      return html`
-          <div class=wrestler-img><img src=${w2}></div>
-          <div class=wrestler-img><img src=${o}></div>`;
+      createEffect(updateImg);
+      return store2.matches[matchN()]?.wrestlers.flat().map((m) => {
+        return html`
+              <div class=wrestler-img>
+                ${m ? html`<img src=${imgPath2(m.img)}>` : ""}
+              </div>
+            `;
+      });
     }}
     </div>`;
   };
@@ -13358,13 +13984,20 @@ return _$el${id};
     return html`<div class=wl>
     ${() => {
       if (xButton() == "Finish") {
-        let x = store2.result[matchN()];
-        if (x?.winner?.name == name2) return html`<div class=win>Win</div>`;
-        if (x?.loser?.name == name2) return html`<div class=loss>Loss</div>`;
+        let m = store2.result[matchN()];
+        if (m?.winner?.find((w3) => w3.name == name2)) return html`<div class=win>Win</div>`;
+        if (m?.loser?.flat().find((w3) => w3.name == name2)) return html`<div class=loss>Loss</div>`;
       }
       return "";
     }}
   </div>`;
+  };
+  var matchDup = (name2) => {
+    if (name2 == "") return "";
+    let n = usedMap.get(name2);
+    if (n == 1) return html`<p>${name2}</p>`;
+    if (n == 2) return html`<p class=dup1>${name2}</p>`;
+    if (n > 2) return html`<p class=dup2>${name2}</p>`;
   };
   var name;
   var MatchNameList = (store2) => {
@@ -13384,49 +14017,169 @@ return _$el${id};
       </div>
         
       ${() => {
-      if (store2.matches.length == 0) return "";
       if (matchN() > store2.matches.length - 1) return "";
-      let w2 = store2.matches[matchN()]?.wrestler || "";
-      let o = store2.matches[matchN()]?.opponent || "";
-      return html`
-          <div class=name-lab>
-            <p>${w2.name}</p>
-            ${winLoss(store2, w2.name)}
+      let wrestlers = store2.matches[matchN()]?.wrestlers || "";
+      if (wrestlers == "") return html`<p>Vacant</p>`;
+      if (wrestlers.length == 2) {
+        return range6(0, 3).map((i) => {
+          let l = wrestlers[0][i];
+          let r = wrestlers[1][i];
+          if (!l && !r) return "";
+          return html`<div class=name-row>
+              ${l ? html`<div class=name-col>
+                <div class=name-lab>
+                  ${matchDup(l.name)}
+                  ${winLoss(store2, l.name)}
+                </div>
+              </div>` : ""}
+              ${r ? html`<div class=name-col>
+                <div class=name-lab>
+                  ${matchDup(r.name)}
+                  ${winLoss(store2, r.name)}
+                </div>
+              </div>` : ""}
+            </div>`;
+        });
+      } else if (wrestlers.length == 3 && wrestlers[0].length == 1) {
+        let [a, b, c] = wrestlers.flat();
+        return html`
+          <div class=name-row>
+            <div class=name-col>
+              <div class=name-lab>
+                ${matchDup(a.name)}
+                ${winLoss(store2, a.name)}
+              </div>
+            </div>
+            <div class=name-col>
+              <div class=name-lab>
+                ${matchDup(c.name)}
+                ${winLoss(store2, c.name)}
+              </div>
+            </div>
           </div>
-          <div class=name-lab>
-            <p>${o.name}</p>
-            ${winLoss(store2, o.name)}
+          <div class=name-row>
+            <div class=name-lab>
+              ${matchDup(b.name)}
+              ${winLoss(store2, b.name)}
+            </div>
           </div>
-        `;
+          `;
+      } else if (wrestlers.length == 3 && wrestlers[0].length == 2) {
+        let a = range6(0, 2).map((i) => {
+          let l = wrestlers[0][i];
+          let r = wrestlers[1][i];
+          if (!l && !r) return "";
+          return html`<div class=name-row>
+              ${l ? html`<div class=name-col>
+                <div class=name-lab>
+                  ${matchDup(l.name)}
+                  ${winLoss(store2, l.name)}
+                </div>
+              </div>` : ""}
+              ${r ? html`<div class=name-col>
+                <div class=name-lab>
+                  ${matchDup(r.name)}
+                  ${winLoss(store2, r.name)}
+                </div>
+              </div>` : ""}
+            </div>`;
+        });
+        let b = html`<div class=name-row>
+              ${wrestlers[2].map(
+          (w3) => html`<div class=name-col>
+                  <div class=name-lab>
+                    ${matchDup(w3.name)}
+                    ${winLoss(store2, w3.name)}
+                  </div>
+                </div>`
+        )}
+          </div>`;
+        a.push(b);
+        return a;
+      } else if (wrestlers.length == 4) {
+        let [a, b, c, d] = wrestlers;
+        let pair = [[b, c], [a, d]];
+        return pair.map(
+          (side) => html`<div class=name-row>
+              ${side.map(
+            (w3) => html`<div class=name-col>
+                  <div class=name-lab>
+                    ${matchDup(w3[0].name)}
+                    ${winLoss(store2, w3[0].name)}
+                  </div>
+                </div>`
+          )}
+            </div>`
+        );
+      } else if (wrestlers.length == 5) {
+        let [a, b, c, d, e] = wrestlers.flat();
+        let pair = [[b, d], [a, e]];
+        return pair.map(
+          (side) => html`<div class=name-row>
+              ${side.map(
+            (w3) => html`<div class=name-col>
+                  <div class=name-lab>
+                    ${matchDup(w3.name)}
+                    ${winLoss(store2, w3.name)}
+                  </div>
+                </div>`
+          )}
+            </div>`
+        ).concat(
+          html`<div class=name-row>
+              <div class=name-lab>
+                ${matchDup(c.name)}
+                ${winLoss(store2, c.name)}
+              </div>
+            </div>`
+        );
+      } else if (wrestlers.length == 6) {
+        let [a, b, c, d, e, f] = wrestlers.flat();
+        let pair = [[c, d], [b, e], [a, f]];
+        return pair.map(
+          (side) => html`<div class=name-row>
+              ${side.map(
+            (w3) => html`<div class=name-col>
+                  <div class=name-lab>
+                    ${matchDup(w3.name)}
+                    ${winLoss(store2, w3.name)}
+                  </div>
+                </div>`
+          )}
+            </div>`
+        );
+      }
     }}
     </div>`;
+  };
+  var removeCurrentCard = (store2, setStore2) => {
+    store2.matches[matchN()].wrestlers.forEach((team) => {
+      team.forEach((w3) => {
+        let n = usedMap.get(w3.name) - 1;
+        if (n < 1) {
+          usedMap.delete(w3.name);
+        } else {
+          usedMap.set(w3.name, n);
+        }
+      });
+    });
   };
   var [page, setPage] = createSignal("main");
   var MatchList = (store2, setStore2) => {
     return html`
-    <div ref=${(e) => carousel = e} class=carousel ontouchstart=${onstart} ontouchmove=${onmove}>
-      <div ref=${(e) => track2 = e} class=track>
+    <div ref=${(e) => carousel = e} class=carousel ontouchstart=${onstart2} ontouchmove=${onmove2}>
+      <div ref=${(e) => track3 = e} class=track>
       ${clonedMenu.map((lab, i) => {
       return html`<div class=match-lab onClick=${() => {
-        transEnd();
-        setNextMatch();
-        if (page() == "main") {
+        if (page() == "main" && xButton() == "Confirm") {
+          transEnd2();
+          setNextMatch();
           if (store2.matches[matchN()] == null) {
             let m = genSingleMatch(store2.roster, matchN(), store2.matches);
-            let newMatches = store2.matches.slice();
-            newMatches[matchN()] = m;
-            setStore2("matches", newMatches);
+            setStore2("matches", matchN(), m);
           }
-          body.style.display = "none";
-          card.style.display = "flex";
           setPage("match");
         } else if (page() == "prepare") {
-          body.style.display = "none";
-          pre.style.display = "flex";
-          requestAnimationFrame(() => {
-            let card2 = pre.querySelectorAll(".prepare-card");
-            card2.forEach((i2) => i2.style.transform = "translateX(0%)");
-          });
         }
       }}>
           <div class=match-n>${lab}</div>
@@ -13435,110 +14188,262 @@ return _$el${id};
       </div>
   </div>`;
   };
-  var [select, setSelect] = createSignal(null);
-  var MatchCard = (store2, setStore2) => {
+  var MatchMain = (store2, setStore2) => {
     onMount(() => {
       w = carousel.querySelector(".match-lab").offsetWidth + 8;
       resetTransform(0, false);
       requestAnimationFrame(setTransition);
-      track2.addEventListener("transitionend", transEnd);
-    });
-    createEffect(() => {
-      let img = imgRef.querySelectorAll(".wrestler-img");
-      if (img.length == 2) {
-      }
-      if (img.length == 3) {
-        imgRef.style["justify-content"] = "center";
-      }
-      if (img.length == 4) {
-        img[0].style.left = "5%";
-        img[1].style.left = "2%";
-        img[2].style.left = "-2%";
-        img[2].style["z-index"] = 2;
-        img[3].style.left = "-5%";
-      }
-      let c = 2;
-      if (img.length == 5) {
-        img.forEach((im, i) => {
-          im.style.left = -i * 5 + "%";
-          i >= c ? im.style["z-index"] = img.length - i - 1 : null;
-        });
-      }
-      if (img.length == 6) {
-        img.forEach((im, i) => {
-          im.style.left = -i * 10 + "%";
-          i >= c ? im.style["z-index"] = img.length - i - 1 : null;
-        });
-      }
+      track3.addEventListener("transitionend", transEnd2);
     });
     return html`
-  <div class=match-container>
-    <div class=match-bg></div>
-    <div class=match-top>
-      <img id=match-brand src=brand.jpg>
-    </div>
-    <div class=spotlight></div>
-    <div class=match-title>
-      <div class=title-n>1st<br>Match</div>
-      <div class=title-lab>
-        <div class=title-championship>Non Title</div>
-        <div onclick=${() => {
-      if (body.style.display == "" || body.style.display == "flex") return;
-      if (page() == "match") {
-        card.style.display = "none";
-        matchT.style.display = "flex";
-        setPage("type");
-      } else {
-        matchT.style.display = "none";
-        card.style.display = "flex";
-        setPage("match");
-      }
-    }} class=title-matchtype>One on One / No Manager</div>
-      </div>
-    </div>
-    ${rosterList(store2, setStore2, matchN, select)}
-    ${folder(container, store2, setStore2, matchN, setSelect)}
-    ${prepare()}
     <div ref=${(e) => body = e} class=match-body>
       ${MatchImage(store2)}
       ${MatchNameList(store2)}
       ${MatchList(store2, setStore2)}
     </div>
-    ${() => body ? matchType(body) : html`<div></div>`}
+  `;
+  };
+  var [select, setSelect] = createSignal(null);
+  var MatchCard = (store2, setStore2) => {
+    return html`
+  <div class=match-container>
+    <div class=match-bg></div>
+    <div class=match-top>
+      <img id=match-brand
+      src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/WWE_SmackDown_%282024%29_Logo.svg/1200px-WWE_SmackDown_%282024%29_Logo.svg.png'
+      >
+    </div>
+    <div class=spotlight></div>
+    <div class=match-title>
+      <div class=title-n>Match<br>${() => matchN() + 1}</div>
+      ${() => {
+      if (page() == "match" || page() == "roster" || page() == "type") {
+        return html`<div class=title-lab>
+            <div class=title-championship>Non Title</div>
+            <div onclick=${() => {
+          page() == "match" ? setPage("type") : setPage("match");
+        }} class=title-matchtype>
+              <p>${store2.matches[matchN()].matchType}</p>
+            </div>
+          </div>`;
+      }
+    }}
+    </div>
+    ${() => {
+      if (page() == "main") return MatchMain(store2, setStore2);
+      if (page() == "match") return folder(store2);
+      if (page() == "roster") {
+        return html`
+          ${folder(store2)}
+          ${rosterList(store2, setStore2)}
+        `;
+      }
+      if (page() == "type") return matchType(store2, setStore2);
+    }}
     <div class=match-menu>
       <p onClick=${() => {
+      alert("This will genetate preset card");
       let match2 = genPresetCard(store2.roster, 5, store2.matches);
       setStore2("matches", match2);
-    }}>[ ] Preset</p>
+    }}>[--] Preset</p>
       <p onClick=${() => {
-      moving = false;
-      matchT.style.display = "none";
-      card.style.display = "none";
-      pre.style.display = "none";
-      body.style.display = "flex";
-      requestAnimationFrame(() => {
-        let card2 = pre.querySelectorAll(".prepare-card");
-        card2.forEach((i) => i.style.transform = "");
-      });
+      moving2 = false;
       if (page() == "main") {
         if (xButton() == "Confirm") {
+          alert("Confirmed match card, you can't changed match ");
           setButton("Simulate");
         } else if (xButton() == "Simulate") {
-          let result = genResults(store2.matches);
-          let pop = [...store2.roster].map((w2) => w2.pop);
+          alert("Simulate all matches");
+          let result = simulateMatches(store2.matches);
+          let pop = [...store2.roster].map((w3) => w3.pop);
           let up = updateStats([...store2.roster], result);
           setStore2("result", result);
           setStore2("popChange", pop);
           setStore2("roster", up);
           setButton("Finish");
         } else if (xButton() == "Finish") {
-          setStore2("matches", range7(0, 5).map((_) => null));
+          alert("You will go to next match card");
+          setStore2("matches", range6(0, 5).map((_) => null));
           setUsed(/* @__PURE__ */ new Set());
+          setUsedMap(/* @__PURE__ */ new Map());
           setButton("Confirm");
         }
-      } else setPage("main");
+      } else {
+        setPage("main");
+      }
     }}>${xButton()}</p>
     </div>
+  </div>`;
+  };
+
+  // src/components/schedule.js
+  var range7 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
+  var day = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  var _month = [
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+    "January",
+    "February",
+    "March"
+  ];
+  var clonedMonth = [
+    ..._month.slice(-2),
+    ..._month,
+    ..._month.slice(0, 2)
+  ];
+  var carousel2;
+  var track4;
+  var w2;
+  var [index3, setIndex3] = createSignal(0);
+  var startTime2;
+  var setTransition2 = (ts) => {
+    if (startTime2 == ts) {
+      return requestAnimationFrame(setTransition2);
+    }
+    track4.style.transition = "transform 0.25s ease-in-out";
+  };
+  var setTranslate2 = () => requestAnimationFrame(() => {
+    track4.style.transition = "transform 0.25s ease-in-out";
+    track4.style.transform = `translateX(${-index3() * w2}px)`;
+  });
+  var resetTransform2 = (x, reset2) => {
+    requestAnimationFrame((ts) => {
+      startTime2 = ts;
+      track4.style.transition = "none";
+      track4.style.transform = x == 0 ? `translateX(${-index3() * w2}px)` : x == 1 ? `translateX(${-_month.length * w2}px)` : "";
+    });
+    requestAnimationFrame(setTransition2);
+  };
+  var transEnd3 = () => {
+    if (index3() == _month.length + 2 - 1) {
+      setIndex3(2 - 1);
+      resetTransform2(0, true);
+    }
+    if (index3() == 0) {
+      setIndex3(_month.length);
+      resetTransform2(1, true);
+    }
+  };
+  var next3 = () => {
+    if (index3() >= _month.length + 2 - 1) return;
+    setIndex3(index3() + 1);
+    setTranslate2();
+  };
+  var prev3 = () => {
+    if (index3() <= 0) return;
+    setIndex3(index3() - 1);
+    setTranslate2();
+  };
+  var Month = () => {
+    onMount(() => {
+      w2 = carousel2.querySelector(".month").offsetWidth;
+      resetTransform2(0, false);
+      requestAnimationFrame(setTransition2);
+      if (index3() == 0) next3();
+      track4.addEventListener("transitionend", transEnd3);
+    });
+    createEffect(() => {
+    });
+    return html`
+    <div ref=${(e) => carousel2 = e} class=carousel2>
+      <button onclick=${prev3}>L</button>
+      <button onclick=${next3}>R</button>
+      <div ref=${(e) => track4 = e} class=track2>
+      ${clonedMonth.map((lab, i) => {
+      return html`<div class=month>
+          ${lab}
+        </div>`;
+    })}
+      </div>
+  </div>`;
+  };
+  var cal;
+  var show2;
+  var [openShow, setOpen] = createSignal(false);
+  var Calendar = () => {
+    onMount(() => {
+      let days = cal.querySelectorAll(".calendar-cell");
+      days.forEach((day2, i) => {
+        if (day2.textContent == "" && (i % 7 == 1 || i % 7 == 2)) {
+          day2.removeChild(day2.querySelector(".day-bg"));
+        }
+      });
+    });
+    return html`<div ref=${(e) => cal = e} class=calendar>
+  
+      <div ref=${(e) => show2 = e} class=schedule-show>
+      <div class=show-bg></div>
+      <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfw8dcbHJSektuNFTMxqjJX3vlyKvhDi_D_QoN3MMQJmT_gjqizTD0mpOp&s=10'>
+      <div class=show-list>
+        ${range7(0, 7).map((_) => html`<div class=show-item>
+          Match
+        </div>`)}
+        <button>Edit</button>
+      </div>
+    </div>
+  
+    ${day.map((d) => html`<div class=calendar-h>${d}</div>`)}
+    ${range7(0, 5).map((_) => null).concat(range7(1, 32)).map((i, _i) => html`<div class=calendar-cell onclick=${(e) => {
+      e.stopPropagation();
+      let t = document.querySelectorAll(".calendar-cell")[_i];
+      if (t.textContent == "1") {
+        setOpen(true);
+        show2.style.transform = "translateX(0%)";
+      }
+    }}>
+        <p>${i || ""}</p>
+        ${() => {
+      if (_i % 7 == 5) {
+        return html`<div class=day-bg>
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfw8dcbHJSektuNFTMxqjJX3vlyKvhDi_D_QoN3MMQJmT_gjqizTD0mpOp&s=10'>
+          </div>`;
+      }
+      if (_i % 7 == 1) {
+        return html`<div class="day-bg test">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSemPYFfTaJUnQgZqBiVEWVNVTc-tfa9W3tZI7WoDS7FskXREQKgB6MMPo&s=10'>
+          </div>`;
+      }
+      if (_i % 7 == 2) {
+        return html`<div class="day-bg">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2w1Xh5y4KEorsVGjtNebnPwY_R_iMA5S-PN8G7CZz05QK2A90Jhmp8PM&s=10'>
+          </div>`;
+      }
+      return "";
+    }}
+      </div>`)}
+  </div>`;
+  };
+  var Schedule = () => {
+    let bottom;
+    onMount(() => {
+      let h = document.querySelector(".calendar-cell").offsetHeight;
+      bottom.style.height = h + "px";
+    });
+    return html`<div class=schedule-con onclick=${() => {
+      if (openShow()) {
+        setOpen(false);
+        show2.style.transform = "translateX(100%)";
+      }
+    }}>
+
+    <div class=schedule-banner-con>
+      <div class=spotlight></div>
+      <img id=schedule-event 
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfZwPSdk0szFUPYM71VILX_dEqudYBKb0LT5FYi9PzexUc2YTNyGtIv8Ss&s=10">
+      <div class=schedule-h>Schedule</div>
+      <div class=schedule-program>April<br>WWE<br>Year 1</div>
+      <div class=schedule-hidden>April<br>WWE<br>Year 1</div>
+    </div>
+    ${Month()}
+    ${Calendar()}
+    <div ref=${(e) => bottom = e} class=schedule-bottom>Smackdown<br>Brooklyn, New York</div>
   </div>`;
   };
 
@@ -13568,8 +14473,8 @@ return _$el${id};
     ];
     let gen = genWrestlers(9);
     data.forEach((d, i) => {
-      gen[i]["name"] = d.name;
-      gen[i]["img"] = d.img;
+      gen[i]["name"] = d?.name || "wrath";
+      gen[i]["img"] = d?.img || "";
     });
     return gen;
   };
@@ -13586,62 +14491,10 @@ return _$el${id};
   var MatchCardX = () => {
     return MatchCard(store, setStore);
   };
-  var MatchCardTable = () => {
-    return html`
-  <div class="tv">
-    <div class="frame-inner">
-      <div class="screen">
-        <div class="crt-bulge"></div>
-        <div class="glass-glare"></div>
-        <div class="scanlines"></div>
-        <div class="c">
-          <div class="b"></div>
-          <div class="m">
-            <div class="mc">
-              <div class=banner>
-                <img id=bg src=brand.jpg>
-                
-                <div class=d1><img src=dummy.png></div>
-                <div class=d1><img src=dummy.png></div>
-              </div>
-              <div class=namebar>One on One</div>
-            </div>
-          </div>
-          <div class="s">
-            <div class="i">
-              <div class="ib">Match #1</div>
-              <p>Wrath vs Mortis</p>
-            </div>
-            <div class="i">
-              <div class="ib">Match #1</div>
-              <p>Wrath vs Mortis</p>
-            </div>
-            <div class="i">
-              <div class="ib">Match #1</div>
-              <p>Wrath vs Mortis</p>
-            </div>
-            <div class="i">
-              <div class="ib">Match #1</div>
-              <p>Wrath vs Mortis</p>
-            </div>
-            <div class="i">
-              <div class="ib">Match #1</div>
-              <p>Wrath vs Mortis</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  `;
-  };
-  var MatchCard2 = () => {
-    return MatchCardTable();
-  };
   var menu2 = {
     "Roster": Roster,
-    "MatchCard": MatchCard2,
-    "Simulator": MatchCardX
+    "Schedule": Schedule,
+    "MatchCard": MatchCardX
   };
   var Menubar = () => {
     return html`
@@ -13653,8 +14506,9 @@ return _$el${id};
     </div>`;
   };
   var App = () => {
+    let container;
     return html`
-    <div class=container>
+    <div ref=${(e) => container = e} class=container>
       ${Menubar()}
       ${() => menu2[active()]()}
     </div>`;
