@@ -1,4 +1,5 @@
 
+@import url('tv.css');
 @import url('folder.css');
 @import url('roster.css');
 @import url('matchtype.css');
@@ -17,8 +18,9 @@
   ;*/
   background-color: #111;
   align-self: center;
-  
 }
+
+/* background */
 
 .match-bg {
   position: absolute;
@@ -26,13 +28,45 @@
   left: 12.5%;
   width: 75%;
   height: 100%;
-  filter: blur(0px);
+  filter: blur(1px);
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfw8dcbHJSektuNFTMxqjJX3vlyKvhDi_D_QoN3MMQJmT_gjqizTD0mpOp&s=10");
   background-size: 100%;
   background-repeat: repeat;
   background-position: center;
-  transform: skew(-5deg) translateX(-5%);
+  transform: skew(-0deg) translateX(-0%);
 }
+
+.panel {
+  position: absolute;
+  width: fit-content;
+  background: #333;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  gap: 2px;
+  border-radius: 20px;
+  filter: blur(1px);
+}
+.panel.left {
+  left: 8px;
+  transform: skewY(10deg);
+}
+.panel.right {
+  right: 8px;
+  transform: skewY(-10deg);
+}
+
+.light {
+  width: 24px;
+  height: 24px;
+  background-color: lightyellow;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 5px azure;
+}
+
+/* top banner */
 
 .match-top {
   width: 100%;
@@ -43,15 +77,29 @@
   background-position: bottom;
   z-index: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.match-top p {
+  margin: 0;
+  color: white;
+  width: 100%;
+  background: #111;
+  text-align: left;
+  /*border-bottom: 1px solid #ccc;*/
 }
 
 #match-brand {
-  margin: 8px 8px;
-  width: 15%;
+  padding: 4px 32px;
+  width: 25%;
   max-width: 64px;
   max-height: 64px;
   object-fit: contain;
+  /*background: #000;*/
+  border-radius: 0px;
+  clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
 }
 #match-brand-left {
   position: absolute;
@@ -66,36 +114,38 @@
 
 .spotlight {
   position: absolute;
-  top: 0;
+  top: calc(1em + 2px);
   left: 12.5%;
   width: 75%;
   height: 100%;
   background: none;
-  box-shadow: inset 0 0 100px rgba(255, 255, 255, 1);
+  box-shadow: inset 10px 0 100px azure;
   clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
   z-index: 1;
   pointer-events: none;
+  /*animation: spotlight 5s ease infinite;
+  transform-origin: top center;*/
 }
 
 .match-title {
-  background: #222;
-  border: 1px solid #ccc;
+  /*border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;*/
   padding: 0px 0px;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   direction: row;
   width: 100%;
   height: fit-content;
   box-sizing: border-box;
   position: relative;
+  background: #222;
   /*clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);*/
 }
 
 .title-n {
   color: white;
   flex: 1 0 fit-content;
-  
   padding: 4px 4px;
   /*border-right: 1px solid #fff;*/
 }
@@ -143,6 +193,7 @@
   100% { background-color: rgba(255, 0,0, 0.5); }
 }
 
+/* main page */
 
 .match-body {
   display: flex;
@@ -160,7 +211,6 @@
   align-items: flex-end;
   z-index: 1;
   position: relative;
-  
 }
 
 .wrestler-img {
@@ -185,12 +235,28 @@
 }
 
 .match-name {
-  flex: 1;
-  height: 15%;
+  flex: 1.25;
+  height: 25%;
   max-height: 50%;
-  border-top: 4px solid #111;
-  border-top-left-radius: 0%;
-  border-top-right-radius: 0%;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding: 0px 0px;
+  display: flex;
+  background: linear-gradient(45deg, gray, silver);
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.match-name-inner {
+  position: relative;
+  flex: 1;
+  border: 2px solid #111;
+  border-left: 8px solid #111;
+  border-right: 8px solid #111;
+  border-radius: 10px;
+  border-top: 2px solid #ccc;
   color: white;
   background: #222;
   font-size: 24px;
@@ -199,7 +265,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  z-index: 1;
+  z-index: 3;
   box-shadow: 
     inset 20px 0 20px -4px #111,
     inset -20px 0 20px -4px #111
@@ -207,12 +273,14 @@
   position: relative;
 }
 
-.match-name > p {
+.match-name-inner > p {
   z-index: 1;
 }
 
 .match-name .svg-net {
+  display: none;
   z-index: 0;
+  border-radius: 10px;
 }
 
 .name-row {
@@ -313,44 +381,61 @@
   position: relative;
   max-height: fit-content;
   flex: 1;
-  padding: 8px;
+  padding: 0px;
   text-align: center;
   color: white;
   /*background: cornflowerblue;*/
+  border-top: 2px solid cornflowerblue;
   background: #333;
   box-shadow: 
     inset 20px 0 20px -6px #111,
     inset -20px 0 20px -6px #111
   ;
-  z-index: 1;
+  z-index: 2;
   opacity: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  
 }
 
 .match-menu p {
-  margin: 2px;
+  flex: 1;
+  max-width: 30%;
+  margin: 4px;
+  padding: 8px 0px;
   text-align: center;
+  /*background: #444;*/
+  border-radius: 10px;
 }
 
 /* carousel */
 
 .carousel {
-  width: 99%;
+  width: 100%;
   height: max-content;
   overflow: hidden;
   border-top-left-radius: 0%;
   border-top-right-radius: 0%;
   background: #eee;
-  border-top: 2px solid #ccc;
-  border-bottom: 2px solid #ccc;
+  border-top: 2px solid #111;
+  border-bottom: 2px solid #111;
   box-shadow: 
     inset 20px 0 20px -8px #111,
     inset -20px 0 20px -8px #111
   ;
-  z-index: 1;
+  z-index: 2;
+  position: relative;
+}
+
+.carousel .nav-button-l {
+  position: absolute;
+  top: calc(50% - 8px);
+  left: 4px;
+}
+.carousel .nav-button-r {
+  position: absolute;
+  top: calc(50% - 8px);
+  right: 4px;
 }
 
 .track {
@@ -365,7 +450,7 @@
 }
 
 .match-lab {
-  flex: 1 0 30%;
+  flex: 1 0 33.33%;
   max-width: calc(360px / 3);
   height: max-content;
   padding: 2px 2px;

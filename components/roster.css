@@ -55,6 +55,14 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  /*animation: expand1 0.5s ease forwards;*/
+  text-wrap: nowrap;
+  transform-origin: right;
+}
+
+@keyframes expand1 {
+  from { transform: scaleX(0); };
+  to { transform: scaleX(1); };
 }
 
 .roster-menubar {
@@ -65,6 +73,7 @@
   height: fit-content;
   background: #111;
   color: #fff;
+  justify-content: center;
   padding: 4px 4px 4px 4px;
   border-left: 2px solid #ccc;
   border-right: 2px solid #ccc;
@@ -101,7 +110,7 @@
   border: 0px solid #eee;
   color: #fff;
   background: #222;
-  text-align: center;
+  text-align: left;
   height: fit-content;
   width: auto;
 }
@@ -115,11 +124,16 @@
   z-index: 2;
   top: 40%;
   width: 100%;
-  height: max-content;
   background: rgba(11, 11, 11, 0.75);
   border-top: 2px solid #ccc;
   border-bottom: 2px solid #ccc;
   padding: 8px;
+  /*animation: expand2 0.5s ease forwards;*/
+}
+
+@keyframes expand2 {
+  0% { transform: scaleY(0); };
+  100% { transform: scaleY(1); };
 }
 
 .roster-focus {
@@ -147,6 +161,10 @@
   background: #111;
   border: 2px solid #fff;
   text-align: center;
+}
+
+.focus-label.hide {
+  color: gray !important;
 }
 
 .roster-covercon {
@@ -240,7 +258,7 @@
   width: 42%;
   height: fit-content;
   background: rgba(11, 11, 11, 0.3);
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 1);
   position: relative;
   top: 53%;
   left: -6%;

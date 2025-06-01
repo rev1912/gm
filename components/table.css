@@ -7,7 +7,6 @@
   overflow: hidden;
   background: url('/bg.jpg');
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv7K23sLPJoz9JKyRgiKWUjg_lu4-mqJWxK0BIIO9iMUw0CMgjFUmZC5vi&s=10');
-  
   background-size: cover;
   background-position: center;
 }
@@ -38,14 +37,17 @@
 .grid-table {
   display: grid;
   grid-template-columns: repeat(10, max-content);
+  grid-auto-rows: fit-content max-content;
   min-width: max-content;
   height: max-content;
   gap: 0;
 }
 
+/* navigation guide */
+
 .nav-button-up {
   position: absolute;
-  top: 20%;
+  top: 13%;
   left: 2%;
   height: 16px;
   width: 16px;
@@ -56,7 +58,7 @@
 
 .nav-button-dn {
   position: fixed;
-  bottom: 2%;
+  bottom: 7%;
   left: 2%;
   height: 16px;
   width: 16px;
@@ -89,7 +91,8 @@
 .nav-button-l {
   position: relative;
   bottom: 0%;
-  left: 0%;
+  left: 0;
+  margin-right: auto;
   height: 1em;
   width: 1em;
   background: rgba(33, 33, 33, 0.9);;
@@ -99,7 +102,8 @@
 .nav-button-r {
   position: relative;
   bottom: 0%;
-  left: 0%;
+  right: 0;
+  margin-left: auto;
   height: 1em;
   width: 1em;
   background: rgba(33, 33, 33, 0.9);;
@@ -132,6 +136,8 @@
 	border-left: 12px solid #ddd;
 }
 
+/* header, cell */
+
 .cell-h {
   display: flex;
   background: #111;
@@ -147,7 +153,16 @@
 }
 
 .cell-h:hover .cell-bg {
-  background-color: blueviolet;
+  animation: h-blink 1s ease infinite;
+}
+
+@keyframes h-blink {
+  0%, 100% {
+    background-image: linear-gradient(to left, #000, royalblue, #000);
+  }
+  50% {
+    background-image: linear-gradient(to left, #333, royalblue, #333);
+  }
 }
 
 .corner {
@@ -159,6 +174,12 @@
   clip-path: polygon(0% 100%, 10% 0%, 100% 0%, 100% 100%);
 }
 
+.corner .cell-bg {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfw8dcbHJSektuNFTMxqjJX3vlyKvhDi_D_QoN3MMQJmT_gjqizTD0mpOp&s=10') !important;
+  background-size: 100%;
+  background-position: top;
+}
+
 .cell-bg {
   font-family: system-ui;
   font-weight: bold;
@@ -168,7 +189,7 @@
   text-align: center;
   box-shadow: inset -2px 0 2px black;
   pointer-events: none;
-  
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -215,11 +236,15 @@
   position: sticky;
   top: 30px;
   left: 10%;
-  height: max-content;
+  height: 1fr;
+}
+
+.cell-h .cell-highlight {
+  background-image: linear-gradient(to left, #333, royalblue, #333);
 }
 
 .cell-highlight {
-  background: mediumpurple !important;
+  background: cornflowerblue;
 }
 
 .table-body {
@@ -237,21 +262,21 @@
   animation: bg-blink 1s ease infinite !important;
 }
 
-@keyframes bg-blink {
+@keyframes fcol-blink {
   0%, 100% {
-    background: transparent;
+    background: rgba(44, 44, 44, 0.9);
   }
   50% {
-    background: blueviolet;
+    background: linear-gradient(to right, #222 0%, #444 25%, royalblue 50%);
   }
 }
 
-@keyframes fcol-blink {
+@keyframes bg-blink {
   0%, 100% {
-    background: transparent;
+    background: rgba(44, 44, 44, 0.9);
   }
   50% {
-    background: blueviolet; /*linear-gradient(to right, #222 0%, blueviolet 25%);*/
+    background: linear-gradient(to right, royalblue);
   }
 }
 
@@ -292,15 +317,6 @@
   border-bottom: 1px solid silver;
 }
 
-.fcol .cell-bg p {
-  margin: 0;
-  margin-left: 25%;
-  margin-right: 4px;
-  overflow: hidden;
-  text-wrap: nowrap;
-  font-size: clamp(0.5em, 30vw, 1em);
-}
-
 .cell-fcol img {
   padding-left: 10%;
   max-width: 25%;
@@ -316,7 +332,31 @@
   left: 10%;
   width: 90%;
   box-shadow: inset -2px 0 2px black;
-  background: linear-gradient(to right, #222, #444 40%);
+  background: linear-gradient(to right, #111 0%, #333 25%); 
+  background: linear-gradient(to right, #333 0%, royalblue 70%); 
+}
+
+.fcol-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-right: 4px;
+  position: relative;
+  padding-left: 25%;
+  overflow: hidden;
+  text-wrap: nowrap;
+  align-items: start;
+}
+
+.fcol-text p {
+  margin: 0;
+  padding-left: 4px;
+  text-align: left;
+}
+
+.fcol-text p:nth-child(2) {
+  font-size: 0.5em;
+  padding-left: 16px;
 }
 
 .fat-bar {
@@ -394,7 +434,7 @@ img {
   top: 4px;
   left: 50%;
   transform: translateX(-50%);
-  background: lawngreen;
+  background: seagreen;
 }
 .arrow.up::after {
   bottom: 0.75em;
@@ -402,7 +442,7 @@ img {
   transform: translateX(-50%);
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-bottom: 6px solid lawngreen;
+  border-bottom: 6px solid seagreen;
 }
 
 .arrow.down {
@@ -411,7 +451,7 @@ img {
   right: 12%;
 }
 .arrow.down::before {
-  background: gold;
+  background: goldenrod;
   width: 0.5em;
   height: 0.75em;
   top: 0;
@@ -424,7 +464,7 @@ img {
   transform: translateX(-50%);
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 6px solid gold;
+  border-top: 6px solid goldenrod;
 }
 
 .arrow.right {
@@ -448,6 +488,8 @@ img {
   border-left: 6px solid gray;
 }
 
+/* top banner */
+
 .table-banner {
   height: 10%;
   width: 100%;
@@ -459,46 +501,77 @@ img {
 
 .table-top {
   position: relative;
-  left: -0%;
+  left: 0%;
   width: 50%;
+  height: 4em;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background: #222;
-  border: 2px solid #ccc;
+  border: 2px solid #666;
   box-sizing: border-box;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
 }
 
+.banner-name {
+  position: relative;
+  margin-top: 4px;
+  padding-left: 2px;
+  text-align: left;
+  text-wrap: nowrap;
+  background: #333;
+  color: white;
+}
+
+.banner-row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+}
+
+.table-brand {
+  position: relative;
+  top: 0%;
+  left: 2px;
+  height: 75%;
+  width: 25%;
+}
+
+.table-brand img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.banner-row p {
+  flex: 1;
+  color: white;
+  margin: 0;
+  margin-left: 4px;
+  text-align: center;
+  text-wrap: nowrap;
+  max-width: 50%;
+  z-index: 1;
+  font-size: 0.8em;
+  border-radius: 0px;
+  background: #333;
+}
+
 .table-top #banner-bg {
-  width: 30%;
+  position: absolute;
+  width: 100%;
+  transform: translateY(-0%) scale(1.5);
   object-fit: cover;
+  z-index: 0;
+  background: #333;
 }
 
 .table-top #banner-img {
   position: absolute;
   max-width: 25%;
   height: 100%;
-  left: 10%;
-}
-
-.top-text {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.table-top p {
-  flex: 1;
-  color: white;
-  margin: 0;
-  padding-left: 24px;
-  text-align: left;
-  text-wrap: nowrap;
-}
-.table-top p:first-child {
-  padding-left: 8px;
-  text-align: center;
-  text-wrap: nowrap;
+  right: 0%;
+  z-index: 0;
 }

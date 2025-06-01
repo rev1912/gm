@@ -10125,11 +10125,11 @@
   var Effects = null;
   var ExecCount = 0;
   function createRoot(fn, detachedOwner) {
-    const listener = Listener, owner = Owner, unowned = fn.length === 0, current2 = detachedOwner === void 0 ? owner : detachedOwner, root = unowned ? UNOWNED : {
+    const listener = Listener, owner = Owner, unowned = fn.length === 0, current3 = detachedOwner === void 0 ? owner : detachedOwner, root = unowned ? UNOWNED : {
       owned: null,
       cleanups: null,
-      context: current2 ? current2.context : null,
-      owner: current2
+      context: current3 ? current3.context : null,
+      owner: current3
     }, updateFn = unowned ? fn : () => fn(() => untrack(() => cleanNode(root)));
     Owner = root;
     Listener = null;
@@ -10273,8 +10273,8 @@
     return this.value;
   }
   function writeSignal(node, value, isComp) {
-    let current2 = Transition && Transition.running && Transition.sources.has(node) ? node.tValue : node.value;
-    if (!node.comparator || !node.comparator(current2, value)) {
+    let current3 = Transition && Transition.running && Transition.sources.has(node) ? node.tValue : node.value;
+    if (!node.comparator || !node.comparator(current3, value)) {
       if (Transition) {
         const TransitionRunning = Transition.running;
         if (TransitionRunning || !isComp && Transition.sources.has(node)) {
@@ -10361,7 +10361,7 @@
       node.updatedAt = time;
     }
   }
-  function createComputation(fn, init, pure, state = STALE, options) {
+  function createComputation(fn, init2, pure, state = STALE, options) {
     const c = {
       fn,
       state,
@@ -10370,7 +10370,7 @@
       sources: null,
       sourceSlots: null,
       cleanups: null,
-      value: init,
+      value: init2,
       owner: Owner,
       context: Owner ? Owner.context : null,
       pure
@@ -10432,10 +10432,10 @@
       }
     }
   }
-  function runUpdates(fn, init) {
+  function runUpdates(fn, init2) {
     if (Updates) return fn();
     let wait = false;
-    if (!init) Updates = [];
+    if (!init2) Updates = [];
     if (Effects) wait = true;
     else Effects = [];
     ExecCount++;
@@ -10989,11 +10989,11 @@
     }
   }
   var $$EVENTS = "_$DX_DELEGATE";
-  function render(code, element, init, options = {}) {
+  function render(code, element, init2, options = {}) {
     let disposer;
     createRoot((dispose) => {
       disposer = dispose;
-      element === document ? code() : insert(element, code(), element.firstChild ? null : void 0, init);
+      element === document ? code() : insert(element, code(), element.firstChild ? null : void 0, init2);
     }, options.owner);
     return () => {
       disposer();
@@ -11105,7 +11105,7 @@
   function insert(parent2, accessor, marker2, initial) {
     if (marker2 !== void 0 && !initial) initial = [];
     if (typeof accessor !== "function") return insertExpression(parent2, accessor, initial, marker2);
-    createRenderEffect((current2) => insertExpression(parent2, accessor(), current2, marker2), initial);
+    createRenderEffect((current3) => insertExpression(parent2, accessor(), current3, marker2), initial);
   }
   function assign(node, props, isSVG, skipChildren, prevProps = {}, skipRef = false) {
     props || (props = {});
@@ -11230,93 +11230,93 @@
     } else walkUpTree();
     retarget(oriTarget);
   }
-  function insertExpression(parent2, value, current2, marker2, unwrapArray) {
+  function insertExpression(parent2, value, current3, marker2, unwrapArray) {
     const hydrating = isHydrating(parent2);
     if (hydrating) {
-      !current2 && (current2 = [...parent2.childNodes]);
+      !current3 && (current3 = [...parent2.childNodes]);
       let cleaned = [];
-      for (let i = 0; i < current2.length; i++) {
-        const node = current2[i];
+      for (let i = 0; i < current3.length; i++) {
+        const node = current3[i];
         if (node.nodeType === 8 && node.data.slice(0, 2) === "!$") node.remove();
         else cleaned.push(node);
       }
-      current2 = cleaned;
+      current3 = cleaned;
     }
-    while (typeof current2 === "function") current2 = current2();
-    if (value === current2) return current2;
+    while (typeof current3 === "function") current3 = current3();
+    if (value === current3) return current3;
     const t = typeof value, multi = marker2 !== void 0;
-    parent2 = multi && current2[0] && current2[0].parentNode || parent2;
+    parent2 = multi && current3[0] && current3[0].parentNode || parent2;
     if (t === "string" || t === "number") {
-      if (hydrating) return current2;
+      if (hydrating) return current3;
       if (t === "number") {
         value = value.toString();
-        if (value === current2) return current2;
+        if (value === current3) return current3;
       }
       if (multi) {
-        let node = current2[0];
+        let node = current3[0];
         if (node && node.nodeType === 3) {
           node.data !== value && (node.data = value);
         } else node = document.createTextNode(value);
-        current2 = cleanChildren(parent2, current2, marker2, node);
+        current3 = cleanChildren(parent2, current3, marker2, node);
       } else {
-        if (current2 !== "" && typeof current2 === "string") {
-          current2 = parent2.firstChild.data = value;
-        } else current2 = parent2.textContent = value;
+        if (current3 !== "" && typeof current3 === "string") {
+          current3 = parent2.firstChild.data = value;
+        } else current3 = parent2.textContent = value;
       }
     } else if (value == null || t === "boolean") {
-      if (hydrating) return current2;
-      current2 = cleanChildren(parent2, current2, marker2);
+      if (hydrating) return current3;
+      current3 = cleanChildren(parent2, current3, marker2);
     } else if (t === "function") {
       createRenderEffect(() => {
         let v = value();
         while (typeof v === "function") v = v();
-        current2 = insertExpression(parent2, v, current2, marker2);
+        current3 = insertExpression(parent2, v, current3, marker2);
       });
-      return () => current2;
+      return () => current3;
     } else if (Array.isArray(value)) {
       const array = [];
-      const currentArray = current2 && Array.isArray(current2);
-      if (normalizeIncomingArray(array, value, current2, unwrapArray)) {
-        createRenderEffect(() => current2 = insertExpression(parent2, array, current2, marker2, true));
-        return () => current2;
+      const currentArray = current3 && Array.isArray(current3);
+      if (normalizeIncomingArray(array, value, current3, unwrapArray)) {
+        createRenderEffect(() => current3 = insertExpression(parent2, array, current3, marker2, true));
+        return () => current3;
       }
       if (hydrating) {
-        if (!array.length) return current2;
-        if (marker2 === void 0) return current2 = [...parent2.childNodes];
+        if (!array.length) return current3;
+        if (marker2 === void 0) return current3 = [...parent2.childNodes];
         let node = array[0];
-        if (node.parentNode !== parent2) return current2;
+        if (node.parentNode !== parent2) return current3;
         const nodes = [node];
         while ((node = node.nextSibling) !== marker2) nodes.push(node);
-        return current2 = nodes;
+        return current3 = nodes;
       }
       if (array.length === 0) {
-        current2 = cleanChildren(parent2, current2, marker2);
-        if (multi) return current2;
+        current3 = cleanChildren(parent2, current3, marker2);
+        if (multi) return current3;
       } else if (currentArray) {
-        if (current2.length === 0) {
+        if (current3.length === 0) {
           appendNodes(parent2, array, marker2);
-        } else reconcileArrays(parent2, current2, array);
+        } else reconcileArrays(parent2, current3, array);
       } else {
-        current2 && cleanChildren(parent2);
+        current3 && cleanChildren(parent2);
         appendNodes(parent2, array);
       }
-      current2 = array;
+      current3 = array;
     } else if (value.nodeType) {
-      if (hydrating && value.parentNode) return current2 = multi ? [value] : value;
-      if (Array.isArray(current2)) {
-        if (multi) return current2 = cleanChildren(parent2, current2, marker2, value);
-        cleanChildren(parent2, current2, null, value);
-      } else if (current2 == null || current2 === "" || !parent2.firstChild) {
+      if (hydrating && value.parentNode) return current3 = multi ? [value] : value;
+      if (Array.isArray(current3)) {
+        if (multi) return current3 = cleanChildren(parent2, current3, marker2, value);
+        cleanChildren(parent2, current3, null, value);
+      } else if (current3 == null || current3 === "" || !parent2.firstChild) {
         parent2.appendChild(value);
       } else parent2.replaceChild(value, parent2.firstChild);
-      current2 = value;
+      current3 = value;
     } else ;
-    return current2;
+    return current3;
   }
-  function normalizeIncomingArray(normalized, array, current2, unwrap2) {
+  function normalizeIncomingArray(normalized, array, current3, unwrap2) {
     let dynamic = false;
     for (let i = 0, len = array.length; i < len; i++) {
-      let item = array[i], prev4 = current2 && current2[normalized.length], t;
+      let item = array[i], prev4 = current3 && current3[normalized.length], t;
       if (item == null || item === true || item === false) ;
       else if ((t = typeof item) === "object" && item.nodeType) {
         normalized.push(item);
@@ -11345,13 +11345,13 @@
   function appendNodes(parent2, array, marker2 = null) {
     for (let i = 0, len = array.length; i < len; i++) parent2.insertBefore(array[i], marker2);
   }
-  function cleanChildren(parent2, current2, marker2, replacement) {
+  function cleanChildren(parent2, current3, marker2, replacement) {
     if (marker2 === void 0) return parent2.textContent = "";
     const node = replacement || document.createTextNode("");
-    if (current2.length) {
+    if (current3.length) {
       let inserted = false;
-      for (let i = current2.length - 1; i >= 0; i--) {
-        const el = current2[i];
+      for (let i = current3.length - 1; i >= 0; i--) {
+        const el = current3[i];
         if (node !== el) {
           const isParent = el.parentNode === parent2;
           if (!inserted && !i)
@@ -11446,7 +11446,7 @@
   }
   function parse(html2) {
     const result = [];
-    let current2 = void 0;
+    let current3 = void 0;
     let level2 = -1;
     const arr = [];
     const byTag = {};
@@ -11458,19 +11458,19 @@
       let parent2 = void 0;
       if (isOpen && !isComment) {
         level2++;
-        current2 = parseTag(tag);
-        if (!current2.voidElement && nextChar && nextChar !== "<") {
-          pushTextNode(current2.children, html2, start2);
+        current3 = parseTag(tag);
+        if (!current3.voidElement && nextChar && nextChar !== "<") {
+          pushTextNode(current3.children, html2, start2);
         }
-        byTag[current2.tagName] = current2;
+        byTag[current3.tagName] = current3;
         if (level2 === 0) {
-          result.push(current2);
+          result.push(current3);
         }
         parent2 = arr[level2 - 1];
         if (parent2) {
-          parent2.children.push(current2);
+          parent2.children.push(current3);
         }
-        arr[level2] = current2;
+        arr[level2] = current3;
       }
       if (isComment) {
         if (level2 < 0) {
@@ -11479,7 +11479,7 @@
           pushCommentNode(arr[level2].children, tag);
         }
       }
-      if (isComment || !isOpen || current2.voidElement) {
+      if (isComment || !isOpen || current3.voidElement) {
         if (!isComment) {
           level2--;
         }
@@ -11558,7 +11558,7 @@
     }
   }
   function createHTML(r, { delegateEvents: delegateEvents2 = true, functionBuilder = (...args) => new Function(...args) } = {}) {
-    let uuid = 1;
+    let uuid2 = 1;
     r.wrapProps = (props) => {
       const d = Object.getOwnPropertyDescriptors(props);
       for (const k in d) {
@@ -11618,11 +11618,11 @@
       const isChildProp = r.ChildProperties.has(name2);
       const isProp = r.Properties.has(name2);
       if (name2 === "style") {
-        const prev4 = `_$v${uuid++}`;
+        const prev4 = `_$v${uuid2++}`;
         options.decl.push(`${prev4}={}`);
         options.exprs.push(`r.style(${tag},${expr},${prev4})`);
       } else if (name2 === "classList") {
-        const prev4 = `_$v${uuid++}`;
+        const prev4 = `_$v${uuid2++}`;
         options.decl.push(`${prev4}={}`);
         options.exprs.push(`r.classList(${tag},${expr},${prev4})`);
       } else if (namespace !== "attr" && (isChildProp || !isSVG && (r.getPropAlias(name2, node.name.toUpperCase()) || isProp) || isCE || namespace === "prop")) {
@@ -11743,7 +11743,7 @@ ${childOptions.exprs.join(
             props.push(`"${name2}": exprs[${options.counter++}]`);
           } else props.push(`"${name2}": "${value}"`);
         } else if (type === "directive") {
-          const tag2 = `_$el${uuid++}`;
+          const tag2 = `_$el${uuid2++}`;
           const topDecl = !options.decl.length;
           options.decl.push(
             topDecl ? "" : `${tag2} = ${options.path}.${options.first ? "firstChild" : "nextSibling"}`
@@ -11770,7 +11770,7 @@ ${childOptions.exprs.join(
       }
       let tag;
       if (options.multi) {
-        tag = `_$el${uuid++}`;
+        tag = `_$el${uuid2++}`;
         options.decl.push(`${tag} = ${options.path}.${options.first ? "firstChild" : "nextSibling"}`);
       }
       if (options.parent)
@@ -11803,7 +11803,7 @@ ${childOptions.exprs.join(
               return;
             }
             options.templateId++;
-            const id = uuid;
+            const id = uuid2;
             const childOptions = Object.assign({}, options, {
               first: true,
               decl: [],
@@ -11831,7 +11831,7 @@ return _$el${id};
         });
         options.exprs.push(`return [${parts.join(", \n")}]`);
       } else if (node.type === "tag") {
-        const tag = `_$el${uuid++}`;
+        const tag = `_$el${uuid2++}`;
         const topDecl = !options.decl.length;
         const templateId = options.templateId;
         options.decl.push(
@@ -11843,18 +11843,18 @@ return _$el${id};
         options.isImportNode = (node.name === "img" || node.name === "iframe") && node.attrs.some((e) => e.name === "loading" && e.value === "lazy");
         if (node.attrs.some((e) => e.name === "###")) {
           const spreadArgs = [];
-          let current2 = "";
+          let current3 = "";
           const newAttrs = [];
           for (let i = 0; i < node.attrs.length; i++) {
             const { type, name: name2, value } = node.attrs[i];
             if (type === "attr") {
               if (value.includes("###")) {
                 let count5 = options.counter++;
-                current2 += `${name2}: ${name2 !== "ref" ? `typeof exprs[${count5}] === "function" ? exprs[${count5}]() : ` : ""}exprs[${count5}],`;
+                current3 += `${name2}: ${name2 !== "ref" ? `typeof exprs[${count5}] === "function" ? exprs[${count5}]() : ` : ""}exprs[${count5}],`;
               } else if (name2 === "###") {
-                if (current2.length) {
-                  spreadArgs.push(`()=>({${current2}})`);
-                  current2 = "";
+                if (current3.length) {
+                  spreadArgs.push(`()=>({${current3}})`);
+                  current3 = "";
                 }
                 spreadArgs.push(`exprs[${options.counter++}]`);
               } else {
@@ -11865,8 +11865,8 @@ return _$el${id};
             }
           }
           node.attrs = newAttrs;
-          if (current2.length) {
-            spreadArgs.push(`()=>({${current2}})`);
+          if (current3.length) {
+            spreadArgs.push(`()=>({${current3}})`);
           }
           options.exprs.push(
             `r.spread(${tag},${spreadArgs.length === 1 ? `typeof ${spreadArgs[0]} === "function" ? r.mergeProps(${spreadArgs[0]}) : ${spreadArgs[0]}` : `r.mergeProps(${spreadArgs.join(",")})`},${isSVG},${!!node.children.length})`
@@ -11894,12 +11894,12 @@ return _$el${id};
           options.decl[0] = options.hasCustomElement || options.isImportNode ? `const ${tag} = r.untrack(() => document.importNode(tmpls[${templateId}].content.firstChild, true))` : `const ${tag} = tmpls[${templateId}].content.firstChild.cloneNode(true)`;
         }
       } else if (node.type === "text") {
-        const tag = `_$el${uuid++}`;
+        const tag = `_$el${uuid2++}`;
         options.decl.push(`${tag} = ${options.path}.${options.first ? "firstChild" : "nextSibling"}`);
         options.path = tag;
         options.first = false;
       } else if (node.type === "comment") {
-        const tag = `_$el${uuid++}`;
+        const tag = `_$el${uuid2++}`;
         options.decl.push(`${tag} = ${options.path}.${options.first ? "firstChild" : "nextSibling"}`);
         if (node.content === "#") {
           if (options.multi) {
@@ -11921,7 +11921,7 @@ return _$el${id};
         multi: false,
         templateId: 0,
         templateNodes: []
-      }, id = uuid, origNodes = nodes;
+      }, id = uuid2, origNodes = nodes;
       let toplevel;
       if (nodes.length > 1) {
         nodes = [
@@ -12126,45 +12126,45 @@ return _$el${id};
       setProperty(state, key, value[key]);
     }
   }
-  function updateArray(current2, next4) {
-    if (typeof next4 === "function") next4 = next4(current2);
+  function updateArray(current3, next4) {
+    if (typeof next4 === "function") next4 = next4(current3);
     next4 = unwrap(next4);
     if (Array.isArray(next4)) {
-      if (current2 === next4) return;
+      if (current3 === next4) return;
       let i = 0, len = next4.length;
       for (; i < len; i++) {
         const value = next4[i];
-        if (current2[i] !== value) setProperty(current2, i, value);
+        if (current3[i] !== value) setProperty(current3, i, value);
       }
-      setProperty(current2, "length", len);
-    } else mergeStoreNode(current2, next4);
+      setProperty(current3, "length", len);
+    } else mergeStoreNode(current3, next4);
   }
-  function updatePath(current2, path, traversed = []) {
-    let part, prev4 = current2;
+  function updatePath(current3, path, traversed = []) {
+    let part, prev4 = current3;
     if (path.length > 1) {
       part = path.shift();
-      const partType = typeof part, isArray = Array.isArray(current2);
+      const partType = typeof part, isArray = Array.isArray(current3);
       if (Array.isArray(part)) {
         for (let i = 0; i < part.length; i++) {
-          updatePath(current2, [part[i]].concat(path), traversed);
+          updatePath(current3, [part[i]].concat(path), traversed);
         }
         return;
       } else if (isArray && partType === "function") {
-        for (let i = 0; i < current2.length; i++) {
-          if (part(current2[i], i)) updatePath(current2, [i].concat(path), traversed);
+        for (let i = 0; i < current3.length; i++) {
+          if (part(current3[i], i)) updatePath(current3, [i].concat(path), traversed);
         }
         return;
       } else if (isArray && partType === "object") {
-        const { from = 0, to = current2.length - 1, by = 1 } = part;
+        const { from = 0, to = current3.length - 1, by = 1 } = part;
         for (let i = from; i <= to; i += by) {
-          updatePath(current2, [i].concat(path), traversed);
+          updatePath(current3, [i].concat(path), traversed);
         }
         return;
       } else if (path.length > 1) {
-        updatePath(current2[part], path, [part].concat(traversed));
+        updatePath(current3[part], path, [part].concat(traversed));
         return;
       }
-      prev4 = current2[part];
+      prev4 = current3[part];
       traversed = [part].concat(traversed);
     }
     let value = path[0];
@@ -12176,7 +12176,7 @@ return _$el${id};
     value = unwrap(value);
     if (part === void 0 || isWrappable(prev4) && isWrappable(value) && !Array.isArray(value)) {
       mergeStoreNode(prev4, value);
-    } else setProperty(current2, part, value);
+    } else setProperty(current3, part, value);
   }
   function createStore(...[store2, options]) {
     const unwrappedStore = unwrap(store2 || {});
@@ -12420,6 +12420,856 @@ return _$el${id};
   `;
   };
 
+  // src/components/shared.js
+  var netPattern = (id) => {
+    id = "diamondNet" + id;
+    let url = "url(#" + id + ")";
+    return html`
+    <div class="svg-net">
+      <svg class="diamond-net" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id=${id} width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="5" y2="0" stroke="#000" stroke-width="2"/>
+            <line x1="0" y1="0" x2="0" y2="5" stroke="#000" stroke-width="2"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill=${url} />
+      </svg>
+    </div>
+  `;
+  };
+  var warn;
+  var openWarn = () => warn.style.transform = "scale(1) translateY(0%)";
+  var close = () => warn.style.transform = "scale(1) translateY(100%)";
+  var [msg, setMsg] = createSignal([]);
+  var [action, setAction] = createSignal(() => {
+  });
+  var Attention = (text) => {
+    return html`
+    <div ref=${(e) => warn = e} class=attention-con>
+      <div class=attention>
+        <div class=attention-h>Attention</div>
+        <div class=alert-h>${msg()[0]}</div>
+        <div class=alert-msg>${msg()[1]}</div>
+        <div class=alert-action>
+          <button onclick=${() => {
+      action()();
+      close();
+    }}>Ok</button>
+          <button onclick=${close}>Cancel</button>
+        </div>
+      </div>
+    </div>`;
+  };
+  var help;
+  var openHelp = () => help.style.transform = "scale(1) translateY(0%)";
+  var closeHelp = () => help.style.transform = "scale(1) translateY(150%)";
+  var [helpContent, setHelp] = createSignal(() => "");
+  var HelpMenu = (content) => {
+    return html`
+    <div ref=${(e) => help = e} class=help-con onclick=${closeHelp}>
+      <div class=help-menu>
+        ${content}
+      </div>
+    </div>
+  `;
+  };
+
+  // node_modules/.pnpm/html-to-image@1.11.13/node_modules/html-to-image/es/util.js
+  function resolveUrl(url, baseUrl) {
+    if (url.match(/^[a-z]+:\/\//i)) {
+      return url;
+    }
+    if (url.match(/^\/\//)) {
+      return window.location.protocol + url;
+    }
+    if (url.match(/^[a-z]+:/i)) {
+      return url;
+    }
+    const doc = document.implementation.createHTMLDocument();
+    const base = doc.createElement("base");
+    const a = doc.createElement("a");
+    doc.head.appendChild(base);
+    doc.body.appendChild(a);
+    if (baseUrl) {
+      base.href = baseUrl;
+    }
+    a.href = url;
+    return a.href;
+  }
+  var uuid = /* @__PURE__ */ (() => {
+    let counter = 0;
+    const random2 = () => (
+      // eslint-disable-next-line no-bitwise
+      `0000${(Math.random() * 36 ** 4 << 0).toString(36)}`.slice(-4)
+    );
+    return () => {
+      counter += 1;
+      return `u${random2()}${counter}`;
+    };
+  })();
+  function toArray(arrayLike) {
+    const arr = [];
+    for (let i = 0, l = arrayLike.length; i < l; i++) {
+      arr.push(arrayLike[i]);
+    }
+    return arr;
+  }
+  var styleProps = null;
+  function getStyleProperties(options = {}) {
+    if (styleProps) {
+      return styleProps;
+    }
+    if (options.includeStyleProperties) {
+      styleProps = options.includeStyleProperties;
+      return styleProps;
+    }
+    styleProps = toArray(window.getComputedStyle(document.documentElement));
+    return styleProps;
+  }
+  function px(node, styleProperty) {
+    const win = node.ownerDocument.defaultView || window;
+    const val = win.getComputedStyle(node).getPropertyValue(styleProperty);
+    return val ? parseFloat(val.replace("px", "")) : 0;
+  }
+  function getNodeWidth(node) {
+    const leftBorder = px(node, "border-left-width");
+    const rightBorder = px(node, "border-right-width");
+    return node.clientWidth + leftBorder + rightBorder;
+  }
+  function getNodeHeight(node) {
+    const topBorder = px(node, "border-top-width");
+    const bottomBorder = px(node, "border-bottom-width");
+    return node.clientHeight + topBorder + bottomBorder;
+  }
+  function getImageSize(targetNode, options = {}) {
+    const width = options.width || getNodeWidth(targetNode);
+    const height = options.height || getNodeHeight(targetNode);
+    return { width, height };
+  }
+  function getPixelRatio() {
+    let ratio;
+    let FINAL_PROCESS;
+    try {
+      FINAL_PROCESS = process;
+    } catch (e) {
+    }
+    const val = FINAL_PROCESS && FINAL_PROCESS.env ? FINAL_PROCESS.env.devicePixelRatio : null;
+    if (val) {
+      ratio = parseInt(val, 10);
+      if (Number.isNaN(ratio)) {
+        ratio = 1;
+      }
+    }
+    return ratio || window.devicePixelRatio || 1;
+  }
+  var canvasDimensionLimit = 16384;
+  function checkCanvasDimensions(canvas) {
+    if (canvas.width > canvasDimensionLimit || canvas.height > canvasDimensionLimit) {
+      if (canvas.width > canvasDimensionLimit && canvas.height > canvasDimensionLimit) {
+        if (canvas.width > canvas.height) {
+          canvas.height *= canvasDimensionLimit / canvas.width;
+          canvas.width = canvasDimensionLimit;
+        } else {
+          canvas.width *= canvasDimensionLimit / canvas.height;
+          canvas.height = canvasDimensionLimit;
+        }
+      } else if (canvas.width > canvasDimensionLimit) {
+        canvas.height *= canvasDimensionLimit / canvas.width;
+        canvas.width = canvasDimensionLimit;
+      } else {
+        canvas.width *= canvasDimensionLimit / canvas.height;
+        canvas.height = canvasDimensionLimit;
+      }
+    }
+  }
+  function createImage(url) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        img.decode().then(() => {
+          requestAnimationFrame(() => resolve(img));
+        });
+      };
+      img.onerror = reject;
+      img.crossOrigin = "anonymous";
+      img.decoding = "async";
+      img.src = url;
+    });
+  }
+  async function svgToDataURL(svg) {
+    return Promise.resolve().then(() => new XMLSerializer().serializeToString(svg)).then(encodeURIComponent).then((html2) => `data:image/svg+xml;charset=utf-8,${html2}`);
+  }
+  async function nodeToDataURL(node, width, height) {
+    const xmlns = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(xmlns, "svg");
+    const foreignObject = document.createElementNS(xmlns, "foreignObject");
+    svg.setAttribute("width", `${width}`);
+    svg.setAttribute("height", `${height}`);
+    svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+    foreignObject.setAttribute("width", "100%");
+    foreignObject.setAttribute("height", "100%");
+    foreignObject.setAttribute("x", "0");
+    foreignObject.setAttribute("y", "0");
+    foreignObject.setAttribute("externalResourcesRequired", "true");
+    svg.appendChild(foreignObject);
+    foreignObject.appendChild(node);
+    return svgToDataURL(svg);
+  }
+  var isInstanceOfElement = (node, instance) => {
+    if (node instanceof instance)
+      return true;
+    const nodePrototype = Object.getPrototypeOf(node);
+    if (nodePrototype === null)
+      return false;
+    return nodePrototype.constructor.name === instance.name || isInstanceOfElement(nodePrototype, instance);
+  };
+
+  // node_modules/.pnpm/html-to-image@1.11.13/node_modules/html-to-image/es/clone-pseudos.js
+  function formatCSSText(style2) {
+    const content = style2.getPropertyValue("content");
+    return `${style2.cssText} content: '${content.replace(/'|"/g, "")}';`;
+  }
+  function formatCSSProperties(style2, options) {
+    return getStyleProperties(options).map((name2) => {
+      const value = style2.getPropertyValue(name2);
+      const priority = style2.getPropertyPriority(name2);
+      return `${name2}: ${value}${priority ? " !important" : ""};`;
+    }).join(" ");
+  }
+  function getPseudoElementStyle(className2, pseudo, style2, options) {
+    const selector = `.${className2}:${pseudo}`;
+    const cssText = style2.cssText ? formatCSSText(style2) : formatCSSProperties(style2, options);
+    return document.createTextNode(`${selector}{${cssText}}`);
+  }
+  function clonePseudoElement(nativeNode, clonedNode, pseudo, options) {
+    const style2 = window.getComputedStyle(nativeNode, pseudo);
+    const content = style2.getPropertyValue("content");
+    if (content === "" || content === "none") {
+      return;
+    }
+    const className2 = uuid();
+    try {
+      clonedNode.className = `${clonedNode.className} ${className2}`;
+    } catch (err) {
+      return;
+    }
+    const styleElement = document.createElement("style");
+    styleElement.appendChild(getPseudoElementStyle(className2, pseudo, style2, options));
+    clonedNode.appendChild(styleElement);
+  }
+  function clonePseudoElements(nativeNode, clonedNode, options) {
+    clonePseudoElement(nativeNode, clonedNode, ":before", options);
+    clonePseudoElement(nativeNode, clonedNode, ":after", options);
+  }
+
+  // node_modules/.pnpm/html-to-image@1.11.13/node_modules/html-to-image/es/mimes.js
+  var WOFF = "application/font-woff";
+  var JPEG = "image/jpeg";
+  var mimes = {
+    woff: WOFF,
+    woff2: WOFF,
+    ttf: "application/font-truetype",
+    eot: "application/vnd.ms-fontobject",
+    png: "image/png",
+    jpg: JPEG,
+    jpeg: JPEG,
+    gif: "image/gif",
+    tiff: "image/tiff",
+    svg: "image/svg+xml",
+    webp: "image/webp"
+  };
+  function getExtension(url) {
+    const match2 = /\.([^./]*?)$/g.exec(url);
+    return match2 ? match2[1] : "";
+  }
+  function getMimeType(url) {
+    const extension = getExtension(url).toLowerCase();
+    return mimes[extension] || "";
+  }
+
+  // node_modules/.pnpm/html-to-image@1.11.13/node_modules/html-to-image/es/dataurl.js
+  function getContentFromDataUrl(dataURL) {
+    return dataURL.split(/,/)[1];
+  }
+  function isDataUrl(url) {
+    return url.search(/^(data:)/) !== -1;
+  }
+  function makeDataUrl(content, mimeType) {
+    return `data:${mimeType};base64,${content}`;
+  }
+  async function fetchAsDataURL(url, init2, process2) {
+    const res = await fetch(url, init2);
+    if (res.status === 404) {
+      throw new Error(`Resource "${res.url}" not found`);
+    }
+    const blob = await res.blob();
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = reject;
+      reader.onloadend = () => {
+        try {
+          resolve(process2({ res, result: reader.result }));
+        } catch (error) {
+          reject(error);
+        }
+      };
+      reader.readAsDataURL(blob);
+    });
+  }
+  var cache2 = {};
+  function getCacheKey(url, contentType, includeQueryParams) {
+    let key = url.replace(/\?.*/, "");
+    if (includeQueryParams) {
+      key = url;
+    }
+    if (/ttf|otf|eot|woff2?/i.test(key)) {
+      key = key.replace(/.*\//, "");
+    }
+    return contentType ? `[${contentType}]${key}` : key;
+  }
+  async function resourceToDataURL(resourceUrl, contentType, options) {
+    const cacheKey = getCacheKey(resourceUrl, contentType, options.includeQueryParams);
+    if (cache2[cacheKey] != null) {
+      return cache2[cacheKey];
+    }
+    if (options.cacheBust) {
+      resourceUrl += (/\?/.test(resourceUrl) ? "&" : "?") + (/* @__PURE__ */ new Date()).getTime();
+    }
+    let dataURL;
+    try {
+      const content = await fetchAsDataURL(resourceUrl, options.fetchRequestInit, ({ res, result }) => {
+        if (!contentType) {
+          contentType = res.headers.get("Content-Type") || "";
+        }
+        return getContentFromDataUrl(result);
+      });
+      dataURL = makeDataUrl(content, contentType);
+    } catch (error) {
+      dataURL = options.imagePlaceholder || "";
+      let msg2 = `Failed to fetch resource: ${resourceUrl}`;
+      if (error) {
+        msg2 = typeof error === "string" ? error : error.message;
+      }
+      if (msg2) {
+        console.warn(msg2);
+      }
+    }
+    cache2[cacheKey] = dataURL;
+    return dataURL;
+  }
+
+  // node_modules/.pnpm/html-to-image@1.11.13/node_modules/html-to-image/es/clone-node.js
+  async function cloneCanvasElement(canvas) {
+    const dataURL = canvas.toDataURL();
+    if (dataURL === "data:,") {
+      return canvas.cloneNode(false);
+    }
+    return createImage(dataURL);
+  }
+  async function cloneVideoElement(video, options) {
+    if (video.currentSrc) {
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = video.clientWidth;
+      canvas.height = video.clientHeight;
+      ctx === null || ctx === void 0 ? void 0 : ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      const dataURL2 = canvas.toDataURL();
+      return createImage(dataURL2);
+    }
+    const poster = video.poster;
+    const contentType = getMimeType(poster);
+    const dataURL = await resourceToDataURL(poster, contentType, options);
+    return createImage(dataURL);
+  }
+  async function cloneIFrameElement(iframe, options) {
+    var _a;
+    try {
+      if ((_a = iframe === null || iframe === void 0 ? void 0 : iframe.contentDocument) === null || _a === void 0 ? void 0 : _a.body) {
+        return await cloneNode(iframe.contentDocument.body, options, true);
+      }
+    } catch (_b) {
+    }
+    return iframe.cloneNode(false);
+  }
+  async function cloneSingleNode(node, options) {
+    if (isInstanceOfElement(node, HTMLCanvasElement)) {
+      return cloneCanvasElement(node);
+    }
+    if (isInstanceOfElement(node, HTMLVideoElement)) {
+      return cloneVideoElement(node, options);
+    }
+    if (isInstanceOfElement(node, HTMLIFrameElement)) {
+      return cloneIFrameElement(node, options);
+    }
+    return node.cloneNode(isSVGElement(node));
+  }
+  var isSlotElement = (node) => node.tagName != null && node.tagName.toUpperCase() === "SLOT";
+  var isSVGElement = (node) => node.tagName != null && node.tagName.toUpperCase() === "SVG";
+  async function cloneChildren(nativeNode, clonedNode, options) {
+    var _a, _b;
+    if (isSVGElement(clonedNode)) {
+      return clonedNode;
+    }
+    let children = [];
+    if (isSlotElement(nativeNode) && nativeNode.assignedNodes) {
+      children = toArray(nativeNode.assignedNodes());
+    } else if (isInstanceOfElement(nativeNode, HTMLIFrameElement) && ((_a = nativeNode.contentDocument) === null || _a === void 0 ? void 0 : _a.body)) {
+      children = toArray(nativeNode.contentDocument.body.childNodes);
+    } else {
+      children = toArray(((_b = nativeNode.shadowRoot) !== null && _b !== void 0 ? _b : nativeNode).childNodes);
+    }
+    if (children.length === 0 || isInstanceOfElement(nativeNode, HTMLVideoElement)) {
+      return clonedNode;
+    }
+    await children.reduce((deferred, child) => deferred.then(() => cloneNode(child, options)).then((clonedChild) => {
+      if (clonedChild) {
+        clonedNode.appendChild(clonedChild);
+      }
+    }), Promise.resolve());
+    return clonedNode;
+  }
+  function cloneCSSStyle(nativeNode, clonedNode, options) {
+    const targetStyle = clonedNode.style;
+    if (!targetStyle) {
+      return;
+    }
+    const sourceStyle = window.getComputedStyle(nativeNode);
+    if (sourceStyle.cssText) {
+      targetStyle.cssText = sourceStyle.cssText;
+      targetStyle.transformOrigin = sourceStyle.transformOrigin;
+    } else {
+      getStyleProperties(options).forEach((name2) => {
+        let value = sourceStyle.getPropertyValue(name2);
+        if (name2 === "font-size" && value.endsWith("px")) {
+          const reducedFont = Math.floor(parseFloat(value.substring(0, value.length - 2))) - 0.1;
+          value = `${reducedFont}px`;
+        }
+        if (isInstanceOfElement(nativeNode, HTMLIFrameElement) && name2 === "display" && value === "inline") {
+          value = "block";
+        }
+        if (name2 === "d" && clonedNode.getAttribute("d")) {
+          value = `path(${clonedNode.getAttribute("d")})`;
+        }
+        targetStyle.setProperty(name2, value, sourceStyle.getPropertyPriority(name2));
+      });
+    }
+  }
+  function cloneInputValue(nativeNode, clonedNode) {
+    if (isInstanceOfElement(nativeNode, HTMLTextAreaElement)) {
+      clonedNode.innerHTML = nativeNode.value;
+    }
+    if (isInstanceOfElement(nativeNode, HTMLInputElement)) {
+      clonedNode.setAttribute("value", nativeNode.value);
+    }
+  }
+  function cloneSelectValue(nativeNode, clonedNode) {
+    if (isInstanceOfElement(nativeNode, HTMLSelectElement)) {
+      const clonedSelect = clonedNode;
+      const selectedOption = Array.from(clonedSelect.children).find((child) => nativeNode.value === child.getAttribute("value"));
+      if (selectedOption) {
+        selectedOption.setAttribute("selected", "");
+      }
+    }
+  }
+  function decorate(nativeNode, clonedNode, options) {
+    if (isInstanceOfElement(clonedNode, Element)) {
+      cloneCSSStyle(nativeNode, clonedNode, options);
+      clonePseudoElements(nativeNode, clonedNode, options);
+      cloneInputValue(nativeNode, clonedNode);
+      cloneSelectValue(nativeNode, clonedNode);
+    }
+    return clonedNode;
+  }
+  async function ensureSVGSymbols(clone, options) {
+    const uses = clone.querySelectorAll ? clone.querySelectorAll("use") : [];
+    if (uses.length === 0) {
+      return clone;
+    }
+    const processedDefs = {};
+    for (let i = 0; i < uses.length; i++) {
+      const use2 = uses[i];
+      const id = use2.getAttribute("xlink:href");
+      if (id) {
+        const exist = clone.querySelector(id);
+        const definition = document.querySelector(id);
+        if (!exist && definition && !processedDefs[id]) {
+          processedDefs[id] = await cloneNode(definition, options, true);
+        }
+      }
+    }
+    const nodes = Object.values(processedDefs);
+    if (nodes.length) {
+      const ns = "http://www.w3.org/1999/xhtml";
+      const svg = document.createElementNS(ns, "svg");
+      svg.setAttribute("xmlns", ns);
+      svg.style.position = "absolute";
+      svg.style.width = "0";
+      svg.style.height = "0";
+      svg.style.overflow = "hidden";
+      svg.style.display = "none";
+      const defs = document.createElementNS(ns, "defs");
+      svg.appendChild(defs);
+      for (let i = 0; i < nodes.length; i++) {
+        defs.appendChild(nodes[i]);
+      }
+      clone.appendChild(svg);
+    }
+    return clone;
+  }
+  async function cloneNode(node, options, isRoot) {
+    if (!isRoot && options.filter && !options.filter(node)) {
+      return null;
+    }
+    return Promise.resolve(node).then((clonedNode) => cloneSingleNode(clonedNode, options)).then((clonedNode) => cloneChildren(node, clonedNode, options)).then((clonedNode) => decorate(node, clonedNode, options)).then((clonedNode) => ensureSVGSymbols(clonedNode, options));
+  }
+
+  // node_modules/.pnpm/html-to-image@1.11.13/node_modules/html-to-image/es/embed-resources.js
+  var URL_REGEX = /url\((['"]?)([^'"]+?)\1\)/g;
+  var URL_WITH_FORMAT_REGEX = /url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g;
+  var FONT_SRC_REGEX = /src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;
+  function toRegex(url) {
+    const escaped = url.replace(/([.*+?^${}()|\[\]\/\\])/g, "\\$1");
+    return new RegExp(`(url\\(['"]?)(${escaped})(['"]?\\))`, "g");
+  }
+  function parseURLs(cssText) {
+    const urls = [];
+    cssText.replace(URL_REGEX, (raw, quotation, url) => {
+      urls.push(url);
+      return raw;
+    });
+    return urls.filter((url) => !isDataUrl(url));
+  }
+  async function embed(cssText, resourceURL, baseURL, options, getContentFromUrl) {
+    try {
+      const resolvedURL = baseURL ? resolveUrl(resourceURL, baseURL) : resourceURL;
+      const contentType = getMimeType(resourceURL);
+      let dataURL;
+      if (getContentFromUrl) {
+        const content = await getContentFromUrl(resolvedURL);
+        dataURL = makeDataUrl(content, contentType);
+      } else {
+        dataURL = await resourceToDataURL(resolvedURL, contentType, options);
+      }
+      return cssText.replace(toRegex(resourceURL), `$1${dataURL}$3`);
+    } catch (error) {
+    }
+    return cssText;
+  }
+  function filterPreferredFontFormat(str, { preferredFontFormat }) {
+    return !preferredFontFormat ? str : str.replace(FONT_SRC_REGEX, (match2) => {
+      while (true) {
+        const [src, , format] = URL_WITH_FORMAT_REGEX.exec(match2) || [];
+        if (!format) {
+          return "";
+        }
+        if (format === preferredFontFormat) {
+          return `src: ${src};`;
+        }
+      }
+    });
+  }
+  function shouldEmbed(url) {
+    return url.search(URL_REGEX) !== -1;
+  }
+  async function embedResources(cssText, baseUrl, options) {
+    if (!shouldEmbed(cssText)) {
+      return cssText;
+    }
+    const filteredCSSText = filterPreferredFontFormat(cssText, options);
+    const urls = parseURLs(filteredCSSText);
+    return urls.reduce((deferred, url) => deferred.then((css) => embed(css, url, baseUrl, options)), Promise.resolve(filteredCSSText));
+  }
+
+  // node_modules/.pnpm/html-to-image@1.11.13/node_modules/html-to-image/es/embed-images.js
+  async function embedProp(propName, node, options) {
+    var _a;
+    const propValue = (_a = node.style) === null || _a === void 0 ? void 0 : _a.getPropertyValue(propName);
+    if (propValue) {
+      const cssString = await embedResources(propValue, null, options);
+      node.style.setProperty(propName, cssString, node.style.getPropertyPriority(propName));
+      return true;
+    }
+    return false;
+  }
+  async function embedBackground(clonedNode, options) {
+    ;
+    await embedProp("background", clonedNode, options) || await embedProp("background-image", clonedNode, options);
+    await embedProp("mask", clonedNode, options) || await embedProp("-webkit-mask", clonedNode, options) || await embedProp("mask-image", clonedNode, options) || await embedProp("-webkit-mask-image", clonedNode, options);
+  }
+  async function embedImageNode(clonedNode, options) {
+    const isImageElement = isInstanceOfElement(clonedNode, HTMLImageElement);
+    if (!(isImageElement && !isDataUrl(clonedNode.src)) && !(isInstanceOfElement(clonedNode, SVGImageElement) && !isDataUrl(clonedNode.href.baseVal))) {
+      return;
+    }
+    const url = isImageElement ? clonedNode.src : clonedNode.href.baseVal;
+    const dataURL = await resourceToDataURL(url, getMimeType(url), options);
+    await new Promise((resolve, reject) => {
+      clonedNode.onload = resolve;
+      clonedNode.onerror = options.onImageErrorHandler ? (...attributes) => {
+        try {
+          resolve(options.onImageErrorHandler(...attributes));
+        } catch (error) {
+          reject(error);
+        }
+      } : reject;
+      const image = clonedNode;
+      if (image.decode) {
+        image.decode = resolve;
+      }
+      if (image.loading === "lazy") {
+        image.loading = "eager";
+      }
+      if (isImageElement) {
+        clonedNode.srcset = "";
+        clonedNode.src = dataURL;
+      } else {
+        clonedNode.href.baseVal = dataURL;
+      }
+    });
+  }
+  async function embedChildren(clonedNode, options) {
+    const children = toArray(clonedNode.childNodes);
+    const deferreds = children.map((child) => embedImages(child, options));
+    await Promise.all(deferreds).then(() => clonedNode);
+  }
+  async function embedImages(clonedNode, options) {
+    if (isInstanceOfElement(clonedNode, Element)) {
+      await embedBackground(clonedNode, options);
+      await embedImageNode(clonedNode, options);
+      await embedChildren(clonedNode, options);
+    }
+  }
+
+  // node_modules/.pnpm/html-to-image@1.11.13/node_modules/html-to-image/es/apply-style.js
+  function applyStyle(node, options) {
+    const { style: style2 } = node;
+    if (options.backgroundColor) {
+      style2.backgroundColor = options.backgroundColor;
+    }
+    if (options.width) {
+      style2.width = `${options.width}px`;
+    }
+    if (options.height) {
+      style2.height = `${options.height}px`;
+    }
+    const manual = options.style;
+    if (manual != null) {
+      Object.keys(manual).forEach((key) => {
+        style2[key] = manual[key];
+      });
+    }
+    return node;
+  }
+
+  // node_modules/.pnpm/html-to-image@1.11.13/node_modules/html-to-image/es/embed-webfonts.js
+  var cssFetchCache = {};
+  async function fetchCSS(url) {
+    let cache3 = cssFetchCache[url];
+    if (cache3 != null) {
+      return cache3;
+    }
+    const res = await fetch(url);
+    const cssText = await res.text();
+    cache3 = { url, cssText };
+    cssFetchCache[url] = cache3;
+    return cache3;
+  }
+  async function embedFonts(data, options) {
+    let cssText = data.cssText;
+    const regexUrl = /url\(["']?([^"')]+)["']?\)/g;
+    const fontLocs = cssText.match(/url\([^)]+\)/g) || [];
+    const loadFonts = fontLocs.map(async (loc) => {
+      let url = loc.replace(regexUrl, "$1");
+      if (!url.startsWith("https://")) {
+        url = new URL(url, data.url).href;
+      }
+      return fetchAsDataURL(url, options.fetchRequestInit, ({ result }) => {
+        cssText = cssText.replace(loc, `url(${result})`);
+        return [loc, result];
+      });
+    });
+    return Promise.all(loadFonts).then(() => cssText);
+  }
+  function parseCSS(source) {
+    if (source == null) {
+      return [];
+    }
+    const result = [];
+    const commentsRegex = /(\/\*[\s\S]*?\*\/)/gi;
+    let cssText = source.replace(commentsRegex, "");
+    const keyframesRegex = new RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})", "gi");
+    while (true) {
+      const matches = keyframesRegex.exec(cssText);
+      if (matches === null) {
+        break;
+      }
+      result.push(matches[0]);
+    }
+    cssText = cssText.replace(keyframesRegex, "");
+    const importRegex = /@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;
+    const combinedCSSRegex = "((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})";
+    const unifiedRegex = new RegExp(combinedCSSRegex, "gi");
+    while (true) {
+      let matches = importRegex.exec(cssText);
+      if (matches === null) {
+        matches = unifiedRegex.exec(cssText);
+        if (matches === null) {
+          break;
+        } else {
+          importRegex.lastIndex = unifiedRegex.lastIndex;
+        }
+      } else {
+        unifiedRegex.lastIndex = importRegex.lastIndex;
+      }
+      result.push(matches[0]);
+    }
+    return result;
+  }
+  async function getCSSRules(styleSheets, options) {
+    const ret = [];
+    const deferreds = [];
+    styleSheets.forEach((sheet) => {
+      if ("cssRules" in sheet) {
+        try {
+          toArray(sheet.cssRules || []).forEach((item, index4) => {
+            if (item.type === CSSRule.IMPORT_RULE) {
+              let importIndex = index4 + 1;
+              const url = item.href;
+              const deferred = fetchCSS(url).then((metadata) => embedFonts(metadata, options)).then((cssText) => parseCSS(cssText).forEach((rule) => {
+                try {
+                  sheet.insertRule(rule, rule.startsWith("@import") ? importIndex += 1 : sheet.cssRules.length);
+                } catch (error) {
+                  console.error("Error inserting rule from remote css", {
+                    rule,
+                    error
+                  });
+                }
+              })).catch((e) => {
+                console.error("Error loading remote css", e.toString());
+              });
+              deferreds.push(deferred);
+            }
+          });
+        } catch (e) {
+          const inline = styleSheets.find((a) => a.href == null) || document.styleSheets[0];
+          if (sheet.href != null) {
+            deferreds.push(fetchCSS(sheet.href).then((metadata) => embedFonts(metadata, options)).then((cssText) => parseCSS(cssText).forEach((rule) => {
+              inline.insertRule(rule, inline.cssRules.length);
+            })).catch((err) => {
+              console.error("Error loading remote stylesheet", err);
+            }));
+          }
+          console.error("Error inlining remote css file", e);
+        }
+      }
+    });
+    return Promise.all(deferreds).then(() => {
+      styleSheets.forEach((sheet) => {
+        if ("cssRules" in sheet) {
+          try {
+            toArray(sheet.cssRules || []).forEach((item) => {
+              ret.push(item);
+            });
+          } catch (e) {
+            console.error(`Error while reading CSS rules from ${sheet.href}`, e);
+          }
+        }
+      });
+      return ret;
+    });
+  }
+  function getWebFontRules(cssRules) {
+    return cssRules.filter((rule) => rule.type === CSSRule.FONT_FACE_RULE).filter((rule) => shouldEmbed(rule.style.getPropertyValue("src")));
+  }
+  async function parseWebFontRules(node, options) {
+    if (node.ownerDocument == null) {
+      throw new Error("Provided element is not within a Document");
+    }
+    const styleSheets = toArray(node.ownerDocument.styleSheets);
+    const cssRules = await getCSSRules(styleSheets, options);
+    return getWebFontRules(cssRules);
+  }
+  function normalizeFontFamily(font) {
+    return font.trim().replace(/["']/g, "");
+  }
+  function getUsedFonts(node) {
+    const fonts = /* @__PURE__ */ new Set();
+    function traverse(node2) {
+      const fontFamily = node2.style.fontFamily || getComputedStyle(node2).fontFamily;
+      fontFamily.split(",").forEach((font) => {
+        fonts.add(normalizeFontFamily(font));
+      });
+      Array.from(node2.children).forEach((child) => {
+        if (child instanceof HTMLElement) {
+          traverse(child);
+        }
+      });
+    }
+    traverse(node);
+    return fonts;
+  }
+  async function getWebFontCSS(node, options) {
+    const rules = await parseWebFontRules(node, options);
+    const usedFonts = getUsedFonts(node);
+    const cssTexts = await Promise.all(rules.filter((rule) => usedFonts.has(normalizeFontFamily(rule.style.fontFamily))).map((rule) => {
+      const baseUrl = rule.parentStyleSheet ? rule.parentStyleSheet.href : null;
+      return embedResources(rule.cssText, baseUrl, options);
+    }));
+    return cssTexts.join("\n");
+  }
+  async function embedWebFonts(clonedNode, options) {
+    const cssText = options.fontEmbedCSS != null ? options.fontEmbedCSS : options.skipFonts ? null : await getWebFontCSS(clonedNode, options);
+    if (cssText) {
+      const styleNode = document.createElement("style");
+      const sytleContent = document.createTextNode(cssText);
+      styleNode.appendChild(sytleContent);
+      if (clonedNode.firstChild) {
+        clonedNode.insertBefore(styleNode, clonedNode.firstChild);
+      } else {
+        clonedNode.appendChild(styleNode);
+      }
+    }
+  }
+
+  // node_modules/.pnpm/html-to-image@1.11.13/node_modules/html-to-image/es/index.js
+  async function toSvg(node, options = {}) {
+    const { width, height } = getImageSize(node, options);
+    const clonedNode = await cloneNode(node, options, true);
+    await embedWebFonts(clonedNode, options);
+    await embedImages(clonedNode, options);
+    applyStyle(clonedNode, options);
+    const datauri = await nodeToDataURL(clonedNode, width, height);
+    return datauri;
+  }
+  async function toCanvas(node, options = {}) {
+    const { width, height } = getImageSize(node, options);
+    const svg = await toSvg(node, options);
+    const img = await createImage(svg);
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    const ratio = options.pixelRatio || getPixelRatio();
+    const canvasWidth = options.canvasWidth || width;
+    const canvasHeight = options.canvasHeight || height;
+    canvas.width = canvasWidth * ratio;
+    canvas.height = canvasHeight * ratio;
+    if (!options.skipAutoScale) {
+      checkCanvasDimensions(canvas);
+    }
+    canvas.style.width = `${canvasWidth}`;
+    canvas.style.height = `${canvasHeight}`;
+    if (options.backgroundColor) {
+      context.fillStyle = options.backgroundColor;
+      context.fillRect(0, 0, canvas.width, canvas.height);
+    }
+    context.drawImage(img, 0, 0, canvas.width, canvas.height);
+    return canvas;
+  }
+  async function toPng(node, options = {}) {
+    const canvas = await toCanvas(node, options);
+    return canvas.toDataURL();
+  }
+
   // src/components/table.js
   var stats = {
     pop: "Popularity",
@@ -12434,8 +13284,30 @@ return _$el${id};
   };
   var keys = Object.keys(stats);
   var count = keys.length;
-  var toggleArrow = (table2, e, sortOrder) => {
-    table2.querySelectorAll("#nav-arrow").forEach(
+  var TableHeader = (handleSort) => {
+    return html`
+    <div class="cell-h corner" onClick=${(e) => handleSort(e, "id")}>
+      <div class=cell-bg>
+        <div class=hd>Name</div>
+        <div id=nav-arrow></div>
+      </div>
+    </div>
+    ${() => Object.keys(stats).map(
+      (k) => html`
+      <div class=cell-h onClick=${(e) => handleSort(e, k)}>
+        <div class=cell-bg>
+          <div class="nav-button-l invis"><div class=nav-l></div></div>
+          <div class=hd>${stats[k]}</div>
+          <div id=nav-arrow></div>
+          <div class="nav-button-r invis"><div class=nav-r></div></div>
+        </div>
+      </div>`
+    )}
+  `;
+  };
+  var table;
+  var toggleArrow = (e, sortOrder) => {
+    table.querySelectorAll("#nav-arrow").forEach(
       (arrow) => (arrow.classList.remove("arrow-dn"), arrow.classList.remove("arrow-up"))
     );
     e = e.target.querySelector("#nav-arrow");
@@ -12458,46 +13330,27 @@ return _$el${id};
       i % count5 == index4 ? bg.querySelector(".cell-bg").classList.add("cell-highlight") : null;
     });
   };
-  var selectCol = () => {
+  var handleCol = (store2) => {
     let cellh = document.querySelectorAll(".cell-h:not(.corner)");
     let cell = document.querySelectorAll(".cell-data");
-    cell.forEach((col2, index4) => {
+    cell.forEach((col, index4) => {
       index4 = index4 % count;
-      col2.addEventListener("mouseenter", (e) => {
+      col.addEventListener("mouseenter", (e) => {
         highlight(cellh, cell, count, index4);
         e.target.children[0].classList.remove("cell-highlight");
       });
-      col2.addEventListener("mouseleave", () => {
+      col.addEventListener("mouseleave", () => {
         highlight(cellh, cell, count, index4);
       });
     });
   };
-  var TableHeader = (handleSort) => {
-    return html`
-    <div class="cell-h corner" onClick=${(e) => handleSort(e, "id")}>
-      <div class=cell-bg>
-        <div class=hd>Name</div>
-        <div id=nav-arrow></div>
-      </div>
-    </div>
-    ${() => Object.keys(stats).map(
-      (k) => html`
-      <div class=cell-h onClick=${(e) => handleSort(e, k)}>
-        <div class=cell-bg>
-          <div class="nav-button-l invis"><div class=nav-l></div></div>
-          <div class=hd>${stats[k]}</div>
-          <div id=nav-arrow></div>
-          <div class="nav-button-r invis"><div class=nav-r></div></div>
-        </div>
-      </div>`
-    )}
-  `;
-  };
   var popArrow = (store2, i) => {
-    if (store2.popChange[i] == null) return html`<div class="arrow right"></div>`;
-    if (store2.popChange[i] == store2.roster[i].pop) return html`<div class="arrow right"></div>`;
-    if (store2.popChange[i] < store2.roster[i].pop) return html`<div class="arrow up"></div>`;
-    if (store2.popChange[i] > store2.roster[i].pop) return html`<div class="arrow down"></div>`;
+    let prev4 = store2.roster[i];
+    let now = store2.popChange.find((w3) => w3?.id == prev4.id || false);
+    if (now == null) return html`<div class="arrow right"></div>`;
+    if (now.pop == prev4.pop) return html`<div class="arrow right"></div>`;
+    if (now.pop < prev4.pop) return html`<div class="arrow up"></div>`;
+    if (now.pop > prev4.pop) return html`<div class="arrow down"></div>`;
   };
   var TableBody = (store2) => {
     return () => store2.roster.map((w3, i) => {
@@ -12510,9 +13363,13 @@ return _$el${id};
           <div>
             <div>
               <div class=fcol onClick=${() => {
-        overlay.classList.add("active");
       }}>
-                <div class=cell-bg><p>${w3.name}</p></div>
+                <div class=cell-bg>
+                  <div class=fcol-text>
+                    <p>${w3.name}</p>
+                    <p>Team 0</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -12535,7 +13392,7 @@ return _$el${id};
         </div>
         <div class=cell-data><div class=cell-bg>${w3.mor}</div></div>
         <div class=cell-data><div class=cell-bg>${w3.align.toUpperCase()}</div></div>
-        <div class=cell-data><div class=cell-bg>${"WCW"}</div></div>
+        <div class=cell-data><div class=cell-bg>${"WWE"}</div></div>
         <div class=cell-data><div class=cell-bg>${"-"}</div></div>
         <div class=cell-data><div class=cell-bg>${"-"}</div></div>
         <div class=cell-data><div class=cell-bg>${"-"}</div></div>
@@ -12543,75 +13400,68 @@ return _$el${id};
     `;
     });
   };
-  var table;
-  var [row, setRow] = createStore({
+  var [current, setCurrent] = createStore({
     stats: {}
   });
-  var [col, setCol] = createSignal(null);
+  var [selected, setSel] = createSignal(null);
   var imgPath = (img) => `/assets/${img}.png`;
-  var updateBanner = (store2) => {
+  var defBanner = (store2) => {
     let { name: name2, pop, img } = store2.roster[0];
-    setRow("stats", { name: name2, pop, img: imgPath(img) });
+    setCurrent("stats", { name: name2, pop, img: imgPath(img) });
   };
-  var mountBanner = (store2) => {
-    updateBanner(store2);
-    table.addEventListener("scroll", () => {
-      if (col()) return;
-      let cur;
-      let rows2 = table.querySelectorAll(".cell-fcol");
-      let rect = rows2[0].getBoundingClientRect();
-      rows2.forEach((r) => {
-        let rect2 = r.getBoundingClientRect();
-        if (rect.top == rect2.top) {
-          cur = r;
-        }
-      });
-      cur = cur.textContent;
-      let w3 = store2.roster.find((w4) => w4.name == cur);
-      setRow("stats", {
-        name: cur,
-        pop: w3.pop,
-        ovr: 80,
-        img: imgPath(w3.img)
-      });
+  var onScroll = (store2) => {
+  };
+  var rowClick = (r, store2) => {
+    let fcol = r.querySelector(".cell-fcol p:first-child");
+    fcol = fcol.textContent;
+    let w3 = store2.roster.find((w4) => w4.name == fcol);
+    setCurrent("stats", {
+      name: fcol,
+      pop: w3.pop,
+      ovr: 80,
+      img: imgPath(w3.img)
     });
+    setSel(true);
+  };
+  var updateBanner = (store2) => {
+    defBanner(store2);
+    table.addEventListener("scroll", () => onScroll(store2));
     let rows = table.querySelectorAll(".row");
     rows.forEach((r) => {
-      r.addEventListener("click", (e) => {
-        let fcol = r.querySelector(".cell-fcol");
-        fcol = fcol.textContent;
-        let w3 = store2.roster.find((w4) => w4.name == fcol);
-        setRow("stats", {
-          name: fcol,
-          pop: w3.pop,
-          ovr: 80,
-          img: imgPath(w3.img)
-        });
-        setCol(true);
-      });
+      r.addEventListener("click", () => rowClick(r, store2));
     });
     document.addEventListener("mouseup", (e) => {
-      if (col()) setCol(false);
+      if (selected()) setSel(false);
     });
   };
   var TableBanner = () => {
     return html`
     <div class=table-banner>
       <div class=table-top>
-        <img id=banner-bg src=bg2.jpg>
-        <img id=banner-img src=${() => row.stats.img} 
+        <img id=banner-bg src='
+          https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfw8dcbHJSektuNFTMxqjJX3vlyKvhDi_D_QoN3MMQJmT_gjqizTD0mpOp&s=10
+        '>
+        <div class=banner-name>${() => current.stats.name}</div>
+        <div class=banner-row>
+          <div class=table-brand>
+            <img
+              src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/WWE_SmackDown_%282024%29_Logo.svg/1200px-WWE_SmackDown_%282024%29_Logo.svg.png'
+            >
+          </div>
+          <p>Popularity ${() => current.stats.pop}
+            <br>Overall 86</p>
+        </div>
+        <img id=banner-img src=${() => current.stats.img} 
           onload="this.style.visibility='visible';"
           onerror="this.style.visibility='hidden';"
         >
-        <div class=top-text>
-          <p>${() => row.stats.name}</p>
-          <p>Popularity ${() => row.stats.pop}
-            <br>Overall 86</p>
-        </div>
       </div>
     </div>
   `;
   };
+  var [helpContent2, setHelp2] = createSignal("");
+  var [once, setOnce] = createSignal(true);
+  var screenshot = [];
   var RosterTable = (store2, setStore2) => {
     const [sortOrder, setSort] = createSignal(1);
     const [sortKey, setKey] = createSignal(null);
@@ -12622,34 +13472,229 @@ return _$el${id};
         setSort(sortKey() == key ? sortOrder() * -1 : 1);
         let sort = key != "align" ? [...store2.roster].sort((a, b) => (a[key] - b[key]) * sortOrder()) : [...store2.roster].sort((a, b) => a.align != b.align ? (a.align == "face" ? -1 : 1) * sortOrder() : a.id - b.id);
         setStore2("roster", sort);
-        toggleArrow(table, e, sortOrder);
+        toggleArrow(e, sortOrder);
       }
       let index4 = keys.indexOf(key);
       let cellh = document.querySelectorAll(".cell-h:not(.corner)");
       let cell = document.querySelectorAll(".cell-data");
       toggleNav(cellh, index4);
       highlight(cellh, cell, count, index4);
-      selectCol();
+      handleCol(store2);
       updateBanner(store2);
     };
-    onMount(selectCol);
-    onMount(() => mountBanner(store2));
+    onMount(() => handleCol(store2));
+    onMount(() => updateBanner(store2));
+    onMount(async () => {
+      if (once()) {
+        await toPng(document.querySelector(".cell-h:not(.corner)"), {
+          skipFonts: true,
+          cacheBust: true,
+          quality: 0
+        }).then((data) => {
+          let img = new Image();
+          img.src = data;
+          screenshot.push(img);
+        });
+        setHelp2(
+          () => html`
+        <span>Table show various stats and information. After match the popurarity can change depend on result and it has arrow indicated And This is normal table You can click at header to sorting </span><br>
+        ${screenshot[0]}`
+        );
+        setOnce(false);
+      }
+    });
     return html`
   <div class=table-container>
+    ${HelpMenu(helpContent2())}
     ${wrestlerBook()}
     ${TableBanner()}
     <div class=nav-button-up><div class=nav-up></div></div>
     <div class=nav-button-dn><div class=nav-dn></div></div>
     <div ref=${(e) => table = e} class=table>
-        <div class=grid-table>
-          ${TableHeader(handleSort)}
-          <div class=table-body>
+      <div class=grid-table>
+        ${TableHeader(handleSort)}
+        <div class=table-body>
           ${TableBody(store2)}
-          </div>
         </div>
-    <div>
+      </div>
+    </div>
+    <div class=match-menu>
+      <p onclick=${openHelp}>Help</p>
+      <p onclick=${() => setActive("GMDesk")}>Back</p>
+    </div>
   </div>
   `;
+  };
+
+  // src/components/folder.js
+  var range3 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
+  var card;
+  var [select, setSelect] = createSignal(null);
+  var folderBody = (store2, [i, j]) => {
+    let w3 = store2.matches[matchN()]?.wrestlers[i][j];
+    let img = w3?.img || "dummy";
+    img = `/assets/${img}.png`;
+    return html`
+    <div class=folder-before>
+      <div onclick=${() => {
+      setPage("roster");
+      setSelect([[i, j], w3?.name || ""]);
+    }} class=folder-img><img src=${img}></div>
+      <div class="folder-body">
+        <div class=folder-data>
+          <div class=data-brand>
+            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/WWE_SmackDown_%282024%29_Logo.svg/1200px-WWE_SmackDown_%282024%29_Logo.svg.png'>
+          </div>
+          <p>POPULARITY 96 OVERALL 90</p>
+          <div class="fat-c-container">
+            <div class="fat-c-inner">
+              <div class=fat-gauge-border>
+                <div class=fat-gauge style="width:50%;">
+                  <div class=fat-gauge-over></div>
+                </div>
+              </div>
+              <p>FATIGUE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  };
+  var folderLeft = (store2, [i, j]) => {
+    let w3 = store2.matches[matchN()]?.wrestlers[i][j];
+    return html`
+    <div class="folder-left">
+      <div class="tab-border left">
+        <div class="tab-inner">
+          ${matchDup(w3?.name || "")}
+        </div>
+      </div>
+      ${folderBody(store2, [i, j])}
+    </div>
+  `;
+  };
+  var folderRight = (store2, [i, j]) => {
+    let w3 = store2.matches[matchN()]?.wrestlers[i][j];
+    return html`
+    <div class="folder-right">
+      <div class="tab-border right">
+        <div class="tab-inner">
+          ${matchDup(w3?.name || "")}
+        </div>
+      </div>
+      ${folderBody(store2, [i, j])}
+    </div>
+  `;
+  };
+  var [helpContent3, setHelp3] = createSignal("");
+  var [once2, setOnce2] = createSignal(true);
+  var screenshot2 = [];
+  var bodyH;
+  var folder = (store2) => {
+    let wrestlers = store2.matches[matchN()]?.wrestlers || "";
+    onMount(() => bodyH = card.offsetHeight);
+    onMount(async () => {
+      if (once2()) {
+        await toPng(document.querySelector(".match-title"), {
+          skipFonts: true,
+          cacheBust: true,
+          quality: 0
+        }).then((data) => {
+          let img = new Image();
+          img.src = data;
+          screenshot2.push(img);
+        });
+        await toPng(document.querySelector(".card-row"), {
+          skipFonts: true,
+          cacheBust: true,
+          quality: 0
+        }).then((data) => {
+          let img = new Image();
+          img.src = data;
+          screenshot2.push(img);
+        });
+        setHelp3(
+          () => html`
+        <span>Here is brief info for match type, You can click at match type (blinking red background) to change match type</span>
+        <br>${screenshot2[0]}<br>
+        <span>Wrestlers card is something... But you can click at wrestler image to change wrestler</span>
+        <br>${screenshot2[1]}<br>`
+        );
+        setOnce2(false);
+      }
+    });
+    return html`<div ref=${(e) => card = e} class=match-con>
+    ${HelpMenu(helpContent3())}
+    ${() => {
+      if (wrestlers == "") return "";
+      if (wrestlers.length == 2) {
+        return range3(0, 3).map((i) => {
+          let l = wrestlers[0][i];
+          let r = wrestlers[1][i];
+          if (!l && !r) return "";
+          return html`<div class=card-row>
+            ${l ? folderLeft(store2, [0, i]) : ""}
+            ${l ? folderRight(store2, [1, i]) : ""}
+          </div>`;
+        });
+      } else if (wrestlers.length == 3 && wrestlers[0].length == 1) {
+        let [a, b, c] = wrestlers.flat();
+        return html`<div class=card-row>
+          ${folderLeft(store2, [0, 0])}
+          ${folderRight(store2, [1, 0])}
+        </div>
+        <div class=card-row>
+          ${folderLeft(store2, [2, 0])}
+        </div>`;
+      } else if (wrestlers.length == 3 && wrestlers[0].length == 2) {
+        let [[a, b], [c, d], [e, f]] = wrestlers;
+        return html`<div class=card-row>
+            ${folderLeft(store2, [0, 0])}
+            ${folderRight(store2, [1, 0])}
+          </div>
+          <div class=card-row>
+            ${folderLeft(store2, [0, 1])}
+            ${folderRight(store2, [1, 1])}
+          </div>
+          <div class=card-row>
+            ${folderLeft(store2, [2, 0])}
+            ${folderRight(store2, [2, 1])}
+          </div>
+        `;
+      } else if (wrestlers.length == 4) {
+        let [a, b, c, d] = wrestlers.flat();
+        let pair = [[a, b], [c, d]];
+        return pair.map(
+          ([a2, b2], i) => html`<div class=card-row>
+            ${folderLeft(store2, [i * 2, 0])}
+            ${folderRight(store2, [i * 2 + 1, 0])}
+          </div>`
+        );
+      } else if (wrestlers.length == 5) {
+        let [a, b, c, d, e] = wrestlers.flat();
+        let pair = [[a, b], [d, e]];
+        return pair.map(([a2, b2], i) => {
+          i = i * 2 == 2 ? i * 2 + 1 : i * 2;
+          return html`<div class=card-row>
+            ${folderLeft(store2, [i, 0])}
+            ${folderRight(store2, [i + 1, 0])}
+          </div>`;
+        }).concat(html`<div class=card-row>
+          ${folderRight(store2, [2, 0])}
+        </div>`);
+      } else if (wrestlers.length == 6) {
+        let [a, b, c, d, e, f] = wrestlers.flat();
+        let pair = [[a, b], [c, d], [e, f]];
+        return pair.map(
+          ([a2, b2], i) => html`<div class=card-row>
+            ${folderLeft(store2, [i * 2, 0])}
+            ${folderRight(store2, [i * 2 + 1, 0])}
+          </div>`
+        );
+      }
+    }}
+  </div>`;
   };
 
   // node_modules/.pnpm/chalk@5.4.1/node_modules/chalk/source/vendor/ansi-styles/index.js
@@ -12991,33 +14036,33 @@ return _$el${id};
       }
     }
   });
-  var createStyler = (open, close, parent2) => {
+  var createStyler = (open, close2, parent2) => {
     let openAll;
     let closeAll;
     if (parent2 === void 0) {
       openAll = open;
-      closeAll = close;
+      closeAll = close2;
     } else {
       openAll = parent2.openAll + open;
-      closeAll = close + parent2.closeAll;
+      closeAll = close2 + parent2.closeAll;
     }
     return {
       open,
-      close,
+      close: close2,
       openAll,
       closeAll,
       parent: parent2
     };
   };
   var createBuilder = (self2, _styler, _isEmpty) => {
-    const builder = (...arguments_) => applyStyle(builder, arguments_.length === 1 ? "" + arguments_[0] : arguments_.join(" "));
+    const builder = (...arguments_) => applyStyle2(builder, arguments_.length === 1 ? "" + arguments_[0] : arguments_.join(" "));
     Object.setPrototypeOf(builder, proto);
     builder[GENERATOR] = self2;
     builder[STYLER] = _styler;
     builder[IS_EMPTY] = _isEmpty;
     return builder;
   };
-  var applyStyle = (self2, string) => {
+  var applyStyle2 = (self2, string) => {
     if (self2.level <= 0 || !string) {
       return self2[IS_EMPTY] ? "" : string;
     }
@@ -13045,9 +14090,9 @@ return _$el${id};
 
   // src/game.js
   var log = (x) => console.log(x);
-  var range3 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
+  var range4 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
   var randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-  var genWrestlers = (n) => range3(0, n).map((id) => ({
+  var genWrestlers = (n) => range4(0, n).map((id) => ({
     id,
     name: id,
     img: "dummy",
@@ -13105,7 +14150,7 @@ return _$el${id};
           return opponent;
         }
       }
-      if (wrestler.align != best.align) {
+      if (wrestler.align == best.align) {
         if (bestPop > diffPop) {
           log(`-> Found nonalign+pop ${opponent.id} (${opponent.pop})`);
           return opponent;
@@ -13116,7 +14161,7 @@ return _$el${id};
     }, roster3[0]);
   };
   var genMatchType = () => {
-    let matchType2 = range3(
+    let matchType2 = range4(
       0,
       Math.random() < 0.75 ? 2 : Math.random() < 0.75 ? 3 : Math.random() < 0.75 ? 4 : Math.random() < 0.75 ? 5 : 6
     );
@@ -13130,7 +14175,7 @@ return _$el${id};
     }
   };
   var genType = 0;
-  var genSingleMatch = (roster3, index4, matches, type) => {
+  var genSingleMatch = (roster3, index4, matches, type, prev4) => {
     let mType = type == void 0 ? genMatchType() : type;
     let matchType2 = Object.values(mType)[0];
     let sorted = sortWrestler(roster3);
@@ -13155,6 +14200,10 @@ matchType ${matchType2.length}x${matchType2[0].length}`);
     if (matchType2.length == 2) {
       let [wrestler] = available;
       let opponent = findOpponent(wrestler, available.filter((w3) => w3.id != wrestler.id));
+      if (prev4 != void 0) {
+        wrestler = prev4[0];
+        opponent = prev4[1];
+      }
       used.add(wrestler.id);
       used.add(opponent.id);
       usedMap.set(wrestler.name, usedMap.get(wrestler.name) + 1 || 1);
@@ -13164,9 +14213,20 @@ matchType ${matchType2.length}x${matchType2[0].length}`);
       return { match: index4 + 1, wrestlers: [team, team2], matchType: _matchType };
     } else {
       let wrestlers = available.slice(0, matchType2.length);
-      wrestlers.forEach((w3) => {
+      if (prev4 != void 0) {
+        let _used = [];
+        wrestlers = range4(0, matchType2.length).map(
+          (_, i) => prev4[i] != void 0 ? prev4[i] : available.find((w3) => {
+            let r = !prev4.includes(w3) && !_used.includes(w3);
+            r ? _used.push(w3) : null;
+            return r;
+          })
+        );
+      }
+      wrestlers = wrestlers.map((w3, i) => {
         used.add(w3.id);
         usedMap.set(w3.name, usedMap.get(w3.name) + 1 || 1);
+        return w3;
       });
       wrestlers = wrestlers.map((wrestler) => {
         let team = findTeam(wrestler, available.filter((w3) => w3.id != wrestler.id), matchType2);
@@ -13180,7 +14240,7 @@ matchType ${matchType2.length}x${matchType2[0].length}`);
     genType = 1;
     setUsed(/* @__PURE__ */ new Set());
     usedMap = /* @__PURE__ */ new Map();
-    let preset = range3(0, n).map((index4) => {
+    let preset = range4(0, n).map((index4) => {
       return genSingleMatch(roster3, index4, matches);
     });
     return genType = 0, preset;
@@ -13215,7 +14275,7 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
     });
   };
   var roster = genWrestlers(12);
-  var match = range3(0, 5).map((x) => null);
+  var match = range4(0, 5).map((x) => null);
   for (let i = 0; i < 4; i++) {
     match[0] = genSingleMatch(roster, 0, match);
     match[1] = genSingleMatch(roster, 1, match);
@@ -13225,15 +14285,15 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
     log(usedMap);
     let result = simulateMatches(match);
     roster = updateStats(roster, result);
-    match = range3(0, 5).map((x) => null);
+    match = range4(0, 5).map((x) => null);
     used = /* @__PURE__ */ new Set();
     usedMap = /* @__PURE__ */ new Map();
   }
 
   // src/components/roster.js
-  var range4 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
+  var range5 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
   var roster2;
-  var [current, setCurrent] = createSignal(null);
+  var [current2, setCurrent2] = createSignal(null);
   var [curImg, setCurImg] = createSignal(null);
   var track;
   var list;
@@ -13272,7 +14332,7 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
         track.scrollTop += itemH;
         return loop();
       }
-      setCurrent(center.textContent);
+      setCurrent2(center.textContent);
       return;
     };
     return loop();
@@ -13325,51 +14385,120 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
       }
     }
     let c = getCenterItem().textContent;
-    setCurrent(c);
+    setCurrent2(c);
     c = store2.roster.find((x) => x.name == c);
     setCurImg(`/assets/${c.img}.png`);
   };
+  var initScroll = (store2) => {
+    items = [...store2.roster.map((x) => x.name)];
+    itemH = list.children[0].offsetHeight + 4;
+    trackH = track.clientHeight;
+    count2 = Math.ceil(trackH / itemH);
+    let buffer = Math.ceil(count2 / items.length);
+    let clonedList = [];
+    for (let i = 0; i < buffer + 1; i++) {
+      clonedList.push(...items);
+    }
+    createList(list, clonedList);
+    toCenter();
+    track.addEventListener("touchstart", start);
+    track.addEventListener("touchmove", move, { passive: false });
+    setCurImg(`/assets/${store2.roster[0].img}.png`);
+    track.addEventListener("scroll", () => onscroll(store2));
+  };
+  var onBook = (store2, setStore2, useCur) => {
+    let [[i, j], sel] = select();
+    if (!useCur && sel == current2()) return alert(`${sel} already in a match`);
+    let wrestlers = store2.matches[matchN()].wrestlers;
+    let dup = wrestlers.find(
+      (team) => team.find((w3) => w3?.name == current2())
+    );
+    if (dup != void 0) return alert(`${current2()} already in a match`);
+    let newWrestler = store2.roster.find((w3) => w3.name == current2());
+    used.delete(wrestlers[i][j].id);
+    let name2 = wrestlers[i][j].name;
+    let n = usedMap.get(name2);
+    usedMap.set(name2, n - 1);
+    used.add(newWrestler.id);
+    usedMap.set(newWrestler.name, usedMap.get(newWrestler.name) + 1 || 1);
+    setStore2(produce((state) => {
+      state.matches[matchN()].wrestlers[i][j] = newWrestler;
+    }));
+  };
+  var rosterCard = () => {
+    return html`
+    <div class=roster-covercon>
+      <div class=film-strip>
+        <div class=film-content>
+          ${netPattern(1)}
+          <div class=film-bg><img src=
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfw8dcbHJSektuNFTMxqjJX3vlyKvhDi_D_QoN3MMQJmT_gjqizTD0mpOp&s=10"
+          ></div>
+          <img src=${curImg}>
+        </div>
+      </div>
+    </div>
+    <div class=roster-w>
+      Heavyweight
+    </div>
+    <div class=roster-card>
+      <div class=card3-bg>
+        <div class=folder-rat-r>
+          <div class=folder-rat>
+            <div class=folder-ovr>Overall</div>
+            <p>96</p>
+          </div>
+        </div>
+      </div>
+      <div class=folder-bar></div>
+    </div>
+  `;
+  };
+  var rosterBanner = (store2, setStore2) => {
+    return html`
+    <div class=roster-over>
+      <div class=roster-focus>
+        <div class=card-octagon>
+          <div class=octagon-container>
+            <div class=name-line></div>
+            <div class=name-line></div>
+            ${() => {
+      return usedMap.has(current2()) ? matchDup(current2()) : html`<p>${current2()}</p>`;
+    }}
+            <div class=octagon-inner>
+              <div class=brand-center><img 
+                src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/WWE_SmackDown_%282024%29_Logo.svg/1200px-WWE_SmackDown_%282024%29_Logo.svg.png'
+              ></div>
+            </div>
+            <div class=octagon-label>OVERALL 78</div>
+          </div>
+        </div>
+      </div>
+      <div class="focus-label hide">Minor Injury</div>
+      <div class=focus-label onclick=${() => onBook(store2, setStore2, false)}>Book</div>
+    </div>
+  `;
+  };
+  var [helpContent4, setHelp4] = createSignal("");
+  var [once3, setOnce3] = createSignal(true);
   var rosterList = (store2, setStore2) => {
-    onMount(() => {
-      items = [...store2.roster.map((x) => x.name)];
-      itemH = list.children[0].offsetHeight + 4;
-      trackH = track.clientHeight;
-      count2 = Math.ceil(trackH / itemH);
-      let buffer = Math.ceil(count2 / items.length);
-      let clonedList = [];
-      for (let i = 0; i < buffer + 1; i++) {
-        clonedList.push(...items);
+    onMount(() => initScroll(store2));
+    onMount(async () => {
+      if (once3()) {
+        setHelp4(
+          () => html`
+        <span>This page is very complex. But you can click 'Book' anywhere to pick your wrestler<br>Scroll is infinite look at some logic behind will explains you
+        <pre><code>
+        getCenterItem ${getCenterItem.toString()}<br>
+        toCenter ${toCenter.toString()}<br>
+        move ${move.toString()}<br>
+        onscroll ${onscroll.toString()}<br>
+        </code></pre>
+        </span>`
+        );
+        setOnce3(false);
       }
-      createList(list, clonedList);
-      toCenter();
-      track.addEventListener("touchstart", start);
-      track.addEventListener("touchmove", move, { passive: false });
-      setCurImg(`/assets/${store2.roster[0].img}.png`);
-      track.addEventListener(
-        "scroll",
-        () => onscroll(store2)
-      );
     });
-    let book = () => {
-      let [[i, j], sel] = select();
-      if (sel == current()) return alert(`${sel} already in a match`);
-      let wrestlers = store2.matches[matchN()].wrestlers;
-      let dup = wrestlers.find(
-        (team) => team.find((w3) => w3?.name == current())
-      );
-      if (dup != void 0) return alert(`${current()} already in a match`);
-      let newWrestler = store2.roster.find((w3) => w3.name == current());
-      used.delete(wrestlers[i][j].id);
-      let name2 = wrestlers[i][j].name;
-      let n = usedMap.get(name2);
-      n = n < 1 ? 1 : n;
-      usedMap.set(name2, n);
-      used.add(newWrestler.id);
-      usedMap.set(newWrestler.name, usedMap.get(newWrestler.name) + 1 || 1);
-      setStore2(produce((state) => {
-        state.matches[matchN()].wrestlers[i][j] = newWrestler;
-      }));
-    };
     return html`
     <div ref=${(e) => roster2 = e} class=roster-container 
       onclick=${() => {
@@ -13377,9 +14506,10 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
     }}>
       <div class=roster-vlist>
         <div class=vlist-track>
-        ${range4(0, 20).map((_) => html`<div class=vlist-item></div>`)}
+        ${range5(0, 20).map((_) => html`<div class=vlist-item></div>`)}
         </div>
       </div>
+      ${HelpMenu(helpContent4())}
       <div class=roster-listmenu>
         <div class=roster-menubar>All${""}</div>
         <div ref=${(e) => track = e} class=roster-listcon>
@@ -13388,200 +14518,10 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
           </div>
         </div>
       </div>
-      <div class=roster-covercon>
-        <div class=film-strip>
-          <div class=film-content>
-            <div class="svg-net">
-              <svg class="diamond-net" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-                <defs>
-                  <pattern id="diamondNet" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                    <line x1="0" y1="0" x2="5" y2="0" stroke="#000" stroke-width="2"/>
-                    <line x1="0" y1="0" x2="0" y2="5" stroke="#000" stroke-width="2"/>
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#diamondNet)" />
-              </svg>
-            </div>
-            <div class=film-bg><img src=
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfw8dcbHJSektuNFTMxqjJX3vlyKvhDi_D_QoN3MMQJmT_gjqizTD0mpOp&s=10"
-            ></div>
-            <img src=${curImg}>
-          </div>
-        </div>
-      </div>
-      <div class=roster-w>
-        Heavyweight
-      </div>
-      <div class=roster-card>
-        <div class=card3-bg>
-          <div class=folder-rat-r>
-            <div class=folder-rat>
-              <p>96</p>
-            </div>
-            <div class=folder-ovr>Overall</div>
-          </div>
-        </div>
-        <div class=folder-bar></div>
-      </div>
-      <div class=roster-over>
-        <div class=roster-focus>
-          <div class=card-octagon>
-            <div class=octagon-container>
-              <div class=name-line></div>
-              <div class=name-line></div>
-              ${() => {
-      return usedMap.has(current()) ? matchDup(current()) : html`<p>${current()}</p>`;
-    }}
-              <div class=octagon-inner>
-                <div class=brand-center><img 
-                src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/WWE_SmackDown_%282024%29_Logo.svg/1200px-WWE_SmackDown_%282024%29_Logo.svg.png'
-                ></div>
-              </div>
-              <div class=octagon-label>OVERALL 78</div>
-            </div>
-          </div>
-        </div>
-        <div class=focus-label>Minor Injury</div>
-        <div class=focus-label onclick=${book}>Book</div>
-      </div>
+      ${rosterCard()}
+      ${rosterBanner(store2, setStore2)}
     </div>
   `;
-  };
-
-  // src/components/folder.js
-  var range5 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
-  var card;
-  var folderBody = (store2, [i, j]) => {
-    let w3 = store2.matches[matchN()]?.wrestlers[i][j];
-    let img = w3?.img || "dummy";
-    img = `/assets/${img}.png`;
-    return html`
-    <div class=folder-before>
-      <div onclick=${() => {
-      setPage("roster");
-      setSelect([[i, j], w3?.name || ""]);
-    }} class=folder-img><img src=${img}></div>
-      <div class="folder-body">
-        <div class=folder-data>
-          <div class=data-brand>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/WWE_SmackDown_%282024%29_Logo.svg/1200px-WWE_SmackDown_%282024%29_Logo.svg.png'>
-          </div>
-          <p>POPULARITY 96 OVERALL 90</p>
-          <div class="fat-c-container">
-            <div class="fat-c-inner">
-              <div class=fat-gauge-border>
-                <div class=fat-gauge style="width:50%;">
-                  <div class=fat-gauge-over></div>
-                </div>
-              </div>
-              <p>FATIGUE</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-  };
-  var folderLeft = (store2, [i, j]) => {
-    let w3 = store2.matches[matchN()]?.wrestlers[i][j];
-    return html`
-    <div class="folder-left">
-      <div class="tab-border left">
-        <div class="tab-inner">
-          ${matchDup(w3?.name || "")}
-        </div>
-      </div>
-      ${folderBody(store2, [i, j])}
-    </div>
-  `;
-  };
-  var folderRight = (store2, [i, j]) => {
-    let w3 = store2.matches[matchN()]?.wrestlers[i][j];
-    return html`
-    <div class="folder-right">
-      <div class="tab-border right">
-        <div class="tab-inner">
-          ${matchDup(w3?.name || "")}
-        </div>
-      </div>
-      ${folderBody(store2, [i, j])}
-    </div>
-  `;
-  };
-  var bodyH;
-  var folder = (store2) => {
-    let wrestlers = store2.matches[matchN()]?.wrestlers || "";
-    onMount(() => bodyH = card.offsetHeight);
-    return html`<div ref=${(e) => card = e} class=match-con>
-    ${() => {
-      if (wrestlers == "") return "";
-      if (wrestlers.length == 2) {
-        return range5(0, 3).map((i) => {
-          let l = wrestlers[0][i];
-          let r = wrestlers[1][i];
-          if (!l && !r) return "";
-          return html`<div class=card-row>
-            ${l ? folderLeft(store2, [0, i]) : ""}
-            ${l ? folderRight(store2, [1, i]) : ""}
-          </div>`;
-        });
-      } else if (wrestlers.length == 3 && wrestlers[0].length == 1) {
-        let [a, b, c] = wrestlers.flat();
-        return html`<div class=card-row>
-          ${folderLeft(store2, [0, 0])}
-          ${folderRight(store2, [1, 0])}
-        </div>
-        <div class=card-row>
-          ${folderLeft(store2, [2, 0])}
-        </div>`;
-      } else if (wrestlers.length == 3 && wrestlers[0].length == 2) {
-        let [[a, b], [c, d], [e, f]] = wrestlers;
-        return html`<div class=card-row>
-            ${folderLeft(store2, [0, 0])}
-            ${folderRight(store2, [1, 0])}
-          </div>
-          <div class=card-row>
-            ${folderLeft(store2, [0, 1])}
-            ${folderRight(store2, [1, 1])}
-          </div>
-          <div class=card-row>
-            ${folderLeft(store2, [2, 0])}
-            ${folderRight(store2, [2, 1])}
-          </div>
-        `;
-      } else if (wrestlers.length == 4) {
-        let [a, b, c, d] = wrestlers.flat();
-        let pair = [[a, b], [c, d]];
-        return pair.map(
-          ([a2, b2], i) => html`<div class=card-row>
-            ${folderLeft(store2, [i * 2, 0])}
-            ${folderRight(store2, [i * 2 + 1, 0])}
-          </div>`
-        );
-      } else if (wrestlers.length == 5) {
-        let [a, b, c, d, e] = wrestlers.flat();
-        let pair = [[a, b], [d, e]];
-        return pair.map(([a2, b2], i) => {
-          i = i * 2 == 2 ? i * 2 + 1 : i * 2;
-          return html`<div class=card-row>
-            ${folderLeft(store2, [i, 0])}
-            ${folderRight(store2, [i + 1, 0])}
-          </div>`;
-        }).concat(html`<div class=card-row>
-          ${folderRight(store2, [2, 0])}
-        </div>`);
-      } else if (wrestlers.length == 6) {
-        let [a, b, c, d, e, f] = wrestlers.flat();
-        let pair = [[a, b], [c, d], [e, f]];
-        return pair.map(
-          ([a2, b2], i) => html`<div class=card-row>
-            ${folderLeft(store2, [i * 2, 0])}
-            ${folderRight(store2, [i * 2 + 1, 0])}
-          </div>`
-        );
-      }
-    }}
-  </div>`;
   };
 
   // src/components/matchtype.js
@@ -13633,9 +14573,10 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
   };
   var curStyle = "";
   var scrollRange = (from, to) => {
-    if (index() < to || pos() >= 0) {
+    if (index() < to || pos >= 0) {
       setIndex(from);
-      curStyle = `translateY(${scrollUp(index())}px)`;
+      let p = scrollUp(index());
+      curStyle = `translateY(${p}px)`;
       return scrollRange(from + 1, to);
     }
     track2.style.transform = curStyle;
@@ -13653,18 +14594,19 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
     );
   };
   var transEnd = (defStyle, defPos) => {
-    if (pos() >= 0) {
+    if (index() == match_cat.length + count3) {
+      track2.style.transition = "none";
+      track2.style.transform = defStyle;
+      setPos(defPos);
+      setIndex(0);
+      scrollRange(0, count3);
+      updateShadow(false);
+    }
+    if (index() == count3 - 1) {
       track2.style.transition = "none";
       track2.style.transform = defStyle;
       setPos(defPos);
       scrollRange(0, match_cat.length + count3 - 1);
-      updateShadow(true);
-    }
-    if (pos() + track2.offsetHeight <= sub.offsetHeight) {
-      track2.style.transition = "none";
-      track2.style.transform = defStyle;
-      setPos(defPos);
-      scrollRange(0, count3);
       updateShadow(true);
     }
     moving = false;
@@ -13673,7 +14615,7 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
     c[index() - count3].style.background = "darkred";
   };
   var next = (e) => {
-    if (moving || index() >= track2.children.length - 1) return;
+    if (moving || index() >= match_cat.length + count3) return;
     moving = true;
     setIndex(index() + 1);
     requestAnimationFrame(() => {
@@ -13727,48 +14669,85 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
       return;
     }
   };
+  var init = () => {
+    matchRef.style.height = bodyH + 1 + "px";
+    let target = track2.children[index() + count3];
+    let ch = sub.offsetHeight;
+    let th = target.offsetHeight + 8;
+    setPos(ch / 2 - th / 2);
+    let defPos = ch / 2 - th / 2;
+    let defStyle = `translateY(${defPos}px)`;
+    track2.style.transform = defStyle;
+    scrollRange(0, count3);
+    updateShadow(false);
+    track2.addEventListener(
+      "transitionend",
+      () => transEnd(defStyle, defPos)
+    );
+  };
+  var handleCat = (e, i, store2) => {
+    if (once4()) return;
+    let c = document.querySelectorAll(".typecat-item");
+    c.forEach((cc) => cc.style.background = "rgba(11,11,11,0.7)");
+    e.stopPropagation();
+    let scrollUntil = () => {
+      if (index() != count3 + i) {
+        next();
+        moving = true;
+        return setTimeout(scrollUntil, 50);
+      } else {
+        moving = false;
+        return movecat(e, store2, false);
+      }
+    };
+    scrollUntil();
+  };
+  var handleSub = (e, cat2, sub2, i, store2, setStore2) => {
+    if (e.target.parentElement.parentElement.classList.contains("match-shadow")) return;
+    let prev4 = { ...store2.matches[matchN()] };
+    prev4 = prev4.wrestlers.flat();
+    removeCurrentCard(store2, setStore2);
+    let t = match_type[cat2];
+    t = { [Object.keys(t)[i]]: t[sub2] };
+    let m = genSingleMatch(store2.roster, matchN(), store2.matches, t, prev4);
+    setStore2("matches", matchN(), m);
+    setPage("match");
+  };
+  var [helpContent5, setHelp5] = createSignal("");
+  var [once4, setOnce4] = createSignal(true);
+  var screenshot3 = [];
   var matchType = (store2, setStore2) => {
-    onMount(() => {
-      matchRef.style.height = bodyH + 1 + "px";
-      let target = track2.children[index() + count3];
-      let ch = sub.offsetHeight;
-      let th = target.offsetHeight + 8;
-      setPos(ch / 2 - th / 2);
-      let defPos = pos();
-      let defStyle = `translateY(${pos()}px)`;
-      track2.style.transform = defStyle;
-      scrollRange(0, count3);
-      updateShadow(false);
-      track2.addEventListener(
-        "transitionend",
-        () => transEnd(defStyle, defPos)
-      );
+    onMount(async () => {
+      if (once4()) {
+        await toPng(document.querySelector(".typecat-list"), {
+          skipFonts: true,
+          cacheBust: true,
+          quality: 0
+        }).then((data) => {
+          let img = new Image();
+          img.src = data;
+          screenshot3.push(img);
+        });
+        setHelp5(
+          () => html`
+        <span>Scroll trough category and select match type. Something is hidden... just click again if it appear</span><br>
+        ${screenshot3[0]}`
+        );
+        setOnce4(false);
+      } else init();
     });
     return html`
     <div ref=${(e) => matchRef = e} class=match-typecon onclick=${(e) => movecat(e, store2, true)}>
+      ${HelpMenu(helpContent5())}
       <div class=match-typebg></div>
       <div class=match-typeback></div>
       
       <!--div class=testline></div-->
       
-      <div ref=${(e) => cat = e} class=match-typecat>
+      <div ref=${(e) => cat = e} class=match-typecat onclick=${() => setPage("match")}>
         <div class=typecat-list>
-          ${match_cat.map((cat2, i) => html`<div onclick=${(e) => {
-      let c = document.querySelectorAll(".typecat-item");
-      c.forEach((cc) => cc.style.background = "rgba(11,11,11,0.7)");
-      e.stopPropagation();
-      let scrollUntil = () => {
-        if (index() != count3 + i) {
-          next();
-          moving = true;
-          return setTimeout(scrollUntil, 50);
-        } else {
-          moving = false;
-          return movecat(e, store2, false);
-        }
-      };
-      scrollUntil();
-    }} class="typecat-item cat">${cat2}</div>`)}
+          ${match_cat.map((cat2, i) => html`<div onclick=${(e) => handleCat(e, i, store2)} 
+            class="typecat-item cat">${cat2}</div>`)}
         </div>
       </div>
       <div ref=${(e) => sub = e} class=match-typesub ontouchstart=${onstart} ontouchmove=${onmove}>
@@ -13777,31 +14756,12 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
       (cat2) => html`<div class=typecat-list>
               <div class=typesub-cat>
                 <p onclick=${(e) => movecat(e, store2, false)} class=cat>${cat2}</p>
-                
-                <div class="svg-net2">
-                  <svg class="diamond-net" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-                    <defs>
-                      <pattern id="diamondNet2" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                        <line x1="0" y1="0" x2="5" y2="0" stroke="#000" stroke-width="2"/>
-                        <line x1="0" y1="0" x2="0" y2="5" stroke="#000" stroke-width="2"/>
-                      </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#diamondNet2)" />
-                  </svg>
-                </div>
-                
+                ${netPattern(2)}
               </div>
               <div class=typesub-match>
                 ${Object.keys(match_type[cat2]).map(
-        (sub2, i) => html`<div onclick=${(e) => {
-          if (e.target.parentElement.classList.contains("match-shadow")) return;
-          removeCurrentCard(store2, setStore2);
-          let t = match_type[cat2];
-          t = { [Object.keys(t)[i]]: t[sub2] };
-          let m = genSingleMatch(store2.roster, matchN(), store2.matches, t);
-          setStore2("matches", matchN(), m);
-          setPage("match");
-        }} class=typesub-item>${sub2}</div>`
+        (sub2, i) => html`<div onclick=${(e) => handleSub(e, cat2, sub2, i, store2, setStore2)}
+                  class=typesub-item>${sub2}</div>`
       )}
               </div>
             </div>`
@@ -13815,15 +14775,307 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
   `;
   };
 
-  // src/components/matchcard.js
+  // src/components/schedule.js
   var range6 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
+  var day = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  var month_name = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  var clonedMonth = [
+    ...month_name.slice(-2),
+    ...month_name,
+    ...month_name.slice(0, 2)
+  ];
   var carousel;
   var track3;
+  var w;
+  var [index2, setIndex2] = createSignal(0);
+  var startTime;
+  var setTransition = (ts) => {
+    if (startTime == ts) {
+      return requestAnimationFrame(setTransition);
+    }
+    track3.style.transition = "transform 0.25s ease-in-out";
+  };
+  var setTranslate = () => requestAnimationFrame(() => {
+    track3.style.transition = "transform 0.25s ease-in-out";
+    track3.style.transform = `translateX(${-index2() * w}px)`;
+  });
+  var resetTransform = (x, reset2) => {
+    requestAnimationFrame((ts) => {
+      startTime = ts;
+      track3.style.transition = "none";
+      track3.style.transform = x == 0 ? `translateX(${-index2() * w}px)` : x == 1 ? `translateX(${-month_name.length * w}px)` : "";
+    });
+    requestAnimationFrame(setTransition);
+  };
+  var idx = 0;
+  var transEnd2 = () => {
+    if (index2() == month_name.length + 2 - 1) {
+      setIndex2(2 - 1);
+      resetTransform(0, true);
+    }
+    if (index2() == 0) {
+      setIndex2(month_name.length);
+      resetTransform(1, true);
+    }
+    idx = index2();
+  };
+  var next2 = () => {
+    if (index2() >= month_name.length + 2 - 1) return;
+    setIndex2(index2() + 1);
+    setTranslate();
+  };
+  var prev2 = () => {
+    if (index2() <= 0) return;
+    setIndex2(index2() - 1);
+    setTranslate();
+  };
+  var Month = () => {
+    onMount(() => {
+      w = carousel.querySelector(".month").offsetWidth;
+      resetTransform(0, false);
+      requestAnimationFrame(setTransition);
+      track3.addEventListener("transitionend", transEnd2);
+    });
+    return html`
+    <div ref=${(e) => carousel = e} class=carousel2>
+      <button onclick=${prev2}>L</button>
+      <button onclick=${next2}>R</button>
+      <div ref=${(e) => track3 = e} class=track2>
+      ${clonedMonth.map((lab, i) => {
+      return html`<div class=month>
+          ${lab}
+        </div>`;
+    })}
+      </div>
+  </div>`;
+  };
+  var cal;
+  var show2;
+  var [openShow, setOpen] = createSignal(false);
+  var splitEvery = (arr, n) => arr.reduce((acc, val, i) => {
+    if (i % n == 0) acc.push([]);
+    acc[acc.length - 1].push(val);
+    return acc;
+  }, []);
+  var mtable = [
+    31,
+    28,
+    31,
+    30,
+    31,
+    30,
+    31,
+    31,
+    30,
+    31,
+    30,
+    31
+  ];
+  var _month = range6(0, 12).reduce((acc, i) => {
+    let m = range6(0, acc[acc.length - 1][1]).map((_) => null).concat(range6(1, mtable[i] + 1));
+    let n = splitEvery(m, 7);
+    let last = n[n.length - 1].length;
+    last = last == 7 ? 0 : last;
+    acc.push([m, last]);
+    return acc;
+  }, [[[], 1]]).map(([m, _]) => m);
+  var getMonth = () => splitEvery(_month[index2() == 0 || index2() == 13 ? 12 : index2()], 7);
+  var [date, setDate] = createStore({
+    day: 27,
+    week: 4,
+    month: 4,
+    format: ""
+  });
+  var programDate = () => `${month_name[date.month - 1].slice(0, 3).toUpperCase()}. ${date.day}`;
+  var nextProgram = (n) => {
+    let len = getMonth().length;
+    if (date.week == len) {
+      setDate("week", 1);
+      setDate("month", date.month + 1);
+    } else {
+      setDate("week", date.week + 1);
+    }
+    setIndex2(date.month);
+    let week = getMonth()[date.week - 1];
+    if (n - 1 >= week.length) {
+      return nextProgram(n);
+    }
+    setDate("day", week[n - 1]);
+  };
+  var focusRow = () => {
+    if (index2() == date.month) {
+      let week = cal.querySelectorAll(".row")[date.week];
+      week.style.transform = "scale(1.04)";
+      week.style["z-index"] = "2";
+      week.style["transform-origin"] = "center";
+      week.style["border"] = "2px solid #fff";
+      week.querySelectorAll(".calendar-cell").forEach((day2) => {
+        day2.style["border"] = "1px solid #fff";
+      });
+    }
+  };
+  var [record, setRecord] = createSignal(false);
+  var Calendar = (store2) => {
+    onMount(() => requestAnimationFrame(focusRow));
+    createEffect(focusRow);
+    return html`<div ref=${(e) => cal = e} class=calendar>
+  
+      <div ref=${(e) => show2 = e} class=schedule-show>
+      <div class=show-bg></div>
+      <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfw8dcbHJSektuNFTMxqjJX3vlyKvhDi_D_QoN3MMQJmT_gjqizTD0mpOp&s=10'>
+      <div class=show-list>
+        ${range6(0, 7).map((_) => html`<div class=show-item>
+          Match
+        </div>`)}
+        <button>Edit</button>
+      </div>
+    </div>
+  
+    <div class=row>${day.map((d) => html`<div class=calendar-h>${d}</div>`)}</div>
+    ${() => getMonth().map(
+      (week, n) => html`<div class=row>${week.map((day2, _i) => {
+        let pastShow = index2() != 0 && index2() < date.month ? true : index2() == date.month ? n + 1 <= date.week && day2 < date.day ? true : false : false;
+        return html`<div class=${pastShow ? "calendar-cell past-show" : "calendar-cell"} onclick=${(e) => {
+          e.stopPropagation();
+          let d = `${day2} ${n + 1} ${index2()}`;
+          if (store2.record.has(d)) {
+            setDate("format", d);
+            setRecord(true);
+          }
+        }}>
+          ${pastShow && day2 != null ? html`<div class="check">&#10003;</div>` : ""}
+          ${() => {
+          if (index2() == date.month && n + 1 == date.week && day2 == date.day) {
+            return html`<p style="color: yellow;">${day2 || ""}</p>`;
+          }
+          if (_i == 0) return html`<p style="color: crimson;">${day2 || ""}</p>`;
+          if (_i == 6) return html`<p style="color: royalblue;">${day2 || ""}</p>`;
+          if (pastShow) return html`<p style="color: gray;">${day2 || ""}</p>`;
+          return html`<p>${day2 || ""}</p>`;
+        }}
+          ${() => {
+          if (day2 == null) return "";
+          if (_i == 5) {
+            return html`<div class=${pastShow ? "day-bg past-show" : "day-bg"}>
+              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfw8dcbHJSektuNFTMxqjJX3vlyKvhDi_D_QoN3MMQJmT_gjqizTD0mpOp&s=10'>
+            </div>`;
+          }
+          if (_i == 1) {
+            return html`<div class=${pastShow ? "day-bg past-show" : "day-bg"}>
+              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSemPYFfTaJUnQgZqBiVEWVNVTc-tfa9W3tZI7WoDS7FskXREQKgB6MMPo&s=10'>
+            </div>`;
+          }
+          if (_i == 2) {
+            return html`<div class=${pastShow ? "day-bg past-show" : "day-bg"}>
+              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2w1Xh5y4KEorsVGjtNebnPwY_R_iMA5S-PN8G7CZz05QK2A90Jhmp8PM&s=10'>
+            </div>`;
+          }
+          return "";
+        }}
+        </div>`;
+      })}</div>`
+    )}
+  </div>`;
+  };
+  var [once5, setOnce5] = createSignal(true);
+  var [helpContent6, setHelp6] = createSignal("");
+  var screenshot4 = [];
+  var _Schedule = (store2) => {
+    let bottom, menu3;
+    onMount(() => {
+      let h = document.querySelector(".calendar-cell").offsetHeight;
+      bottom.style.height = h + "px";
+      bottom.style.bottom = menu3.offsetHeight + "px";
+    });
+    onMount(async () => {
+      if (once5()) {
+        await toPng(carousel, {
+          skipFonts: true,
+          cacheBust: true,
+          quality: 0
+        }).then((data) => {
+          let img = new Image();
+          img.src = data;
+          screenshot4.push(img);
+        });
+        await toPng(cal.querySelectorAll(".row")[4], {
+          skipFonts: true,
+          cacheBust: true,
+          quality: 0
+        }).then((data) => {
+          let img = new Image();
+          img.src = data;
+          screenshot4.push(img);
+        });
+        setHelp6(
+          () => html`
+        <span>Click L/R button to switch month</span>
+        <br>${screenshot4[0]}<br>
+        <span>Each day store results of your program, click at date (of your program*¹) to view results</span><br>
+        <br>${screenshot4[1]}<br>
+        <span>Current date number is in yellow. Previous date mark with check and has lower brightness</span><br>
+        <span>*¹ In this snapshot you play as Smackdown on Friday)</span><br>`
+        );
+        setOnce5(false);
+      }
+    });
+    return html`<div class=schedule-con onclick=${(e) => {
+      if (openShow()) {
+        setOpen(false);
+        show2.style.transform = "translateX(100%)";
+      }
+    }}>
+    ${HelpMenu(helpContent6())}
+    <div class=schedule-banner-con>
+      <img id=schedule-event 
+      src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/WWE_SmackDown_%282024%29_Logo.svg/1200px-WWE_SmackDown_%282024%29_Logo.svg.png'
+      >
+      <div class=schedule-h>Schedule</div>
+      <div class=schedule-program>${() => month_name[index2() - 1]?.slice(0, 3) || "Dec"}.<br>WWE<br>Year 1</div>
+      <div class=schedule-hidden>April<br>WWE<br>Year 1</div>
+    </div>
+    ${Month()}
+    ${Calendar(store2)}
+    <div ref=${(e) => bottom = e} class=schedule-bottom>Smackdown<br>Brooklyn, New York</div>
+    <div ref=${(e) => menu3 = e} class=match-menu>
+      <p onclick=${openHelp}>Help</p>
+      <p onclick=${() => setActive("GMDesk")}>Back</p>
+    </div>
+  </div>`;
+  };
+  var Schedule = (store2, setStore2) => {
+    onMount(() => index2() == 0 ? setIndex2(date.month) : setIndex2(index2()));
+    onCleanup(
+      () => {
+      }
+      //setRecord(false)
+    );
+    if (record()) return MatchCard(store2.record.get(date.format), setStore2, true);
+    return _Schedule(store2, setStore2);
+  };
+
+  // src/components/matchcard.js
+  var range7 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
+  var carousel2;
+  var track4;
   var body;
   var count4 = 3;
-  var w = 33.33;
-  var [index2, setIndex2] = createSignal(count4 - 1);
-  var [matchN, setMatchN] = createSignal(index2() - count4 + 1);
+  var w2 = 33.33;
+  var [index3, setIndex3] = createSignal(count4 - 1);
+  var [matchN, setMatchN] = createSignal(index3() - count4 + 1);
   var menu = [
     "Match #1",
     "Match #2",
@@ -13839,53 +15091,53 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
     ...menu,
     ...menu.slice(0, count4)
   ];
-  var startTime;
-  var setTransition = (ts) => {
-    if (startTime == ts) {
-      return requestAnimationFrame(setTransition);
+  var startTime2;
+  var setTransition2 = (ts) => {
+    if (startTime2 == ts) {
+      return requestAnimationFrame(setTransition2);
     }
-    track3.style.transition = "transform 0.25s ease-in-out";
+    track4.style.transition = "transform 0.25s ease-in-out";
   };
   var moving2 = false;
-  var resetTransform = (x, reset2) => {
+  var resetTransform2 = (x, reset2) => {
     requestAnimationFrame((ts) => {
-      startTime = ts;
-      track3.style.transition = "none";
-      track3.style.transform = x == 0 ? `translateX(${-index2() * w}px)` : x == 1 ? `translateX(${-menu.length * w}px)` : "";
+      startTime2 = ts;
+      track4.style.transition = "none";
+      track4.style.transform = x == 0 ? `translateX(${-index3() * w2}px)` : x == 1 ? `translateX(${-menu.length * w2}px)` : "";
       updateCarousel(reset2);
       moving2 = false;
     });
-    requestAnimationFrame(setTransition);
+    requestAnimationFrame(setTransition2);
   };
-  var transEnd2 = () => {
-    if (index2() == menu.length + count4 - 1) {
-      setIndex2(count4 - 1);
-      resetTransform(0, true);
+  var transEnd3 = () => {
+    if (index3() == menu.length + count4 - 1) {
+      setIndex3(count4 - 1);
+      resetTransform2(0, true);
     }
-    if (index2() == 0) {
-      setIndex2(menu.length);
-      resetTransform(1, true);
+    if (index3() == 0) {
+      setIndex3(menu.length);
+      resetTransform2(1, true);
     }
     moving2 = false;
   };
   var startX;
-  var setTranslate = () => requestAnimationFrame(() => {
-    track3.style.transition = "transform 0.25s ease-in-out";
-    track3.style.transform = `translateX(${-index2() * w}px)`;
+  var setTranslate2 = () => requestAnimationFrame(() => {
+    track4.style.transition = "transform 0.25s ease-in-out";
+    track4.style.transform = `translateX(${-index3() * w2}px)`;
     updateCarousel(false);
   });
-  var next2 = (e) => {
-    if (moving2 || index2() >= menu.length + count4 - 1) return;
+  var next3 = (e) => {
+    if (moving2 || index3() >= menu.length + count4 - 1) return;
     moving2 = true;
-    setIndex2(index2() + 1);
-    setTranslate();
+    setIndex3(index3() + 1);
+    setTranslate2();
     setNextMatch();
   };
-  var prev2 = (e) => {
-    if (moving2 || index2() <= 0) return;
+  var prev3 = (e) => {
+    if (moving2 || index3() <= 0) return;
     moving2 = true;
-    setIndex2(index2() - 1);
-    setTranslate();
+    setIndex3(index3() - 1);
+    setTranslate2();
     setNextMatch();
   };
   var onstart2 = (e) => {
@@ -13895,31 +15147,31 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
     if (moving2) return;
     let curx = e.touches[0].clientX - startX;
     if (Math.abs(curx) > 50) {
-      curx < 0 ? next2(curx) : prev2(curx);
+      curx < 0 ? next3(curx) : prev3(curx);
       startX = e.touches[0].clientX;
     }
   };
   var setNextMatch = () => {
-    let n = index2() - count4 + 1;
+    let n = index3() - count4 + 1;
     n < 0 ? n = menu.length - 1 : n >= menu.length ? n = 0 : n;
     setMatchN(n);
   };
   var updateCarousel = (reset2) => {
-    let slides = carousel.querySelectorAll(".match-lab");
+    let slides = carousel2.querySelectorAll(".match-lab");
     slides.forEach((e, i) => {
       e.classList.remove("center", "side", "far", "no-anim");
-      e.removeEventListener("click", next2);
-      e.removeEventListener("click", prev2);
-      let offset = i - index2();
+      e.removeEventListener("click", next3);
+      e.removeEventListener("click", prev3);
+      let offset = i - index3();
       if (offset == 1) {
         if (reset2) e.classList.add("no-anim");
         e.classList.add("center");
       } else if (Math.abs(offset) == 0) {
         e.classList.add("far");
-        e.addEventListener("click", prev2);
+        e.addEventListener("click", prev3);
       } else {
         e.classList.add("side");
-        e.addEventListener("click", next2);
+        e.addEventListener("click", next3);
       }
     });
     setNextMatch();
@@ -13965,6 +15217,17 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
   var MatchImage = (store2) => {
     return html`
     <div ref=${(e) => imgRef = e} class=match-wrestler>
+      <div class=match-bg></div>
+      <div class="panel left">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+      </div>
+      <div class="panel right">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+      </div>
       ${() => {
       if (matchN() > store2.matches.length - 1) return "";
       if (store2.matches.length == 0) return "";
@@ -13979,12 +15242,12 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
     }}
     </div>`;
   };
-  var [xButton, setButton] = createSignal("Confirm");
+  var [button, setButton] = createSignal("Confirm");
   var winLoss = (store2, name2) => {
     return html`<div class=wl>
     ${() => {
-      if (xButton() == "Finish") {
-        let m = store2.result[matchN()];
+      if (page() == "record" || button() == "Finish") {
+        let m = store2.results[matchN()];
         if (m?.winner?.find((w3) => w3.name == name2)) return html`<div class=win>Win</div>`;
         if (m?.loser?.flat().find((w3) => w3.name == name2)) return html`<div class=loss>Loss</div>`;
       }
@@ -13995,7 +15258,7 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
   var matchDup = (name2) => {
     if (name2 == "") return "";
     let n = usedMap.get(name2);
-    if (n == 1) return html`<p>${name2}</p>`;
+    if (page() == "record" || n <= 1) return html`<p>${name2}</p>`;
     if (n == 2) return html`<p class=dup1>${name2}</p>`;
     if (n > 2) return html`<p class=dup2>${name2}</p>`;
   };
@@ -14003,25 +15266,13 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
   var MatchNameList = (store2) => {
     return html`
     <div ref=${(e) => name = e} class=match-name>
-        
-      <div class="svg-net">
-        <svg class="diamond-net" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-          <defs>
-            <pattern id="diamondNet3" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <line x1="0" y1="0" x2="5" y2="0" stroke="#000" stroke-width="2"/>
-              <line x1="0" y1="0" x2="0" y2="5" stroke="#000" stroke-width="2"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#diamondNet3)" />
-        </svg>
-      </div>
-        
+      <div class=match-name-inner>
+      ${netPattern(3)}
       ${() => {
-      if (matchN() > store2.matches.length - 1) return "";
       let wrestlers = store2.matches[matchN()]?.wrestlers || "";
       if (wrestlers == "") return html`<p>Vacant</p>`;
       if (wrestlers.length == 2) {
-        return range6(0, 3).map((i) => {
+        return range7(0, 3).map((i) => {
           let l = wrestlers[0][i];
           let r = wrestlers[1][i];
           if (!l && !r) return "";
@@ -14065,7 +15316,7 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
           </div>
           `;
       } else if (wrestlers.length == 3 && wrestlers[0].length == 2) {
-        let a = range6(0, 2).map((i) => {
+        let a = range7(0, 2).map((i) => {
           let l = wrestlers[0][i];
           let r = wrestlers[1][i];
           if (!l && !r) return "";
@@ -14150,6 +15401,7 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
         );
       }
     }}
+      </div>
     </div>`;
   };
   var removeCurrentCard = (store2, setStore2) => {
@@ -14167,12 +15419,15 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
   var [page, setPage] = createSignal("main");
   var MatchList = (store2, setStore2) => {
     return html`
-    <div ref=${(e) => carousel = e} class=carousel ontouchstart=${onstart2} ontouchmove=${onmove2}>
-      <div ref=${(e) => track3 = e} class=track>
+    <div ref=${(e) => carousel2 = e} class=carousel ontouchstart=${onstart2} ontouchmove=${onmove2}>
+      <div class="nav-button-l"><div class=nav-l></div></div>
+      <div class="nav-button-r"><div class=nav-r></div></div>
+      <div ref=${(e) => track4 = e} class=track>
       ${clonedMenu.map((lab, i) => {
       return html`<div class=match-lab onClick=${() => {
-        if (page() == "main" && xButton() == "Confirm") {
-          transEnd2();
+        if (page() == "record") return;
+        if (page() == "main" && button() == "Confirm") {
+          transEnd3();
           setNextMatch();
           if (store2.matches[matchN()] == null) {
             let m = genSingleMatch(store2.roster, matchN(), store2.matches);
@@ -14188,12 +15443,34 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
       </div>
   </div>`;
   };
+  var MatchTitle = (store2) => {
+    return html`
+    <div class=match-title>
+      ${() => {
+      if (page() == "match" || page() == "roster" || page() == "type") {
+        return html`
+          <div class=title-n>Match<br>${() => matchN() + 1}</div>
+          <div class=title-lab>
+            <div class=title-championship>Non Title</div>
+            <div onclick=${() => {
+          page() == "match" ? setPage("type") : setPage("match");
+        }} class=title-matchtype>
+              <p>${store2.matches[matchN()].matchType}</p>
+            </div>
+          </div>`;
+      } else {
+        return html`<div class=title-n>Match ${() => matchN() + 1}</div>`;
+      }
+    }}
+    </div>
+  `;
+  };
   var MatchMain = (store2, setStore2) => {
     onMount(() => {
-      w = carousel.querySelector(".match-lab").offsetWidth + 8;
-      resetTransform(0, false);
-      requestAnimationFrame(setTransition);
-      track3.addEventListener("transitionend", transEnd2);
+      w2 = carousel2.querySelector(".match-lab").offsetWidth + 8;
+      resetTransform2(0, false);
+      requestAnimationFrame(setTransition2);
+      track4.addEventListener("transitionend", transEnd3);
     });
     return html`
     <div ref=${(e) => body = e} class=match-body>
@@ -14203,247 +15480,195 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
     </div>
   `;
   };
-  var [select, setSelect] = createSignal(null);
-  var MatchCard = (store2, setStore2) => {
+  var MatchContent = (store2, setStore2) => {
+    if (page() == "main" || page() == "record") return MatchMain(store2, setStore2);
+    if (page() == "match") return folder(store2);
+    if (page() == "roster") {
+      return html`
+      ${folder(store2)}
+      ${rosterList(store2, setStore2)}
+    `;
+    }
+    if (page() == "type") return matchType(store2, setStore2);
+  };
+  var buttonPreset = (store2, setStore2) => {
+    if (page() == "record") return;
+    if (page() == "main") {
+      setMsg([
+        "This will generate preset card",
+        "All previous changed wil be remove and replace with preset"
+      ]);
+      openWarn();
+      setAction(() => () => {
+        let match2 = genPresetCard(store2.roster, 5, store2.matches);
+        setStore2("matches", match2);
+      });
+    } else {
+      setMsg([
+        "This will generate random matching",
+        "All previous changed wil be remove and replace with new match"
+      ]);
+      openWarn();
+      setAction(() => () => {
+        removeCurrentCard(store2, setStore2);
+        let m = genSingleMatch(store2.roster, matchN(), store2.matches);
+        setStore2("matches", matchN(), m);
+      });
+    }
+  };
+  var buttonMain = (store2, setStore2) => {
+    if (page() == "record") return setRecord(false);
+    if (page() == "main") {
+      if (button() == "Confirm") {
+        setMsg([
+          "Do you want to continue?",
+          "All cards can't be change anymore"
+        ]);
+        openWarn();
+        setAction(() => () => {
+          setButton("Simulate");
+        });
+      } else if (button() == "Simulate") {
+        setMsg([
+          "Do you want to simulate all matches?",
+          `Since game isn't finish, Click "Ok" is only your option`
+        ]);
+        openWarn();
+        setAction(() => () => {
+          let matches = [...store2.matches].slice();
+          let result = simulateMatches(store2.matches);
+          let pop = [...store2.roster].map((w3) => ({ id: w3.id, pop: w3.pop }));
+          let up = updateStats([...store2.roster], result);
+          setStore2("results", result);
+          setStore2("popChange", pop);
+          setStore2("roster", up);
+          setStore2("record", (record2) => {
+            record2.set(
+              `${date.day} ${date.week} ${date.month}`,
+              {
+                date: programDate(),
+                matches,
+                results: result
+              }
+            );
+            return record2;
+          });
+          setButton("Finish");
+        });
+      } else if (button() == "Finish") {
+        setMsg([
+          "Do you want to continue?",
+          "This will bring you to next event. You can view results before leaving and You can check at schedule and roster What's things changed?"
+        ]);
+        openWarn();
+        setAction(() => () => {
+          setStore2("matches", range7(0, 5).map((_) => null));
+          setUsed(/* @__PURE__ */ new Set());
+          setUsedMap(/* @__PURE__ */ new Map());
+          nextProgram(6);
+          setButton("Confirm");
+        });
+      }
+    } else if (page() == "roster") {
+      onBook(store2, setStore2, true);
+      setPage("match");
+    } else {
+      setPage("main");
+    }
+  };
+  var buttonBack = () => {
+    if (page() == "main") {
+      setActive("GMDesk");
+    } else if (page() == "type" || page() == "roster") {
+      setPage("match");
+    } else {
+      setPage("main");
+    }
+  };
+  var [helpContent7, setHelp7] = createSignal("");
+  var [once6, setOnce6] = createSignal(true);
+  var screenshot5 = [];
+  var MatchCard = (store2, setStore2, record2) => {
+    onMount(() => {
+      if (record2) return setPage("record");
+      setRecord(false);
+      if (page() == "record") setPage("main");
+    });
+    onCleanup(() => {
+      if (record2) {
+        setIndex3(count4 - 1);
+        setMatchN(index3() - count4 + 1);
+      }
+    });
+    onMount(async () => {
+      if (once6()) {
+        await toPng(document.querySelector(".match-top p"), {
+          skipFonts: true,
+          cacheBust: true,
+          quality: 0
+        }).then((data) => {
+          let img = new Image();
+          img.src = data;
+          screenshot5.push(img);
+        });
+        await toPng(carousel2, {
+          skipFonts: true,
+          cacheBust: true,
+          quality: 0
+        }).then((data) => {
+          let img = new Image();
+          img.src = data;
+          screenshot5.push(img);
+        });
+        await toPng(document.querySelector(".match-menu"), {
+          skipFonts: true,
+          cacheBust: true,
+          quality: 0
+        }).then((data) => {
+          let img = new Image();
+          img.src = data;
+          screenshot5.push(img);
+        });
+        setHelp7(
+          () => html`
+        <span>Here is program date</span>
+        <br>${screenshot5[0]}<br>
+        <span>You can scroll left/right to switch match, And click it to enter edit page</span>
+        <br>${screenshot5[1]}<br>
+        <span>This is just menu that you can click</span>
+        <br>${screenshot5[2]}<br>
+        <span><button>Help</button> Show this dialog, click again to close</span><br>
+        <span><button>Preset</button> This will generate preset. Number of match is random, but match card is very balanced. it will find best match for your roster (You can check logging at Eruda console when generated match)</span><br>
+        <span><button>Confirm</button> Just click. it will explain you trough attention dialog</span><br>
+        <span><button>Back</button> This button is show up everywhere, it bring you back to history</span><br>`
+        );
+        setOnce6(false);
+      }
+    });
     return html`
   <div class=match-container>
-    <div class=match-bg></div>
+    ${Attention()}
+    ${HelpMenu(helpContent7())}
     <div class=match-top>
+      <p>${() => store2.date != void 0 ? store2.date : programDate()} BROOKLYN, NY
+      </p>
       <img id=match-brand
       src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/WWE_SmackDown_%282024%29_Logo.svg/1200px-WWE_SmackDown_%282024%29_Logo.svg.png'
       >
     </div>
     <div class=spotlight></div>
-    <div class=match-title>
-      <div class=title-n>Match<br>${() => matchN() + 1}</div>
-      ${() => {
-      if (page() == "match" || page() == "roster" || page() == "type") {
-        return html`<div class=title-lab>
-            <div class=title-championship>Non Title</div>
-            <div onclick=${() => {
-          page() == "match" ? setPage("type") : setPage("match");
-        }} class=title-matchtype>
-              <p>${store2.matches[matchN()].matchType}</p>
-            </div>
-          </div>`;
-      }
-    }}
-    </div>
-    ${() => {
-      if (page() == "main") return MatchMain(store2, setStore2);
-      if (page() == "match") return folder(store2);
-      if (page() == "roster") {
-        return html`
-          ${folder(store2)}
-          ${rosterList(store2, setStore2)}
-        `;
-      }
-      if (page() == "type") return matchType(store2, setStore2);
-    }}
+    ${MatchTitle(store2)}
+    ${MatchContent(store2, setStore2)}
     <div class=match-menu>
-      <p onClick=${() => {
-      alert("This will genetate preset card");
-      let match2 = genPresetCard(store2.roster, 5, store2.matches);
-      setStore2("matches", match2);
-    }}>[--] Preset</p>
-      <p onClick=${() => {
-      moving2 = false;
-      if (page() == "main") {
-        if (xButton() == "Confirm") {
-          alert("Confirmed match card, you can't changed match ");
-          setButton("Simulate");
-        } else if (xButton() == "Simulate") {
-          alert("Simulate all matches");
-          let result = simulateMatches(store2.matches);
-          let pop = [...store2.roster].map((w3) => w3.pop);
-          let up = updateStats([...store2.roster], result);
-          setStore2("result", result);
-          setStore2("popChange", pop);
-          setStore2("roster", up);
-          setButton("Finish");
-        } else if (xButton() == "Finish") {
-          alert("You will go to next match card");
-          setStore2("matches", range6(0, 5).map((_) => null));
-          setUsed(/* @__PURE__ */ new Set());
-          setUsedMap(/* @__PURE__ */ new Map());
-          setButton("Confirm");
-        }
-      } else {
-        setPage("main");
-      }
-    }}>${xButton()}</p>
+      <p onClick=${openHelp}>Help</p>
+      ${() => page() == "main" || page() == "match" ? html`<p onClick=${() => buttonPreset(store2, setStore2)}>
+          ${page() == "main" ? "Preset" : "Random"}
+        </p>` : ""}
+      ${() => page() == "main" || page() == "match" || page() == "roster" ? html`<p onClick=${() => buttonMain(store2, setStore2)}>
+          ${page() == "roster" ? "Book" : button()}
+        </p>` : ""}
+      ${() => page() != "match" ? html`<p onClick=${() => buttonBack()}>Back</p>` : ""}
     </div>
-  </div>`;
-  };
-
-  // src/components/schedule.js
-  var range7 = (start2, end) => Array.from({ length: end - start2 }, (_, i) => start2 + i);
-  var day = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-  var _month = [
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-    "January",
-    "February",
-    "March"
-  ];
-  var clonedMonth = [
-    ..._month.slice(-2),
-    ..._month,
-    ..._month.slice(0, 2)
-  ];
-  var carousel2;
-  var track4;
-  var w2;
-  var [index3, setIndex3] = createSignal(0);
-  var startTime2;
-  var setTransition2 = (ts) => {
-    if (startTime2 == ts) {
-      return requestAnimationFrame(setTransition2);
-    }
-    track4.style.transition = "transform 0.25s ease-in-out";
-  };
-  var setTranslate2 = () => requestAnimationFrame(() => {
-    track4.style.transition = "transform 0.25s ease-in-out";
-    track4.style.transform = `translateX(${-index3() * w2}px)`;
-  });
-  var resetTransform2 = (x, reset2) => {
-    requestAnimationFrame((ts) => {
-      startTime2 = ts;
-      track4.style.transition = "none";
-      track4.style.transform = x == 0 ? `translateX(${-index3() * w2}px)` : x == 1 ? `translateX(${-_month.length * w2}px)` : "";
-    });
-    requestAnimationFrame(setTransition2);
-  };
-  var transEnd3 = () => {
-    if (index3() == _month.length + 2 - 1) {
-      setIndex3(2 - 1);
-      resetTransform2(0, true);
-    }
-    if (index3() == 0) {
-      setIndex3(_month.length);
-      resetTransform2(1, true);
-    }
-  };
-  var next3 = () => {
-    if (index3() >= _month.length + 2 - 1) return;
-    setIndex3(index3() + 1);
-    setTranslate2();
-  };
-  var prev3 = () => {
-    if (index3() <= 0) return;
-    setIndex3(index3() - 1);
-    setTranslate2();
-  };
-  var Month = () => {
-    onMount(() => {
-      w2 = carousel2.querySelector(".month").offsetWidth;
-      resetTransform2(0, false);
-      requestAnimationFrame(setTransition2);
-      if (index3() == 0) next3();
-      track4.addEventListener("transitionend", transEnd3);
-    });
-    createEffect(() => {
-    });
-    return html`
-    <div ref=${(e) => carousel2 = e} class=carousel2>
-      <button onclick=${prev3}>L</button>
-      <button onclick=${next3}>R</button>
-      <div ref=${(e) => track4 = e} class=track2>
-      ${clonedMonth.map((lab, i) => {
-      return html`<div class=month>
-          ${lab}
-        </div>`;
-    })}
-      </div>
-  </div>`;
-  };
-  var cal;
-  var show2;
-  var [openShow, setOpen] = createSignal(false);
-  var Calendar = () => {
-    onMount(() => {
-      let days = cal.querySelectorAll(".calendar-cell");
-      days.forEach((day2, i) => {
-        if (day2.textContent == "" && (i % 7 == 1 || i % 7 == 2)) {
-          day2.removeChild(day2.querySelector(".day-bg"));
-        }
-      });
-    });
-    return html`<div ref=${(e) => cal = e} class=calendar>
-  
-      <div ref=${(e) => show2 = e} class=schedule-show>
-      <div class=show-bg></div>
-      <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfw8dcbHJSektuNFTMxqjJX3vlyKvhDi_D_QoN3MMQJmT_gjqizTD0mpOp&s=10'>
-      <div class=show-list>
-        ${range7(0, 7).map((_) => html`<div class=show-item>
-          Match
-        </div>`)}
-        <button>Edit</button>
-      </div>
-    </div>
-  
-    ${day.map((d) => html`<div class=calendar-h>${d}</div>`)}
-    ${range7(0, 5).map((_) => null).concat(range7(1, 32)).map((i, _i) => html`<div class=calendar-cell onclick=${(e) => {
-      e.stopPropagation();
-      let t = document.querySelectorAll(".calendar-cell")[_i];
-      if (t.textContent == "1") {
-        setOpen(true);
-        show2.style.transform = "translateX(0%)";
-      }
-    }}>
-        <p>${i || ""}</p>
-        ${() => {
-      if (_i % 7 == 5) {
-        return html`<div class=day-bg>
-            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfw8dcbHJSektuNFTMxqjJX3vlyKvhDi_D_QoN3MMQJmT_gjqizTD0mpOp&s=10'>
-          </div>`;
-      }
-      if (_i % 7 == 1) {
-        return html`<div class="day-bg test">
-            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSemPYFfTaJUnQgZqBiVEWVNVTc-tfa9W3tZI7WoDS7FskXREQKgB6MMPo&s=10'>
-          </div>`;
-      }
-      if (_i % 7 == 2) {
-        return html`<div class="day-bg">
-            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2w1Xh5y4KEorsVGjtNebnPwY_R_iMA5S-PN8G7CZz05QK2A90Jhmp8PM&s=10'>
-          </div>`;
-      }
-      return "";
-    }}
-      </div>`)}
-  </div>`;
-  };
-  var Schedule = () => {
-    let bottom;
-    onMount(() => {
-      let h = document.querySelector(".calendar-cell").offsetHeight;
-      bottom.style.height = h + "px";
-    });
-    return html`<div class=schedule-con onclick=${() => {
-      if (openShow()) {
-        setOpen(false);
-        show2.style.transform = "translateX(100%)";
-      }
-    }}>
-
-    <div class=schedule-banner-con>
-      <div class=spotlight></div>
-      <img id=schedule-event 
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfZwPSdk0szFUPYM71VILX_dEqudYBKb0LT5FYi9PzexUc2YTNyGtIv8Ss&s=10">
-      <div class=schedule-h>Schedule</div>
-      <div class=schedule-program>April<br>WWE<br>Year 1</div>
-      <div class=schedule-hidden>April<br>WWE<br>Year 1</div>
-    </div>
-    ${Month()}
-    ${Calendar()}
-    <div ref=${(e) => bottom = e} class=schedule-bottom>Smackdown<br>Brooklyn, New York</div>
   </div>`;
   };
 
@@ -14482,34 +15707,58 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
     roster: smackdown(),
     popChange: range8(0, 9).map((_) => null),
     matches: range8(0, 5).map((_) => null),
-    results: []
+    results: [],
+    record: /* @__PURE__ */ new Map()
   });
-  var [active, setActive] = createSignal("Roster");
+  var [active, setActive] = createSignal("GMDesk");
   var Roster = () => {
     return RosterTable(store, setStore);
   };
-  var MatchCardX = () => {
+  var _MatchCard = () => {
     return MatchCard(store, setStore);
   };
-  var menu2 = {
-    "Roster": Roster,
-    "Schedule": Schedule,
-    "MatchCard": MatchCardX
+  var laptop;
+  var calendar;
+  var magazine;
+  var handlePulse = (e) => {
+    leave({ target: e.target.parentElement.parentElement });
+    e.target.parentElement.style.transform = "scale(2)";
+    e.target.parentElement.querySelector(".pulse").classList.add("pulse-anim");
   };
-  var Menubar = () => {
+  var leave = (e) => {
+    e.target.querySelectorAll(".office-img").forEach((i) => i.style.transform = "scale(1)");
+    e.target.querySelectorAll(".pulse").forEach((i) => i.classList.remove("pulse-anim"));
+  };
+  var GMDesk = () => {
     return html`
-    <div class=menubar>
-      ${Object.keys(menu2).map((e) => {
-      return html`<div class=menu onClick=
-          ${() => setActive(e)}>${e}</div>`;
-    })}
+    <div class=gm-container onClick=${leave}>
+      <div ref=${(e) => laptop = e} onClick=${(e) => handlePulse(e)} class="office-img laptop"><div class=pulse></div><img src='laptop.png'></div>
+      <div ref=${(e) => calendar = e} onClick=${(e) => handlePulse(e)} class="office-img calendar-img"><div class=pulse></div><img src='calendar.png'></div>
+      <div ref=${(e) => magazine = e} onClick=${(e) => handlePulse(e)} class="office-img magazine"><div class=pulse></div><img src='magazine.png'></div>
+      <div class=schedule-banner-con>
+        <img id=schedule-event 
+          src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/WWE_SmackDown_%282024%29_Logo.svg/1200px-WWE_SmackDown_%282024%29_Logo.svg.png''
+        >
+        <p>GM Desk</p>
+        <div class=schedule-program>WWE<br>Year 1</div>
+      </div>
+      <div class=gm-menu>
+        <div class=gm-menui onClick=${() => setActive("MatchCard")}><p>Match Card</p></div>
+        <div class=gm-menui onClick=${() => setActive("Schedule")}><p>Schedule</p></div>
+        <div class=gm-menui onClick=${() => setActive("Roster")}><p>Rosters</p></div>
+      </div>
     </div>`;
+  };
+  var menu2 = {
+    "GMDesk": GMDesk,
+    "Roster": Roster,
+    "Schedule": () => Schedule(store, setStore),
+    "MatchCard": _MatchCard
   };
   var App = () => {
     let container;
     return html`
     <div ref=${(e) => container = e} class=container>
-      ${Menubar()}
       ${() => menu2[active()]()}
     </div>`;
   };
