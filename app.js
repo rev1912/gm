@@ -15576,7 +15576,11 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
       setPage("main");
     }
   };
-  var buttonBack = () => {
+  var buttonBack = (record2) => {
+    if (record2) {
+      setRecord(false);
+      setActive("Schedule");
+    }
     if (page() == "main") {
       setActive("GMDesk");
     } else if (page() == "type" || page() == "roster") {
@@ -15667,7 +15671,7 @@ Simulating Match ${match2.match}: ${match2.matchType}`));
       ${() => page() == "main" || page() == "match" || page() == "roster" ? html`<p onClick=${() => buttonMain(store2, setStore2)}>
           ${page() == "roster" ? "Book" : button()}
         </p>` : ""}
-      ${() => page() != "match" ? html`<p onClick=${() => buttonBack()}>Back</p>` : ""}
+      ${() => page() != "match" ? html`<p onClick=${() => buttonBack(record2)}>Back</p>` : ""}
     </div>
   </div>`;
   };
